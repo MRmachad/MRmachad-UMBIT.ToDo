@@ -2,12 +2,12 @@
 using Microsoft.AspNetCore.Http;
 using System.Net;
 using System.Text.Json;
-using UMBIT.MicroService.SDK.API.Models;
-using UMBIT.MicroService.SDK.Basicos.Excecoes;
-using UMBIT.MicroService.SDK.Notificacao;
-using UMBIT.MicroService.SDK.Notificacao.Interfaces;
+using UMBIT.ToDo.SDK.API.Models;
+using UMBIT.ToDo.SDK.Basicos.Excecoes;
+using UMBIT.ToDo.SDK.Notificacao;
+using UMBIT.ToDo.SDK.Notificacao.Interfaces;
 
-namespace UMBIT.MicroService.SDK.API.Extensoes
+namespace UMBIT.ToDo.SDK.API.Extensoes
 {
     public class ExceptionHandlingMiddleware
     {

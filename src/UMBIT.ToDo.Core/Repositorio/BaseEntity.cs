@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UMBIT.MicroService.SDK.Entidades
+namespace UMBIT.ToDo.SDK.Entidades
 {
     public abstract class BaseEntity
     {

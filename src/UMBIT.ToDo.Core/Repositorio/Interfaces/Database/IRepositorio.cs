@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace UMBIT.MicroService.SDK.Repositorio.Interfaces.Database
+namespace UMBIT.ToDo.SDK.Repositorio.Interfaces.Database
 {
     public interface IRepositorio<T> where T : class
     {

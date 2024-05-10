@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using UMBIT.MicroService.SDK.API.Models.Fabrica;
+using UMBIT.ToDo.SDK.API.Models.Fabrica;
 
-namespace UMBIT.MicroService.SDK.API.Bootstrapper
+namespace UMBIT.ToDo.SDK.API.Bootstrapper
 {
     public static class FabricaConfigurate
     {

@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using UMBIT.MicroService.SDK.Notificacao;
+using UMBIT.ToDo.SDK.Notificacao;
 
-namespace UMBIT.MicroService.SDK.API.Models
+namespace UMBIT.ToDo.SDK.API.Models
 {
     public class Resposta
     {

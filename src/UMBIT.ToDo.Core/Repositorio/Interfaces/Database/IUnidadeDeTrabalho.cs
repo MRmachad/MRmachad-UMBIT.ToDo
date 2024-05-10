@@ -1,7 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
-using  UMBIT.MicroService.SDK.Entidades;
+using  UMBIT.ToDo.SDK.Entidades;
 
-namespace UMBIT.MicroService.SDK.Repositorio.Interfaces.Database
+namespace UMBIT.ToDo.SDK.Repositorio.Interfaces.Database
 {
     public interface IUnidadeDeTrabalho : IDisposable
     {

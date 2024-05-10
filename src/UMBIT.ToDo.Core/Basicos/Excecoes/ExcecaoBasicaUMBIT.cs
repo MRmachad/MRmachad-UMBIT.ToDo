@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace UMBIT.MicroService.SDK.Basicos.Excecoes
+namespace UMBIT.ToDo.SDK.Basicos.Excecoes
 {
     public class ExcecaoBasicaUMBIT : Exception
     {

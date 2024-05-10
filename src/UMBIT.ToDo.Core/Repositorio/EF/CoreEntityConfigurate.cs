@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using  UMBIT.MicroService.SDK.Entidades;
+using  UMBIT.ToDo.SDK.Entidades;
 
-namespace UMBIT.MicroService.SDK.Repositorio.EF
+namespace UMBIT.ToDo.SDK.Repositorio.EF
 {
     public abstract class CoreEntityConfigurate<T> : IEntityTypeConfiguration<T> where T : BaseEntity
     {

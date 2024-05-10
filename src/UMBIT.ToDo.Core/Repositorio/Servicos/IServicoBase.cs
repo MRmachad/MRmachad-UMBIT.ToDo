@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UMBIT.MicroService.SDK.Repositorio.Servicos
+namespace UMBIT.ToDo.SDK.Repositorio.Servicos
 {
     public interface IServicoBase<T> where T : class
     {

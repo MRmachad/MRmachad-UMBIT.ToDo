@@ -1,4 +1,4 @@
-﻿namespace UMBIT.MicroService.SDK.Notificacao.Interfaces
+﻿namespace UMBIT.ToDo.SDK.Notificacao.Interfaces
 {
     public interface INotificador 
     {

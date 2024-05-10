@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
-using UMBIT.MicroService.SDK.API.Models;
-using UMBIT.MicroService.SDK.Notificacao.Interfaces;
+using UMBIT.ToDo.SDK.API.Models;
+using UMBIT.ToDo.SDK.Notificacao.Interfaces;
 
-namespace UMBIT.MicroService.SDK.API.Controllers
+namespace UMBIT.ToDo.SDK.API.Controllers
 {
     [ApiController]
     public abstract class BaseController : ControllerBase

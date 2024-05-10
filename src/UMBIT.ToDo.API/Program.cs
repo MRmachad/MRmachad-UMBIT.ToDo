@@ -1,6 +1,6 @@
 using System;
-using UMBIT.MicroService.SDK.Notificacao.Bootstrapper;
-using UMBIT.MicroService.SDK.Repositorio.Bootstrapper;
+using UMBIT.ToDo.SDK.Notificacao.Bootstrapper;
+using UMBIT.ToDo.SDK.Repositorio.Bootstrapper;
 using UMBIT.ToDo.API.Bootstrapper;
 using UMBIT.ToDo.Infraestrutura.Contextos;
 

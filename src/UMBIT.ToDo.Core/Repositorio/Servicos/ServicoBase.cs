@@ -1,6 +1,6 @@
-﻿using UMBIT.MicroService.SDK.Repositorio.Interfaces.Database;
+﻿using UMBIT.ToDo.SDK.Repositorio.Interfaces.Database;
 
-namespace UMBIT.MicroService.SDK.Repositorio.Servicos
+namespace UMBIT.ToDo.SDK.Repositorio.Servicos
 {
     public abstract class ServicoBase<T> : IDisposable, IServicoBase<T> where T : class
     {

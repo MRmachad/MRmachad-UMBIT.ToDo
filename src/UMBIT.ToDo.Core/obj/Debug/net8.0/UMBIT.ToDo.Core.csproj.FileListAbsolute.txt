@@ -6,6 +6,7 @@ D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Core\obj\Debug\net8.0\UMBIT.ToD
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Core\obj\Debug\net8.0\UMBIT.ToDo.Core.AssemblyInfoInputs.cache
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Core\obj\Debug\net8.0\UMBIT.ToDo.Core.AssemblyInfo.cs
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Core\obj\Debug\net8.0\UMBIT.ToDo.Core.csproj.CoreCompileInputs.cache
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Core\obj\Debug\net8.0\UMBIT.ToDo.Core.sourcelink.json
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Core\obj\Debug\net8.0\UMBIT.ToDo.Core.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Core\obj\Debug\net8.0\refint\UMBIT.ToDo.Core.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Core\obj\Debug\net8.0\UMBIT.ToDo.Core.pdb

@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using UMBIT.MicroService.SDK.Notificacao.Interfaces;
+using UMBIT.ToDo.SDK.Notificacao.Interfaces;
 
-namespace UMBIT.MicroService.SDK.Notificacao.Bootstrapper
+namespace UMBIT.ToDo.SDK.Notificacao.Bootstrapper
 {
     public static class NotificacaoBootstrapper
     {

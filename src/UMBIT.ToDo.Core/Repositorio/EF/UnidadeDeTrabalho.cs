@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Runtime.CompilerServices;
-using UMBIT.MicroService.SDK.Repositorio.Interfaces.Database;
-using  UMBIT.MicroService.SDK.Entidades;
+using UMBIT.ToDo.SDK.Repositorio.Interfaces.Database;
+using  UMBIT.ToDo.SDK.Entidades;
 
-namespace UMBIT.MicroService.SDK.Repositorio.EF
+namespace UMBIT.ToDo.SDK.Repositorio.EF
 {
     public class UnidadeDeTrabalho : IUnidadeDeTrabalho
     {

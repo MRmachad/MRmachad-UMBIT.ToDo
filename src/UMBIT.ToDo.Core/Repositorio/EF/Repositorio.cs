@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using UMBIT.MicroService.SDK.Repositorio.Interfaces.Database;
+using UMBIT.ToDo.SDK.Repositorio.Interfaces.Database;
 
-namespace UMBIT.MicroService.SDK.Repositorio.EF
+namespace UMBIT.ToDo.SDK.Repositorio.EF
 {
     public class Repositorio<T> : IRepositorio<T> where T : class
     {

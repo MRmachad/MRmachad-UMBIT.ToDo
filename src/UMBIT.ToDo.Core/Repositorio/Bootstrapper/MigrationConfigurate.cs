@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace UMBIT.MicroService.SDK.Repositorio.Bootstrapper
+namespace UMBIT.ToDo.SDK.Repositorio.Bootstrapper
 {
     public static class MigrationConfigurate
     {

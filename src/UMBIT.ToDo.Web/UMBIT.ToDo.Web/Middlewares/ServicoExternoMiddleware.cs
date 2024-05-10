@@ -1,8 +1,8 @@
 ﻿using System.Text;
-using UMBIT.MicroService.SDK.API.Models;
-using UMBIT.MicroService.SDK.Basicos.Excecoes;
+using UMBIT.ToDo.SDK.API.Models;
+using UMBIT.ToDo.SDK.Basicos.Excecoes;
 
-namespace TSE.Nexus.SDK.API.Middlewares
+namespace UMBIT.ToDo.SDK.API.Middlewares
 {
     public class ServicoExternoMiddleware : DelegatingHandler
     {

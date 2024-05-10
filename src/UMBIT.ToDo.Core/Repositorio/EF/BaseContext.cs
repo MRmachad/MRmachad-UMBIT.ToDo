@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Reflection;
-using  UMBIT.MicroService.SDK.Entidades;
+using  UMBIT.ToDo.SDK.Entidades;
 
-namespace UMBIT.MicroService.SDK.Repositorio.EF
+namespace UMBIT.ToDo.SDK.Repositorio.EF
 {
 
     public abstract class BaseContext<T> : DbContext  where T : DbContext

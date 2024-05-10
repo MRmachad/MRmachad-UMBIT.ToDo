@@ -1,6 +1,6 @@
-﻿using UMBIT.MicroService.SDK.Notificacao.Interfaces;
+﻿using UMBIT.ToDo.SDK.Notificacao.Interfaces;
 
-namespace UMBIT.MicroService.SDK.Notificacao
+namespace UMBIT.ToDo.SDK.Notificacao
 {
     public class Notificador : INotificador
     {

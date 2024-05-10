@@ -1,3 +1,10 @@
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.csproj.AssemblyReference.cache
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.AssemblyInfoInputs.cache
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.AssemblyInfo.cs
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.csproj.CoreCompileInputs.cache
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.MvcApplicationPartsAssemblyInfo.cache
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.sourcelink.json
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\appsettings.Development.json
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\appsettings.json
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.API.exe
@@ -96,13 +103,7 @@ D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.Core.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.Dominio.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.Infraestrutura.pdb
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.csproj.AssemblyReference.cache
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.GeneratedMSBuildEditorConfig.editorconfig
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.AssemblyInfoInputs.cache
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.AssemblyInfo.cs
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.csproj.CoreCompileInputs.cache
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.MvcApplicationPartsAssemblyInfo.cs
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.MvcApplicationPartsAssemblyInfo.cache
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\staticwebassets.build.json
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\staticwebassets.development.json
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\staticwebassets\msbuild.UMBIT.ToDo.API.Microsoft.AspNetCore.StaticWebAssets.props
@@ -117,4 +118,3 @@ D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\refint\UMB
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.genruntimeconfig.cache
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\ref\UMBIT.ToDo.API.dll
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.sourcelink.json

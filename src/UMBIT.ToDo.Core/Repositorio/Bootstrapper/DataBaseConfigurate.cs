@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using UMBIT.MicroService.SDK.Repositorio.Basicos.Enumeradores;
-using UMBIT.MicroService.SDK.Repositorio.EF;
-using UMBIT.MicroService.SDK.Repositorio.Interfaces.Database;
+using UMBIT.ToDo.SDK.Repositorio.Basicos.Enumeradores;
+using UMBIT.ToDo.SDK.Repositorio.EF;
+using UMBIT.ToDo.SDK.Repositorio.Interfaces.Database;
 
-namespace UMBIT.MicroService.SDK.Repositorio.Bootstrapper
+namespace UMBIT.ToDo.SDK.Repositorio.Bootstrapper
 {
     public static class DataBaseConfigurate
     {

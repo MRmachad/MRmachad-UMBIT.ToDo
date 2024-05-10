@@ -1,4 +1,4 @@
-﻿namespace UMBIT.MicroService.SDK.Notificacao
+﻿namespace UMBIT.ToDo.SDK.Notificacao
 {
     public class Notificacao
     {

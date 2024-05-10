@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using UMBIT.MicroService.SDK.Basicos.Excecoes;
+using UMBIT.ToDo.SDK.Basicos.Excecoes;
 
-namespace UMBIT.MicroService.SDK.API.Models.Fabrica
+namespace UMBIT.ToDo.SDK.API.Models.Fabrica
 {
     public static class FabricaGenerica
     {

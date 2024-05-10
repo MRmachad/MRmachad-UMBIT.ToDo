@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UMBIT.MicroService.SDK.Basicos.Excecoes;
-using UMBIT.MicroService.SDK.Notificacao.Interfaces;
-using UMBIT.MicroService.SDK.Repositorio.Interfaces.Database;
-using UMBIT.MicroService.SDK.Repositorio.Servicos;
+using UMBIT.ToDo.SDK.Basicos.Excecoes;
+using UMBIT.ToDo.SDK.Notificacao.Interfaces;
+using UMBIT.ToDo.SDK.Repositorio.Interfaces.Database;
+using UMBIT.ToDo.SDK.Repositorio.Servicos;
 using UMBIT.ToDo.Dominio.Basicos.Enum;
 using UMBIT.ToDo.Dominio.Entidades;
 using UMBIT.ToDo.Dominio.Interfaces;
@@ -40,7 +40,7 @@ namespace UMBIT.ToDo.Dominio.Servicos
             {
 
                 await this.UnidadeDeTrabalho.RevertaTransacao();
-                this.Notificador.AdicionarErroSistema(new MicroService.SDK.Notificacao.ErroSistema("", ex));
+                this.Notificador.AdicionarErroSistema(new SDK.Notificacao.ErroSistema("Erro ao Adicionar item", ex));
             }
         }
 
@@ -68,7 +68,7 @@ namespace UMBIT.ToDo.Dominio.Servicos
             {
 
                 await this.UnidadeDeTrabalho.RevertaTransacao();
-                this.Notificador.AdicionarErroSistema(new MicroService.SDK.Notificacao.ErroSistema("", ex));
+                this.Notificador.AdicionarErroSistema(new SDK.Notificacao.ErroSistema("Erro ao Adicionar lista", ex));
             }
         }
 
@@ -87,7 +87,7 @@ namespace UMBIT.ToDo.Dominio.Servicos
             {
 
                 await this.UnidadeDeTrabalho.RevertaTransacao();
-                this.Notificador.AdicionarErroSistema(new MicroService.SDK.Notificacao.ErroSistema("", ex));
+                this.Notificador.AdicionarErroSistema(new SDK.Notificacao.ErroSistema("Erro ao Deletar item", ex));
             }
         }
 
@@ -106,7 +106,7 @@ namespace UMBIT.ToDo.Dominio.Servicos
             {
 
                 await this.UnidadeDeTrabalho.RevertaTransacao();
-                this.Notificador.AdicionarErroSistema(new MicroService.SDK.Notificacao.ErroSistema("", ex));
+                this.Notificador.AdicionarErroSistema(new SDK.Notificacao.ErroSistema("Erro ao Deletar lista", ex));
             }
         }
 
@@ -133,7 +133,7 @@ namespace UMBIT.ToDo.Dominio.Servicos
             {
 
                 await this.UnidadeDeTrabalho.RevertaTransacao();
-                this.Notificador.AdicionarErroSistema(new MicroService.SDK.Notificacao.ErroSistema("", ex));
+                this.Notificador.AdicionarErroSistema(new SDK.Notificacao.ErroSistema("Erro ao Editar item", ex));
             }
         }
 
@@ -155,7 +155,7 @@ namespace UMBIT.ToDo.Dominio.Servicos
             {
 
                 await this.UnidadeDeTrabalho.RevertaTransacao();
-                this.Notificador.AdicionarErroSistema(new MicroService.SDK.Notificacao.ErroSistema("", ex));
+                this.Notificador.AdicionarErroSistema(new SDK.Notificacao.ErroSistema("Erro ao Editar lista", ex));
             }
         }
 
@@ -178,7 +178,7 @@ namespace UMBIT.ToDo.Dominio.Servicos
             {
 
                 await this.UnidadeDeTrabalho.RevertaTransacao();
-                this.Notificador.AdicionarErroSistema(new MicroService.SDK.Notificacao.ErroSistema("", ex));
+                this.Notificador.AdicionarErroSistema(new SDK.Notificacao.ErroSistema("Erro ao finalizar item", ex));
             }
         }
 

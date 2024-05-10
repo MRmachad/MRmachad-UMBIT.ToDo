@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using UMBIT.MicroService.SDK.Basicos.Excecoes;
+using UMBIT.ToDo.SDK.Basicos.Excecoes;
 
-namespace UMBIT.MicroService.SDK.Notificacao
+namespace UMBIT.ToDo.SDK.Notificacao
 {
     public class ErroSistema : Notificacao
     {

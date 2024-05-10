@@ -1,6 +1,6 @@
 ﻿
 
-namespace UMBIT.MicroService.SDK.Repositorio.Basicos.Enumeradores
+namespace UMBIT.ToDo.SDK.Repositorio.Basicos.Enumeradores
 {
     public enum DataBaseEnum
     {

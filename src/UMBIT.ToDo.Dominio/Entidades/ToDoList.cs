@@ -1,4 +1,4 @@
-﻿using UMBIT.MicroService.SDK.Entidades;
+﻿using UMBIT.ToDo.SDK.Entidades;
 
 namespace UMBIT.ToDo.Dominio.Entidades
 {

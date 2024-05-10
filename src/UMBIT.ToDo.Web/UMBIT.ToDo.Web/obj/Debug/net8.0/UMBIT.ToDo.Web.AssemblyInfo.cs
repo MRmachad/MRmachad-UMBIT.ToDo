@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UMBIT.ToDo.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad21bcfd7efd16d89c7cefd3103a3550b0e2ba42")]
 [assembly: System.Reflection.AssemblyProductAttribute("UMBIT.ToDo.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UMBIT.ToDo.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

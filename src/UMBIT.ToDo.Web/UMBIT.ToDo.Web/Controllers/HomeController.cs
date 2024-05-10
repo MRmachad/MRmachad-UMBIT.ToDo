@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using UMBIT.ToDo.Web.Basicos.Enumerador;
+using UMBIT.ToDo.Web.Basicos.Extensores;
 using UMBIT.ToDo.Web.Models;
 using UMBIT.ToDo.Web.services;
 
@@ -19,15 +21,19 @@ namespace UMBIT.ToDo.Web.Controllers
         {
             return MiddlewareDeRetorno(() =>
             {
-                var result = this.ServicoDeToDo.ObtenhaItens().Result;
+                var result = this.ServicoDeToDo.ObtenhaItens().Result
+                                               .Where(t => (status != -1 ? t.Status == status : true) && (idList != null ? t.IdToDoList == idList : true));
+
                 var lists = this.ServicoDeToDo.ObtenhaLists().Result;
 
                 ViewBag.Status = status;
                 ViewBag.IdList = idList;
                 ViewBag.Lists = lists;
 
-                return View(result.Where(t => (status != -1 ? t.Status == status : true) &&
-                                              (idList != null ? t.IdToDoList == idList : true)));
+
+                ViewBag.PieData = GerePieData(result);
+
+                return View(result);
             });
         }
 
@@ -160,6 +166,27 @@ namespace UMBIT.ToDo.Web.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        private string GerePieData(IEnumerable<TaskDTO>? taskDTOs)
+        {
+            string resultItems = "[ITEMS]";
+            string items = "";
+
+            if (taskDTOs != null && taskDTOs.Any())
+            {
+                var list = new List<string>();
+                var groups = taskDTOs.GroupBy(t => t.Status);
+
+                foreach (var group in groups)
+                {
+                    list.Add( $"{{ value: {group.Count()}, name: '{EnumeradorStatus.Parse<EnumeradorStatus>(group.Key.ToString()).GetStatus()}' }} ");
+                }
+
+                items = String.Join(",", list);
+            }
+
+            return resultItems.Replace("ITEMS", items);
         }
 
         protected ActionResult MiddlewareDeRetorno(Func<ActionResult> retorno)

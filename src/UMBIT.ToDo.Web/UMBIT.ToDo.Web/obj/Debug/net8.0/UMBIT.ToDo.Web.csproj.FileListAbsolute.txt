@@ -54,3 +54,5 @@ D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\obj\Debug\ne
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\obj\Debug\net8.0\UMBIT.ToDo.Web.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\obj\Debug\net8.0\UMBIT.ToDo.Web.genruntimeconfig.cache
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\obj\Debug\net8.0\ref\UMBIT.ToDo.Web.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\obj\Debug\net8.0\UMBIT.ToDo.Web.sourcelink.json
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\libman.json

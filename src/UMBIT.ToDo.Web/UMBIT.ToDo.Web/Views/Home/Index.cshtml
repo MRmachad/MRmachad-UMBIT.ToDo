@@ -1,0 +1,113 @@
+﻿@using NonFactors.Mvc.Grid
+@{
+    int status = ViewBag.Status;
+    Guid? idList = ViewBag.IdList;
+    IEnumerable<ListTaskDTO> lists = ViewBag.Lists;
+    string setStatus = $" <select data-id=\"TASKID\" class=\"task-status-select\" name=\"select\">   <option value=\"0\" >Criado</option>    <option value=\"1\">Em andamento</option>   <option value=\"2\">Concluido</option>  </select>";
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<TaskDTO>
+
+
+
+<style>
+    .listagem {
+        margin: 10px
+    }
+
+    .add-btn {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        height: 40px;
+        width: fit-content;
+        margin: 5px;
+        padding: 5px;
+    }
+</style>
+
+<div class="center">
+    <h1 class="display-4">Task ToDo</h1>
+
+    <div class="row col-md-12 justify-content-end">
+        @if (idList != null)
+        {
+            <a asp-action="DeleteList" asp-route-id="@idList" class="btn btn-danger add-btn">Excluir Lista</a>
+            <a asp-action="EditList" asp-route-id="@idList" class="btn btn-warning add-btn">Editar Lista</a>
+        }
+        <a asp-action="AddTask" class="btn btn-warning add-btn">Add Task</a>
+        <a asp-action="AddList" class="btn btn-warning add-btn">Add Lista</a>
+    </div>
+
+    <div class="row col-lg-6 ms-2 align-self-start ">
+        <div class="row col-lg-4">
+            <select id="status-select" name="select">
+                <!option value="-1" @(status == -1 ? "selected" : "")> Geral</!option>
+                <!option value="0"  @(status == 0 ? "selected" : "")>Criado</!option>
+                <!option value="1"  @(status == 1 ? "selected" : "")>Em andamento</!option>
+                <!option value="2"  @(status == 2 ? "selected" : "")>Concluido</!option>
+            </select>
+        </div><div class="row col-lg-4 ms-2">
+            <select id="list-select" name="select">
+                <option value=" ">todas listas</option>
+                @if (lists != null)
+                {
+                    foreach (var list in lists)
+                    {
+                        <!option value="@list.Id" @(idList != null && idList == list.Id ? "selected" : "")>@list.Nome</!option>
+                    }
+                }
+            </select>
+
+        </div>
+    </div>
+
+    <div class="listagem">
+        @(Html.Grid(Model)
+            .Build(columns =>
+            {
+                columns.Add(model => model.Titulo).Titled(Html.DisplayNameFor(model => model.Titulo));
+                columns.Add(model => model.Descricao).Titled(Html.DisplayNameFor(model => model.Descricao));
+                columns.Add(model => model.DataInicio.ToString("dd/MM/yyyy HH:mm:ss")).Titled(Html.DisplayNameFor(model => model.DataInicio));
+                columns.Add(model => model.DataFim.ToString("dd/MM/yyyy HH:mm:ss")).Titled(Html.DisplayNameFor(model => model.DataFim));
+                columns.Add(model => setStatus.Replace($"{model.Status}\"", "\" selected").Replace("TASKID", model.Id.ToString())).Titled(Html.DisplayNameFor(model => model.Status)).Encoded(false);
+                columns.Add(model => Html.ActionLink("Editar", "EditTask", new { id = model.Id })).Encoded(false);
+                columns.Add(model => Html.ActionLink("Excluir", "DeleteTask", new { id = model.Id })).Encoded(false);
+            })
+            .Using(GridFilterMode.Header)
+            .Empty("No data found")
+            .Filterable()
+            .Sortable()
+            .Pageable()
+            )
+
+    </div>
+</div>
+
+@section scripts {
+
+    <script>
+        $("#status-select").on("change", function (el) {
+            let status = $(el.currentTarget).val();
+            let listid = $("#list-select").val();
+            var url = '@Url.Action("Index", "Home")' + `?status=${status}&idList=${listid}`;
+            location.href = url;
+                        });
+
+                $("#list-select").on("change", function (el) {
+                    let listid = $(el.currentTarget).val();
+                    let status = $("#status-select").val();
+                    var url = '@Url.Action("Index", "Home")' + `?status=${status}&idList=${listid}`;
+                    location.href = url;
+                });
+
+                $(".task-status-select").on("change", function (el) {
+                    let status = $(el.currentTarget).val();
+                    let id = $(el.currentTarget).data("id");
+                    fetch('@Url.Action("AltereStatus", "Home")'+ `?id=${id}&status=${status}`,{method: 'POST'})
+                    .catch(t => alert("erro em mundaça de status"))
+                    .then(t => location.reload())
+                });
+
+    </script>
+}

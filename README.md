@@ -12,7 +12,7 @@ Antes de iniciar, certifique-se de ter instalado o seguinte:
 1. Clone o repositório:
 
     ```bash
-    git clone https://github.com/MRmachad/UMBIT.ToDo.git
+    git clone git@github.com:MRmachad/UMBIT.ToDo.git
     ```
 
 2. Na raiz do projeto, execute o seguinte comando para construir os serviços do Docker conforme definido no arquivo `docker-compose.json`:

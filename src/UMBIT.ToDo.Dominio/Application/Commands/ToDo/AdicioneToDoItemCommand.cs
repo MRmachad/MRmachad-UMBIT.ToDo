@@ -2,7 +2,7 @@
 
 namespace UMBIT.ToDo.Dominio.Application.Commands.ToDo
 {
-    internal class AdicioneToDoItemCommand : UMBITCommand<AdicioneToDoItemCommand>
+    public class AdicioneToDoItemCommand : UMBITCommand<AdicioneToDoItemCommand>
     {
         public Guid? IdToDoList { get; set; }
         public int Index { get; set; }

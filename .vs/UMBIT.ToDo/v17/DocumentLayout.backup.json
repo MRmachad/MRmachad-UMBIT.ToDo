@@ -1,0 +1,143 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9A0E6275-86E8-4905-82F5-4B5C1C4E4B53}|src\\UMBIT.ToDo.Core\\UMBIT.ToDo.Core.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.core\\api\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A0E6275-86E8-4905-82F5-4B5C1C4E4B53}|src\\UMBIT.ToDo.Core\\UMBIT.ToDo.Core.csproj|solutionrelative:src\\umbit.todo.core\\api\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.api\\controllers\\todocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|solutionrelative:src\\umbit.todo.api\\controllers\\todocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4325DA91-ED56-40E0-AB30-9BBFA4962E45}|src\\UMBIT.ToDo.Dominio\\UMBIT.ToDo.Dominio.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.dominio\\application\\commands\\todo\\adicionetodolistcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4325DA91-ED56-40E0-AB30-9BBFA4962E45}|src\\UMBIT.ToDo.Dominio\\UMBIT.ToDo.Dominio.csproj|solutionrelative:src\\umbit.todo.dominio\\application\\commands\\todo\\adicionetodolistcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.api\\bootstrapper\\appconfigurate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|solutionrelative:src\\umbit.todo.api\\bootstrapper\\appconfigurate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.api\\mapeadores\\autenticacaomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|solutionrelative:src\\umbit.todo.api\\mapeadores\\autenticacaomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.api\\mapeadores\\todomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|solutionrelative:src\\umbit.todo.api\\mapeadores\\todomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.api\\mapeadores\\usuariomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|solutionrelative:src\\umbit.todo.api\\mapeadores\\usuariomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BaseController.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Core\\API\\Controllers\\BaseController.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.Core\\API\\Controllers\\BaseController.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Core\\API\\Controllers\\BaseController.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.Core\\API\\Controllers\\BaseController.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAEwJQAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T19:05:19.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ToDoController.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Controllers\\ToDoController.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.API\\Controllers\\ToDoController.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Controllers\\ToDoController.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.API\\Controllers\\ToDoController.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAswH8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T19:05:03.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdicioneToDoListCommand.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Dominio\\Application\\Commands\\ToDo\\AdicioneToDoListCommand.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.Dominio\\Application\\Commands\\ToDo\\AdicioneToDoListCommand.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Dominio\\Application\\Commands\\ToDo\\AdicioneToDoListCommand.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.Dominio\\Application\\Commands\\ToDo\\AdicioneToDoListCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T19:03:55.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppConfigurate.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Bootstrapper\\AppConfigurate.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.API\\Bootstrapper\\AppConfigurate.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Bootstrapper\\AppConfigurate.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.API\\Bootstrapper\\AppConfigurate.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T19:02:37.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ToDoMapper.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Mapeadores\\ToDoMapper.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.API\\Mapeadores\\ToDoMapper.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Mapeadores\\ToDoMapper.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.API\\Mapeadores\\ToDoMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T19:01:46.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AutenticacaoMapper.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Mapeadores\\AutenticacaoMapper.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.API\\Mapeadores\\AutenticacaoMapper.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Mapeadores\\AutenticacaoMapper.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.API\\Mapeadores\\AutenticacaoMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T19:00:53.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UsuarioMapper.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Mapeadores\\UsuarioMapper.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.API\\Mapeadores\\UsuarioMapper.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Mapeadores\\UsuarioMapper.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.API\\Mapeadores\\UsuarioMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T19:00:23.543Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

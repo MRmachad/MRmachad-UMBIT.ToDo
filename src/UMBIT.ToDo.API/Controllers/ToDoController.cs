@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+using UMBIT.Nexus.Auth.Dominio.Application.Queries.ToDo;
 using UMBIT.ToDo.API.DTOs;
-using UMBIT.ToDo.Dominio.Basicos.Enum;
+using UMBIT.ToDo.Core.API.Controllers;
+using UMBIT.ToDo.Dominio.Application.Commands.ToDo;
 using UMBIT.ToDo.Dominio.Entidades;
 using UMBIT.ToDo.Dominio.Interfaces;
-using UMBIT.ToDo.Core.API.Controllers;
 
 namespace UMBIT.ToDo.API.Controllers
 {
@@ -12,116 +12,126 @@ namespace UMBIT.ToDo.API.Controllers
     [Route("[controller]")]
     public class ToDoController : BaseController
     {
-        private readonly IServicoDeToDo ServicoDeTodo;
-        public ToDoController(IServiceProvider serviceProvider, IServicoDeToDo servicoDeToDo) : base(serviceProvider)
+        public ToDoController(IServiceProvider serviceProvider) : base(serviceProvider)
         {
-            this.ServicoDeTodo = servicoDeToDo;
         }
 
-//        [HttpDelete("/delete-item/{id}")]
-//        public async Task<IActionResult> DeleteItem([FromRoute] Guid id)
-//        {
-//            return await MiddlewareDeRetorno(async () =>
-//            {
-//                await this.ServicoDeTodo.DeleteToDoItem(id);
-//            });
-//        }
-//        [HttpDelete("/delete-list/{id}")]
-//        public async Task<IActionResult> DeleteList([FromRoute] Guid id)
-//        {
-//            return await MiddlewareDeRetorno(async () =>
-//            {
-//                await this.ServicoDeTodo.DeleteToDoList(id);
-//            });
-//        }
-//        [HttpPost("/adicione-item")]
-//        public async Task<IActionResult> AdicioneItem([FromBody] ToDoItemDTO itemDTO)
-//        {
-//            return await MiddlewareDeRetorno(async () =>
-//            {
-//                await this.ServicoDeTodo.AdicioneToDoItem(new ToDoItem()
-//                {
-//                    Nome = itemDTO.Nome,
-//                    Index = itemDTO.Index,
-//                    Descricao = itemDTO.Descricao,
-//                    IdToDoList = itemDTO.IdToDoList,
-//                    DataFim = itemDTO.DataFim,
-//                    DataInicio = itemDTO.DataInicio,
-//                    Status = Dominio.Basicos.Enum.EnumeradorStatus.Parse<EnumeradorStatus>(itemDTO.Status.ToString()),
+        [HttpDelete("/delete-item/{id}")]
+        public async Task<IActionResult> DeleteItem([FromRoute] Guid id)
+        {
+            var command = Mapper.Map<DeleteToDoItemCommand>(new DeleteToDoItemCommand()
+            {
+                Id = id
+            });
 
-//                });
-//            });
-//        }
+            var response = await Mediator.EnviarComando(command);
 
-//        [HttpPost("/adicione-list")]
-//        public async Task<IActionResult> AdicioneList([FromBody] ToDoListDTO toDoListDTO)
-//        {
-//            return await MiddlewareDeRetorno(async () =>
-//            {
-//#pragma warning disable CS8604 // Possible null reference argument.
-//                await this.ServicoDeTodo.AdicioneToDoList(toDoListDTO.Nome, toDoListDTO.Items?.Select(itemDTO =>
-//                {
-//                    return new ToDoItem()
-//                    {
-//                        Index = itemDTO.Index,
-//                        Descricao = itemDTO.Descricao,
-//                        IdToDoList = itemDTO.IdToDoList,
-//                        Status = Dominio.Basicos.Enum.EnumeradorStatus.Parse<EnumeradorStatus>(itemDTO.Status.ToString()),
+            return UMBITResponse(response);
+        }
+        [HttpDelete("/delete-list/{id}")]
+        public async Task<IActionResult> DeleteList([FromRoute] Guid id)
+        {
+            var command = Mapper.Map<DeleteToDoListCommand>(new DeleteToDoListCommand()
+            {
+                Id = id
+            });
 
-//                    };
-//                })?.ToList());
-//#pragma warning restore CS8604 // Possible null reference argument.
-//            });
-//        }
-//        [HttpPost("/edite-item")]
-//        public async Task<IActionResult> EditeItem([FromBody] ToDoItemDTO toDoItemDTO)
-//        {
-//            return await MiddlewareDeRetorno(async () =>
-//            {
-//                await this.ServicoDeTodo.EditeToDoItem(toDoItemDTO.Id, toDoItemDTO.IdToDoList, toDoItemDTO.DataFim, toDoItemDTO.DataInicio, toDoItemDTO.Nome, toDoItemDTO.Descricao, toDoItemDTO.Status);
-//            });
-//        }
+            var response = await Mediator.EnviarComando(command);
 
-//        [HttpPost("/edite-list")]
-//        public async Task<IActionResult> EditeLista([FromBody] ToDoListDTO toDoListDTO)
-//        {
-//            return await MiddlewareDeRetorno(async () =>
-//            {
-//               await this.ServicoDeTodo.EditeToDoListItem(toDoListDTO.Id, toDoListDTO.Nome);
-//            });
-//        }
+            return UMBITResponse(response);
+        }
 
-//        [HttpGet("/obtenha-item/{id}")]
-//        public async Task<ActionResult<ToDoItem>> ObtenhaItem([FromRoute()] Guid id)
-//        {
-//            return await MiddlewareDeRetorno<ToDoItem>(async () =>
-//            {
-//                return await this.ServicoDeTodo.ObtenhaToDoItem(id);
-//            });
-//        }
-//        [HttpGet("/obtenha-list/{id}")]
-//        public async Task<ActionResult<ToDoList>> ObtenhaLista([FromRoute()] Guid id)
-//        {
-//            return await MiddlewareDeRetorno<ToDoList>(async () =>
-//            {
-//                return await this.ServicoDeTodo.ObtenhaToDoList(id);
-//            });
-//        }
-//        [HttpGet("/obtenha-item")]
-//        public async Task<ActionResult<List<ToDoItem>>> ObtenhaItem()
-//        {
-//            return await MiddlewareDeRetorno<List<ToDoItem>>(async () =>
-//            {
-//                return await this.ServicoDeTodo.ObtenhaToDoItems();
-//            });
-//        }
-//        [HttpGet("/obtenha-list")]
-//        public async Task<ActionResult<List<ToDoList>>> ObtenhaLista()
-//        {
-//            return await MiddlewareDeRetorno<List<ToDoList>>(async () =>
-//            {
-//                return await this.ServicoDeTodo.ObtenhaToDoLists();
-//            });
-//        }
+        [HttpPost("/adicione-item")]
+        public async Task<IActionResult> AdicioneItem([FromBody] ToDoItemDTO itemDTO)
+        {
+            var command = Mapper.Map<AdicioneToDoItemCommand>(new AdicioneToDoItemCommand()
+            {
+                Nome = itemDTO.Nome,
+                Index = itemDTO.Index,
+                Status = itemDTO.Status,
+                DataFim = itemDTO.DataFim,
+                Descricao = itemDTO.Descricao,
+                IdToDoList = itemDTO.IdToDoList,
+                DataInicio = itemDTO.DataInicio,
+            });
+
+            var response = await Mediator.EnviarComando(command);
+
+            return UMBITResponse(response);
+        }
+
+        [HttpPost("/adicione-list")]
+        public async Task<IActionResult> AdicioneList([FromBody] ToDoListDTO toDoListDTO)
+        {
+            var command = Mapper.Map<AdicioneToDoListCommand>(new AdicioneToDoListCommand()
+            {
+                Nome = toDoListDTO.Nome,
+                Items = toDoListDTO.Items?.Select(itemDTO => (itemDTO.Nome, itemDTO.Descricao, itemDTO.DataInicio, itemDTO.DataFim, itemDTO.Status))?.ToList()
+            });
+
+            var response = await Mediator.EnviarComando(command);
+
+            return UMBITResponse(response);
+        }
+
+        [HttpPost("/edite-item")]
+        public async Task<IActionResult> EditeItem([FromBody] ToDoItemDTO toDoItemDTO)
+        {
+            var command = Mapper.Map<EditeToDoItemCommand>(new EditeToDoItemCommand()
+            {
+                Id = toDoItemDTO.Id,
+                Nome = toDoItemDTO.Nome,
+                Status = toDoItemDTO.Status,
+                DataFim = toDoItemDTO.DataFim,
+                Descricao = toDoItemDTO.Descricao,
+                DataInicio = toDoItemDTO.DataInicio,
+                IdToDoList = toDoItemDTO.IdToDoList,
+            });
+
+            var response = await Mediator.EnviarComando(command);
+
+            return UMBITResponse(response);
+        }
+
+        [HttpPost("/edite-list")]
+        public async Task<IActionResult> EditeLista([FromBody] ToDoListDTO toDoListDTO)
+        {
+            var command = Mapper.Map<EditeToDoListItemCommand>(new EditeToDoListItemCommand()
+            {
+                Id = toDoListDTO.Id,
+                Nome = toDoListDTO.Nome
+            });
+
+            var response = await Mediator.EnviarComando(command);
+
+            return UMBITResponse(response);
+        }
+
+        [HttpGet("/obtenha-item/{id}")]
+        public async Task<ActionResult<ToDoItem>> ObtenhaItem([FromRoute()] Guid id)
+        {
+            var response = await Mediator.EnviarQuery<ObterToDoPorIdQuery, ToDoItem>(new ObterToDoPorIdQuery(id));
+            return UMBITResponse<ToDoItem, ToDoItem>(response);
+        }
+
+        [HttpGet("/obtenha-list/{id}")]
+        public async Task<ActionResult<ToDoList>> ObtenhaLista([FromRoute()] Guid id)
+        {
+            var response = await Mediator.EnviarQuery<ObterToDoListPorIdQuery, ToDoList>(new ObterToDoListPorIdQuery(id));
+            return UMBITResponse<ToDoList, ToDoList>(response);
+
+        }
+        [HttpGet("/obtenha-item")]
+        public async Task<ActionResult<ICollection<ToDoItem>>> ObtenhaItem()
+        {
+            var response = await Mediator.EnviarQuery<ObterToDoQuery, IQueryable<ToDoItem>>(new ObterToDoQuery());
+            return UMBITCollectionResponseEntity<ToDoItem, ToDoItem>(response);
+        }
+        [HttpGet("/obtenha-list")]
+        public async Task<ActionResult<ICollection<ToDoList>>> ObtenhaLista()
+        {
+            var response = await Mediator.EnviarQuery<ObterToDoListQuery, IQueryable<ToDoList>>(new ObterToDoListQuery());
+            return UMBITCollectionResponseEntity<ToDoList, ToDoList>(response);
+        }
     }
 }

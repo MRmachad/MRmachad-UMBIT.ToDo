@@ -7,7 +7,7 @@ using UMBIT.ToDo.Core.Messages.Messagem.Applications.Commands;
 
 namespace UMBIT.ToDo.Dominio.Application.Commands.ToDo
 {
-    internal class EditeToDoItemCommand : UMBITCommand<EditeToDoItemCommand>
+    public class EditeToDoItemCommand : UMBITCommand<EditeToDoItemCommand>
     {
         public Guid Id { get; set; }
         public Guid? IdToDoList { get; set; }

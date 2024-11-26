@@ -1,37 +1,84 @@
-﻿using UMBIT.ToDo.Core.API.Middlewares;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.OData;
+using Microsoft.AspNetCore.OData.Query;
+using Microsoft.IdentityModel.JsonWebTokens;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using UMBIT.ToDo.Core.API.Middlewares;
+using UMBIT.ToDo.Core.Basicos.Utilitarios;
 
 namespace UMBIT.ToDo.API.Bootstrapper
 {
     public static class AppConfigurate
     {
-        public static IServiceCollection AddApp(this IServiceCollection services)
+        public static IServiceCollection AddApp(this IServiceCollection services, string versao = "v1")
         {
-            services.AddControllers();
-            services.AddEndpointsApiExplorer();
-            services.AddSwaggerGen();
+            services.AddCors();
 
+            services.AddControllers(o => o.Filters.Add(new EnableQueryAttribute()))
+                    .AddJsonOptions(options =>
+                    {
+                        options.JsonSerializerOptions.WriteIndented = true;
+                        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+                    })
+                    .AddOData((o) =>
+                    {
+                        o.EnableQueryFeatures(1000);
+                    });
+
+            services.AddEndpointsApiExplorer();
+            services.AddAutoMapper(typeof(Program).Assembly);
+            services.AddSwaggerGen(c =>
+            {
+                c.CustomSchemaIds(type => type.ToString());
+                c.SwaggerDoc(versao, new OpenApiInfo { Title = ProjetoAssemblyHelper.NameProjetoInterface, Version = versao });
+            });
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                    .AddJwtBearer(x =>
+                    {
+                        x.SaveToken = true;
+                        x.RequireHttpsMetadata = false;
+                        x.TokenValidationParameters = new TokenValidationParameters
+                        {
+                            ValidateIssuer = false,
+                            ValidateAudience = false,
+                            ValidateLifetime = false,
+                            ValidateIssuerSigningKey = false,
+                            SignatureValidator = (token, _) => new JsonWebToken(token)
+                        };
+                    });
+            services.AddAuthorization();
             return services;
         }
 
-        public static IApplicationBuilder UseApp(this IApplicationBuilder app)
+        public static IApplicationBuilder UseApp(this IApplicationBuilder app, string versao = "v1")
         {
-            app.UseSwagger();
-            app.UseSwaggerUI();
+            app.UseCors(t =>
+            {
+                t.AllowAnyOrigin();
+                t.AllowAnyMethod();
+                t.AllowAnyHeader();
+            });
 
-            app.UseHttpsRedirection();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("v1/swagger.json", $"{ProjetoAssemblyHelper.NameProjetoInterface} {versao}");
+            });
 
             app.UseMiddleware<ExceptionHandlingMiddleware>();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
 
+
             return app;
         }
+
     }
 }

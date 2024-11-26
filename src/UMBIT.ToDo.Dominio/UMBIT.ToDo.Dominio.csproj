@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Servicos\ServicoDeToDo.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.11" />
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="9.0.0" />
@@ -19,10 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\UMBIT.ToDo.Core\UMBIT.ToDo.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Servicos\" />
   </ItemGroup>
 
 </Project>

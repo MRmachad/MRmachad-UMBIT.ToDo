@@ -7,6 +7,7 @@ namespace UMBIT.ToDo.Core.Seguranca.Bootstrapper
     {
         public static IServiceCollection AddContextPrincipal(this IServiceCollection services)
         {
+            services.AddHttpContextAccessor();
             services.AddScoped<ContextoPrincipal>();
 
             return services;

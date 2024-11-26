@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\UMBIT.ToDo.Web.props" />
-</Project>

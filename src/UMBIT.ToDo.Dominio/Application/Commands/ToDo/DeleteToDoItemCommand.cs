@@ -7,7 +7,7 @@ using UMBIT.ToDo.Core.Messages.Messagem.Applications.Commands;
 
 namespace UMBIT.ToDo.Dominio.Application.Commands.ToDo
 {
-    internal class DeleteToDoItemCommand : UMBITCommand<DeleteToDoItemCommand>
+    public class DeleteToDoItemCommand : UMBITCommand<DeleteToDoItemCommand>
     {
         public Guid Id { get; set; }
         protected override void Validadors(ValidatorCommand<DeleteToDoItemCommand> validator)

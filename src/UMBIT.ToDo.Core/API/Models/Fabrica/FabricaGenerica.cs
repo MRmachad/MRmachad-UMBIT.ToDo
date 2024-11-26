@@ -1,22 +1,21 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using UMBIT.ToDo.SDK.Basicos.Excecoes;
 
-namespace UMBIT.ToDo.SDK.API.Models.Fabrica
+namespace UMBIT.ToDo.Core.API.Models.Fabrica
 {
     public static class FabricaGenerica
     {
-        public static IServiceProvider services { get; set; }
-
-        public static T Crie<T>()
+        private static IServiceProvider _serviceProvider;
+        public static IServiceProvider ServiceProvider
         {
-            try
+            get
             {
-                return services.GetService<T>();
+                return _serviceProvider.CreateScope().ServiceProvider;
             }
-            catch (Exception ex)
-            {
-                throw new ExcecaoBasicaUMBIT($"Erro ao resgatar serviço {nameof(T)}", ex);
-            }
+        }
+
+        public static void Initialize(IServiceProvider serviceProvider)
+        {
+            _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
         }
     }
 }

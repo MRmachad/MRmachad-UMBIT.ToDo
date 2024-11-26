@@ -1,8 +1,8 @@
 ﻿using System.Text;
-using UMBIT.ToDo.SDK.API.Models;
-using UMBIT.ToDo.SDK.Basicos.Excecoes;
+using UMBIT.ToDo.Core.API.Models;
+using UMBIT.ToDo.Core.Basicos.Excecoes;
 
-namespace UMBIT.ToDo.SDK.API.Middlewares
+namespace UMBIT.ToDo.Web.Middlewares
 {
     public class ServicoExternoMiddleware : DelegatingHandler
     {
@@ -28,12 +28,12 @@ namespace UMBIT.ToDo.SDK.API.Middlewares
 
                         var ex = new ExcecaoBasicaUMBIT(
                                                     respotaPadrao.Erros?.FirstOrDefault()?.Titulo ?? "Falha Generica, respota padrão sem erros!",
-                                                    new Exception(String.Join("\n", respotaPadrao.ErrosSistema.Select(t => t.Mensagem))));
+                                                    new Exception(string.Join("\n", respotaPadrao.ErrosSistema.Select(t => t.Mensagem))));
 
                         throw ex;
                     }
 
-                    var contentString = System.Text.Json.JsonSerializer.Serialize(respotaPadrao.Dados) ;
+                    var contentString = System.Text.Json.JsonSerializer.Serialize(respotaPadrao.Dados);
                     response.Content = new StringContent(contentString, Encoding.UTF8, "application/json");
                     return response;
 

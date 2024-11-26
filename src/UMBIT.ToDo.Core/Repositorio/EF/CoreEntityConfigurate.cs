@@ -1,17 +1,26 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using  UMBIT.ToDo.SDK.Entidades;
+using UMBIT.ToDo.Core.Repositorio.Interfaces;
 
-namespace UMBIT.ToDo.SDK.Repositorio.EF
+namespace UMBIT.ToDo.Core.Repositorio.EF
 {
-    public abstract class CoreEntityConfigurate<T> : IEntityTypeConfiguration<T> where T : BaseEntity
+    public abstract class CoreEntityConfigurate<T> : IEntityTypeConfiguration<T> where T : class, IBaseEntity
     {
         public void Configure(EntityTypeBuilder<T> builder)
         {
-            builder.HasKey((T be) => be.Id);
+            builder.HasKey((be) => be.Id);
             ConfigureEntidade(builder);
-            builder.Property((T be) => be.DataCriacao).IsRequired();
-            builder.Property((T be) => be.DataAtualizacao).IsRequired();
+            builder.Property((be) => be.DataCriacao).IsRequired();
+            builder.Property((be) => be.DataAtualizacao).IsRequired();
+        }
+
+        public abstract void ConfigureEntidade(EntityTypeBuilder<T> builder);
+    }
+    public abstract class CoreEntityConfigurateCustom<T> : IEntityTypeConfiguration<T> where T : class
+    {
+        public void Configure(EntityTypeBuilder<T> builder)
+        {
+            ConfigureEntidade(builder);
         }
 
         public abstract void ConfigureEntidade(EntityTypeBuilder<T> builder);

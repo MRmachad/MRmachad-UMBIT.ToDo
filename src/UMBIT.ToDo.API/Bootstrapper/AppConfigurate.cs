@@ -1,4 +1,4 @@
-﻿using UMBIT.ToDo.SDK.API.Extensoes;
+﻿using UMBIT.ToDo.Core.API.Middlewares;
 
 namespace UMBIT.ToDo.API.Bootstrapper
 {

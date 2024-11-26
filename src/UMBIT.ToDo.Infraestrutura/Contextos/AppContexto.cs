@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using UMBIT.ToDo.SDK.Repositorio.EF;
+using UMBIT.ToDo.Core.Repositorio.EF;
 
 namespace UMBIT.ToDo.Infraestrutura.Contextos
 {

@@ -1,0 +1,190 @@
+[
+  {
+    "ContainingType": "UMBIT.ToDo.API.Controllers.ToDoController",
+    "Method": "AdicioneItem",
+    "RelativePath": "adicione-item",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "itemDTO",
+        "Type": "UMBIT.ToDo.API.DTOs.ToDoItemDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UMBIT.ToDo.API.Controllers.ToDoController",
+    "Method": "AdicioneList",
+    "RelativePath": "adicione-list",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "toDoListDTO",
+        "Type": "UMBIT.ToDo.API.DTOs.ToDoListDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UMBIT.ToDo.API.Controllers.ToDoController",
+    "Method": "DeleteItem",
+    "RelativePath": "delete-item/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UMBIT.ToDo.API.Controllers.ToDoController",
+    "Method": "DeleteList",
+    "RelativePath": "delete-list/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UMBIT.ToDo.API.Controllers.ToDoController",
+    "Method": "EditeItem",
+    "RelativePath": "edite-item",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "toDoItemDTO",
+        "Type": "UMBIT.ToDo.API.DTOs.ToDoItemDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UMBIT.ToDo.API.Controllers.ToDoController",
+    "Method": "EditeLista",
+    "RelativePath": "edite-list",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "toDoListDTO",
+        "Type": "UMBIT.ToDo.API.DTOs.ToDoListDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UMBIT.ToDo.API.Controllers.ToDoController",
+    "Method": "ObtenhaItem",
+    "RelativePath": "obtenha-item",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[UMBIT.ToDo.Dominio.Entidades.ToDoItem, UMBIT.ToDo.Dominio, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UMBIT.ToDo.API.Controllers.ToDoController",
+    "Method": "ObtenhaItem",
+    "RelativePath": "obtenha-item/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "UMBIT.ToDo.Dominio.Entidades.ToDoItem",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UMBIT.ToDo.API.Controllers.ToDoController",
+    "Method": "ObtenhaLista",
+    "RelativePath": "obtenha-list",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[UMBIT.ToDo.Dominio.Entidades.ToDoList, UMBIT.ToDo.Dominio, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UMBIT.ToDo.API.Controllers.ToDoController",
+    "Method": "ObtenhaLista",
+    "RelativePath": "obtenha-list/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "UMBIT.ToDo.Dominio.Entidades.ToDoList",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

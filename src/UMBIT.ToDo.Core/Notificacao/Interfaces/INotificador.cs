@@ -1,11 +1,16 @@
-﻿namespace UMBIT.ToDo.SDK.Notificacao.Interfaces
+﻿using FluentValidation.Results;
+using UMBIT.ToDo.Core.Basicos.Notificacoes;
+
+namespace UMBIT.ToDo.Core.Notificacao.Interfaces
 {
-    public interface INotificador 
+    public interface INotificador
     {
-        IEnumerable<Notificacao> ObterTodos(); 
-        IEnumerable<Notificacao> ObterNotificacoes();
+        IEnumerable<NotificacaoPadrao> ObterTodos();
+        IEnumerable<NotificacaoPadrao> ObterNotificacoes();
         IEnumerable<ErroSistema> ObterErrosSistema();
-        void AdicionarNotificacao(Notificacao notificacao);
+        void AdicionarNotificacao(string mensagem);
+        void AdicionarNotificacao(string titulo, string mensagem);
+        void AdicionarNotificacao(ValidationResult validationResult);
         void AdicionarErroSistema(ErroSistema erroSistema);
         bool TemNotificacoes();
         void LimparNotificacoes();

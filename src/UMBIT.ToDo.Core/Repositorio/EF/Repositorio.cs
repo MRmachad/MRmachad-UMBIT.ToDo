@@ -1,31 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using UMBIT.ToDo.SDK.Repositorio.Interfaces.Database;
+using UMBIT.ToDo.Core.Notificacao.Interfaces;
+using UMBIT.ToDo.Core.Repositorio.Interfaces;
+using UMBIT.ToDo.Core.Repositorio.Interfaces.Database;
 
-namespace UMBIT.ToDo.SDK.Repositorio.EF
+namespace UMBIT.ToDo.Core.Repositorio.EF
 {
-    public class Repositorio<T> : IRepositorio<T> where T : class
+    public class Repositorio<T> : RepositorioDeLeitura<T>, IRepositorio<T> where T : class
     {
-        protected DbContext _contexto { get; private set; }
-        protected DbSet<T> Db { get; private set; }
+        private readonly INotificador Notificador;
 
-
-        public Repositorio(DbContext contexto)
+        public Repositorio(DbContext contexto, INotificador notificador) : base(contexto)
         {
-            _contexto = contexto;
-            Db = _contexto.Set<T>();
-        }
-
-        public virtual async Task<IEnumerable<T>> ObterTodos()
-        {
-            return await Db
-                .AsNoTracking()
-                .ToListAsync();
-        }
-
-        public virtual async Task<T> ObterUnico(params object[] args)
-        {
-            return Db.Find(args);
+            Notificador = notificador;
         }
 
         public virtual async Task<IEnumerable<T>> Filtrar(Expression<Func<T, bool>> predicado)
@@ -36,31 +23,51 @@ namespace UMBIT.ToDo.SDK.Repositorio.EF
                 .ToListAsync();
         }
 
-        public virtual T Carregar(T objeto)
-        {
-            return Db.Attach(objeto) as T;
-        }
-
         public virtual async Task Adicionar(T objeto)
         {
+            if (objeto is IBaseEntity baseEntity && !baseEntity.Validate.IsValid)
+            {
+                Notificador.AdicionarNotificacao(baseEntity.Validate);
+                return;
+            }
+
             await Db.AddAsync(objeto);
         }
 
-        public virtual async Task Adicionar(IEnumerable<T> objetos)
+        public virtual async Task AdicionarTodos(List<T> objetos)
         {
+            foreach (T objeto in objetos)
+            {
+                if (objeto is IBaseEntity baseEntity && !baseEntity.Validate.IsValid)
+                {
+                    Notificador.AdicionarNotificacao(baseEntity.Validate);
+                    return;
+                }
+            }
+
             await Db.AddRangeAsync(objetos);
         }
 
         public virtual void Atualizar(T objeto)
         {
+            if (objeto is IBaseEntity baseEntity && !baseEntity.Validate.IsValid)
+            {
+                Notificador.AdicionarNotificacao(baseEntity.Validate);
+                return;
+            }
+
             var result = Db.Update(objeto);
-            _contexto.Entry(objeto).State = result.State;
+            Contexto.Entry(objeto).State = result.State;
         }
 
         public virtual void Remover(T objeto)
         {
             var result = Db.Remove(objeto);
-            _contexto.Entry(objeto).State = result.State;
+            Contexto.Entry(objeto).State = result.State;
+        }
+        public virtual void RemoverTodos(List<T> objetos)
+        {
+            Db.RemoveRange(objetos);
         }
 
         protected void MiddlewareDeRepositorio(Action method)
@@ -86,7 +93,5 @@ namespace UMBIT.ToDo.SDK.Repositorio.EF
                 throw new Exception("Ocorreu um erro no processamento do banco de dados. Contate o administrador.", ex);
             }
         }
-
-
     }
 }

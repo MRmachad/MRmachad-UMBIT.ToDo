@@ -1,19 +1,14 @@
 ﻿using System.Runtime.CompilerServices;
-using  UMBIT.ToDo.SDK.Entidades;
 
-namespace UMBIT.ToDo.SDK.Repositorio.Interfaces.Database
+namespace UMBIT.ToDo.Core.Repositorio.Interfaces.Database
 {
-    public interface IUnidadeDeTrabalho : IDisposable
+    public interface IUnidadeDeTrabalho : IUnidadeDeTrabalhoNaoTransacional
     {
-        IRepositorio<T> ObterRepositorio<T>() where T : class;
+        Task InicieTransacao();
 
-        Task<int> SalveAlteracoes();
+        Task FinalizeTransacao();
 
-        Task InicieTransacao([CallerFilePath] string arquivo = null, [CallerMemberName] string metodo = null);
-
-        Task FinalizeTransacao([CallerFilePath] string arquivo = null, [CallerMemberName] string metodo = null);
-
-        Task RevertaTransacao([CallerFilePath] string arquivo = null, [CallerMemberName] string metodo = null);
+        Task RevertaTransacao();
     }
 
 }

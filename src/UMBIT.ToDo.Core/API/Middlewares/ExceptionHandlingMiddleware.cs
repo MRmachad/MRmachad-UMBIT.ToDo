@@ -2,12 +2,12 @@
 using Microsoft.AspNetCore.Http;
 using System.Net;
 using System.Text.Json;
-using UMBIT.ToDo.SDK.API.Models;
-using UMBIT.ToDo.SDK.Basicos.Excecoes;
-using UMBIT.ToDo.SDK.Notificacao;
-using UMBIT.ToDo.SDK.Notificacao.Interfaces;
+using UMBIT.ToDo.Core.API.Models;
+using UMBIT.ToDo.Core.Basicos.Excecoes;
+using UMBIT.ToDo.Core.Basicos.Notificacoes;
+using UMBIT.ToDo.Core.Notificacao.Interfaces;
 
-namespace UMBIT.ToDo.SDK.API.Extensoes
+namespace UMBIT.ToDo.Core.API.Middlewares
 {
     public class ExceptionHandlingMiddleware
     {
@@ -47,7 +47,12 @@ namespace UMBIT.ToDo.SDK.API.Extensoes
 
             var dadosResposta = new Resposta();
             dadosResposta.Sucesso = false;
-            dadosResposta.Erros = notificador.ObterNotificacoes();
+            dadosResposta.Erros = notificador.ObterNotificacoes().Count() > 0 ?
+                                  notificador.ObterNotificacoes() :
+                                  new List<NotificacaoPadrao>()
+                                  {
+                                        new NotificacaoPadrao("Erro genérico!")
+                                  };
 
             if (_environment.IsDevelopment())
                 dadosResposta.ErrosSistema = notificador.ObterErrosSistema();

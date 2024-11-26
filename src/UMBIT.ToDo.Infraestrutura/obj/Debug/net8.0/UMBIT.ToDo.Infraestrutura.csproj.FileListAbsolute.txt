@@ -11,8 +11,8 @@ D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\bin\Debug\net8.0
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\bin\Debug\net8.0\UMBIT.ToDo.Dominio.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\bin\Debug\net8.0\UMBIT.ToDo.Core.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\bin\Debug\net8.0\UMBIT.ToDo.Dominio.pdb
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\obj\Debug\net8.0\UMBIT.ToDo.Infraestrutura.csproj.CopyComplete
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\obj\Debug\net8.0\UMBIT.ToDo.Infraestrutura.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\obj\Debug\net8.0\refint\UMBIT.ToDo.Infraestrutura.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\obj\Debug\net8.0\UMBIT.ToDo.Infraestrutura.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\obj\Debug\net8.0\ref\UMBIT.ToDo.Infraestrutura.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\obj\Debug\net8.0\UMBIT.To.39E1CB72.Up2Date

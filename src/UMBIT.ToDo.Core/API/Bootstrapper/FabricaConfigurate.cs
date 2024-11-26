@@ -1,14 +1,15 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using UMBIT.ToDo.SDK.API.Models.Fabrica;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using UMBIT.ToDo.Core.API.Models.Fabrica;
 
-namespace UMBIT.ToDo.SDK.API.Bootstrapper
+namespace UMBIT.ToDo.Core.API.Bootstrapper
 {
     public static class FabricaConfigurate
     {
-        public static IServiceCollection AddFabricaGenerica(this IServiceCollection services)
+        public static IApplicationBuilder AddFabricaGenerica(this IApplicationBuilder app)
         {
-            FabricaGenerica.services = services.BuildServiceProvider();
-            return services;
+            FabricaGenerica.Initialize(app.ApplicationServices);
+            return app;
         }
     }
 }

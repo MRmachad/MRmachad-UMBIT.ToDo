@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace UMBIT.ToDo.SDK.Repositorio.Bootstrapper
+namespace UMBIT.ToDo.Core.Repositorio.Bootstrapper
 {
     public static class MigrationConfigurate
     {
@@ -12,26 +12,26 @@ namespace UMBIT.ToDo.SDK.Repositorio.Bootstrapper
             {
                 var context = serviceScope?.ServiceProvider.GetRequiredService<DbContext>();
 
-                context?.Database.EnsureCreated();
-
                 if (context.Database.GetPendingMigrations().Any())
                 {
                     try
                     {
                         context.Database.Migrate();
+                        context?.Database.EnsureCreated();
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         if (!context?.Database.EnsureCreated() ?? false)
+#if DEBUG
                             context.Database.EnsureDeleted();
+#endif
                         context.Database.Migrate();
 
-                        throw new Exception("Falha ao executar Migration");
+                        throw new Exception("Falha ao executar Migration", ex);
                     }
 
                 }
             }
-
             return app;
         }
     }

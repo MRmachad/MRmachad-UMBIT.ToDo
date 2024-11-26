@@ -1,29 +1,27 @@
 ﻿
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
-using System;
-using System.Runtime.CompilerServices;
-using UMBIT.ToDo.SDK.Repositorio.Interfaces.Database;
-using  UMBIT.ToDo.SDK.Entidades;
+using Microsoft.Extensions.DependencyInjection;
+using UMBIT.ToDo.Core.Notificacao.Interfaces;
+using UMBIT.ToDo.Core.Repositorio.Application.Events.Operacoes;
+using UMBIT.ToDo.Core.Repositorio.Interfaces.Database;
 
-namespace UMBIT.ToDo.SDK.Repositorio.EF
+namespace UMBIT.ToDo.Core.Repositorio.EF
 {
     public class UnidadeDeTrabalho : IUnidadeDeTrabalho
     {
         private DbContext _contexto { get; set; }
-        private IServiceProvider _serviceProvider { get; set; }
-        private IDbContextTransaction _transacao { get; set; }
+        private IDbContextTransaction _transacao;
+        private readonly INotificador _notificador;
+        private readonly IServiceProvider _serviceProvider;
         private bool _transacaoAberta { get; set; }
 
-        public UnidadeDeTrabalho(DbContext contexto, IServiceProvider serviceProvider)
+        public UnidadeDeTrabalho(DbContext contexto, IServiceProvider serviceProvider, INotificador notificador)
         {
             _contexto = contexto;
+            _notificador = notificador;
             _serviceProvider = serviceProvider;
-        }
-
-        public IRepositorio<T> ObterRepositorio<T>() where T : class
-        {
-            return _serviceProvider.GetService(typeof(IRepositorio<T>)) as IRepositorio<T> ?? new Repositorio<T>(this._contexto);
         }
 
         public async Task<int> SalveAlteracoes()
@@ -31,32 +29,42 @@ namespace UMBIT.ToDo.SDK.Repositorio.EF
             return await _contexto.SaveChangesAsync();
         }
 
-        public async Task InicieTransacao([CallerFilePath] string arquivo = null, [CallerMemberName] string metodo = null)
+        public async Task InicieTransacao()
         {
             if (!_transacaoAberta)
             {
                 _transacao = await _contexto.Database.BeginTransactionAsync();
                 _transacaoAberta = true;
+
+                _ = EnvieEvento(new BeginTransactionEvent(_transacao.TransactionId));
             }
         }
 
-        public async Task FinalizeTransacao([CallerFilePath] string arquivo = null, [CallerMemberName] string metodo = null)
+        public async Task FinalizeTransacao()
         {
             if (_transacaoAberta)
             {
+                var idTransaction = _transacao.TransactionId;
+
                 await _transacao.CommitAsync();
                 await _transacao.DisposeAsync();
                 _transacaoAberta = false;
+
+                _ = EnvieEvento(new CommitTransactionEvent(idTransaction));
+
             }
         }
 
-        public async Task RevertaTransacao([CallerFilePath] string arquivo = null, [CallerMemberName] string metodo = null)
+        public async Task RevertaTransacao()
         {
             if (_transacaoAberta)
             {
+                var idTransaction = _transacao.TransactionId;
+
                 await _transacao.RollbackAsync();
                 await _transacao.DisposeAsync();
                 _transacaoAberta = false;
+                _ = EnvieEvento(new RollbackTransactionEvent(idTransaction));
             }
         }
 
@@ -69,5 +77,12 @@ namespace UMBIT.ToDo.SDK.Repositorio.EF
 
             _contexto.Dispose();
         }
+
+        public IRepositorio<T> ObterRepositorio<T>() where T : class
+        {
+            return _serviceProvider.GetService(typeof(IRepositorio<T>)) as IRepositorio<T> ?? new Repositorio<T>(_contexto, _notificador);
+        }
+
+        private Task EnvieEvento(INotification notification) => Task.Run(() => _serviceProvider.CreateScope().ServiceProvider.GetService<IMediator>()!.Publish(notification));
     }
 }

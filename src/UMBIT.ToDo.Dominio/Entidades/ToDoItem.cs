@@ -1,9 +1,9 @@
-﻿using UMBIT.ToDo.SDK.Entidades;
+﻿using UMBIT.ToDo.Core.Repositorio.Data;
 using UMBIT.ToDo.Dominio.Basicos.Enum;
 
 namespace UMBIT.ToDo.Dominio.Entidades
 {
-    public class ToDoItem: BaseEntity
+    public class ToDoItem: BaseEntity<ToDoItem>
     {
         public Guid? IdToDoList { get; set; }
         public int Index { get; set; }
@@ -13,5 +13,10 @@ namespace UMBIT.ToDo.Dominio.Entidades
         public DateTime DataFim { get; set; }
         public EnumeradorStatus Status { get;set; }
         public virtual ToDoList ToDoList { get; set; }
+
+        protected override void Validadors(Validator<ToDoItem> validator)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

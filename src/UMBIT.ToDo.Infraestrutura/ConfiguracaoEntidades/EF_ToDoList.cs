@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using UMBIT.ToDo.SDK.Repositorio.EF;
+using UMBIT.ToDo.Core.Repositorio.EF;
 using UMBIT.ToDo.Dominio.Entidades;
 
 

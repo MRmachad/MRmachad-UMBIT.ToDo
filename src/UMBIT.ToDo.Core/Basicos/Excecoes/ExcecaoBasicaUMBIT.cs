@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace UMBIT.ToDo.SDK.Basicos.Excecoes
+namespace UMBIT.ToDo.Core.Basicos.Excecoes
 {
     public class ExcecaoBasicaUMBIT : Exception
     {
@@ -9,21 +9,21 @@ namespace UMBIT.ToDo.SDK.Basicos.Excecoes
         public Exception ExcecaoInterna { get; private set; }
         public ExcecaoBasicaUMBIT(string mensagem) : base(mensagem)
         {
-            this.Mensagem = mensagem;
+            Mensagem = mensagem;
         }
         public ExcecaoBasicaUMBIT(
             string mensagem,
-            Exception ex,  
+            Exception ex,
             [CallerMemberName] string metodoCodigoFonte = "") : base(mensagem, ex)
         {
-            this.ExcecaoInterna = ex;
-            this.MetodoCodigoFonte = metodoCodigoFonte;
-            this.Mensagem = ex.GetType() == typeof(ExcecaoBasicaUMBIT) ? ((ExcecaoBasicaUMBIT)ex).Mensagem : mensagem;
+            ExcecaoInterna = ex;
+            MetodoCodigoFonte = metodoCodigoFonte;
+            Mensagem = ex.GetType() == typeof(ExcecaoBasicaUMBIT) ? ((ExcecaoBasicaUMBIT)ex).Mensagem : mensagem;
         }
 
         public override string ToString()
         {
-            return this.Mensagem;
+            return Mensagem;
         }
     }
 }

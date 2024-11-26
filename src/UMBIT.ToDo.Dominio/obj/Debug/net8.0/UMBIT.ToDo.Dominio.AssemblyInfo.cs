@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UMBIT.ToDo.Dominio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+412e5215780a7747ee08ef1ca5e7b73e832148ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ef1554a4da529adee814a0e022a1cdedc2cba50")]
 [assembly: System.Reflection.AssemblyProductAttribute("UMBIT.ToDo.Dominio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UMBIT.ToDo.Dominio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

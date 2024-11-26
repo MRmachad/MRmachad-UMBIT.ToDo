@@ -1,58 +1,48 @@
-﻿using UMBIT.ToDo.SDK.Repositorio.Interfaces.Database;
+﻿using UMBIT.ToDo.Core.Repositorio.Interfaces.Database;
+using UMBIT.ToDo.Core.Notificacao.Interfaces;
 
-namespace UMBIT.ToDo.SDK.Repositorio.Servicos
+namespace UMBIT.ToDo.Core.Repositorio.Servicos
 {
     public abstract class ServicoBase<T> : IDisposable, IServicoBase<T> where T : class
     {
+        protected readonly INotificador Notificador;
+
         protected readonly IUnidadeDeTrabalho UnidadeDeTrabalho;
         protected IRepositorio<T> Repositorio { get; private set; }
 
-        public ServicoBase(IUnidadeDeTrabalho unidadeDeTrabalho)
+        public ServicoBase(IUnidadeDeTrabalho unidadeDeTrabalho, INotificador notificador)
         {
+            Notificador = notificador;
             UnidadeDeTrabalho = unidadeDeTrabalho;
             Repositorio = UnidadeDeTrabalho.ObterRepositorio<T>();
         }
 
-        public virtual async  Task<IEnumerable<T>> Obter()
-        {
-            return await Repositorio.ObterTodos();
-        }
-
-        public virtual async Task<T> ObterUnico(Guid id)
-        {
-            return await Repositorio.ObterUnico(id);
-        }
-
-        public virtual async Task Adicionar(T objeto)
+        public virtual async Task AdicionarAsync(T objeto)
         {
             await Repositorio.Adicionar(objeto);
             await UnidadeDeTrabalho.SalveAlteracoes();
         }
 
-        public virtual async Task Adicionar(IEnumerable<T> objetos)
+        public virtual async Task AdicionarAsync(List<T> objetos)
         {
-            await Repositorio.Adicionar(objetos);
+            await Repositorio.AdicionarTodos(objetos);
             await UnidadeDeTrabalho.SalveAlteracoes();
         }
 
-        public virtual Task Atualize(T objeto)
+        public virtual async Task AtualizeAsync(T objeto)
         {
             Repositorio.Atualizar(objeto);
-            UnidadeDeTrabalho.SalveAlteracoes();
-            return Task.CompletedTask;
-        }
-
-        public virtual async Task Remover(Guid id)
-        {
-            var objeto = await ObterUnico(id);
-
-            Repositorio.Remover(objeto);
             await UnidadeDeTrabalho.SalveAlteracoes();
         }
 
         public void Dispose()
         {
             UnidadeDeTrabalho.Dispose();
+        }
+
+        public IQueryable<T> Query()
+        {
+            return Repositorio.Query();
         }
     }
 

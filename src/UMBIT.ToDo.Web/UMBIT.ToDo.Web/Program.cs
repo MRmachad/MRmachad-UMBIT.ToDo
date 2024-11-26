@@ -1,9 +1,9 @@
 using Refit;
 using System.Text.Json.Serialization;
 using System.Text.Json;
-using UMBIT.ToDo.SDK.API.Middlewares;
 using UMBIT.ToDo.Web.services;
 using Microsoft.Extensions.DependencyInjection;
+using UMBIT.ToDo.Web.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 

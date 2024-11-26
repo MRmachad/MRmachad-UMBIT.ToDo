@@ -18,9 +18,11 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.2.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\UMBIT.ToDo.Contrato\UMBIT.ToDo.Contrato.csproj" />
     <ProjectReference Include="..\UMBIT.ToDo.Core\UMBIT.ToDo.Core.csproj" />
     <ProjectReference Include="..\UMBIT.ToDo.Dominio\UMBIT.ToDo.Dominio.csproj" />
     <ProjectReference Include="..\UMBIT.ToDo.Infraestrutura\UMBIT.ToDo.Infraestrutura.csproj" />

@@ -9,8 +9,8 @@ D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\bin\Debug\net8.0\UMBIT.
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\bin\Debug\net8.0\UMBIT.ToDo.Dominio.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\bin\Debug\net8.0\UMBIT.ToDo.Core.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\bin\Debug\net8.0\UMBIT.ToDo.Core.pdb
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\obj\Debug\net8.0\UMBIT.ToDo.Dominio.csproj.CopyComplete
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\obj\Debug\net8.0\UMBIT.ToDo.Dominio.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\obj\Debug\net8.0\refint\UMBIT.ToDo.Dominio.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\obj\Debug\net8.0\UMBIT.ToDo.Dominio.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\obj\Debug\net8.0\ref\UMBIT.ToDo.Dominio.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\obj\Debug\net8.0\UMBIT.To.383CB391.Up2Date

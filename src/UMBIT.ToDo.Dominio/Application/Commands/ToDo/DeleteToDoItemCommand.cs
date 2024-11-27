@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentValidation;
 using UMBIT.ToDo.Core.Messages.Messagem.Applications.Commands;
 
 namespace UMBIT.ToDo.Dominio.Application.Commands.ToDo
@@ -12,7 +8,10 @@ namespace UMBIT.ToDo.Dominio.Application.Commands.ToDo
         public Guid Id { get; set; }
         protected override void Validadors(ValidatorCommand<DeleteToDoItemCommand> validator)
         {
-            throw new NotImplementedException();
+            validator
+                .RuleFor(x => x.Id)
+                .NotEqual(Guid.Empty)
+                .WithMessage("Id é obrigatório.");
         }
     }
 }

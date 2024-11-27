@@ -206,6 +206,9 @@ namespace UMBIT.Nexus.Auth.Contrato
         [System.Text.Json.Serialization.JsonPropertyName("accessToken")]
         public string AccessToken { get; set; }
 
+        [System.Text.Json.Serialization.JsonPropertyName("ehAdm")]
+        public bool EhAdm { get; set; }
+
         [System.Text.Json.Serialization.JsonPropertyName("refreshToken")]
         public string RefreshToken { get; set; }
 

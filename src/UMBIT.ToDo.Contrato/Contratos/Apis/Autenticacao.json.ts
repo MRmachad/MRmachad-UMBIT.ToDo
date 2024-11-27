@@ -61,6 +61,7 @@ export interface UserStatusResponseDTO {
 
 export interface TokenResponseDTO {
     accessToken: string;
+    ehAdm: boolean;
     refreshToken: string;
     expiresIn: number;
     usuarioToken: UsuarioTokenResponseDTO;

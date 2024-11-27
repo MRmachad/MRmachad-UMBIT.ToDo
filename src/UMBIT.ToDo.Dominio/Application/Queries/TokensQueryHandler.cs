@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using UMBIT.Nexus.Auth.Dominio.Basicos;
 using UMBIT.ToDo.Core.Messages.Messagem;
 using UMBIT.ToDo.Core.Messages.Messagem.Applications.Query;
 using UMBIT.ToDo.Core.Messages.Messagem.Interfaces;
@@ -96,6 +97,7 @@ namespace UMBIT.ToDo.Dominio.Application.Queries
         {
             var response = new TokenResult
             {
+                EhAdm = claimsIdentity.Claims.Any(t => t.Value == TipoUsuario.ADMINISTRADOR && t.Type == ClaimTypes.Role),
                 AccessToken = encodedToken,
                 RefreshToken = encodedRefreshToken,
                 ExpiresIn = TimeSpan.FromMinutes(expiracaoMins).TotalSeconds,

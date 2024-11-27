@@ -1,10 +1,11 @@
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using UMBIT.Nexus.Auth.Contrato;
 using UMBIT.ToDo.Web.Basicos.Enumerador;
 using UMBIT.ToDo.Web.Basicos.Extensores;
 using UMBIT.ToDo.Web.Models;
 using UMBIT.ToDo.Web.services;
+using static UMBIT.ToDo.Web.Bootstrapper.AuthConfigurate;
 
 namespace UMBIT.ToDo.Web.Controllers
 {
@@ -12,28 +13,85 @@ namespace UMBIT.ToDo.Web.Controllers
     {
         private readonly IServicoToDo _servicoDeToDo;
         private readonly ILogger<HomeController> _logger;
-        private readonly IHttpContextAccessor _httpContextAccessor;
-        public HomeController(ILogger<HomeController> logger, IServicoToDo servicoDeToDo, IHttpContextAccessor httpContextAccessor)
+        private readonly AuthSessionContext _authSessionContext;
+        public HomeController(ILogger<HomeController> logger, IServicoToDo servicoDeToDo, AuthSessionContext authSessionContext)
         {
             _logger = logger;
             _servicoDeToDo = servicoDeToDo;
-            _httpContextAccessor = httpContextAccessor;
+            _authSessionContext = authSessionContext;
         }
 
         public IActionResult Index(int status = -1, Guid? idList = null)
         {
             return MiddlewareDeRetorno(() =>
             {
-                if (String.IsNullOrEmpty(_httpContextAccessor.HttpContext?.Session.GetString("AccessToken")))
+                if (!_authSessionContext.EhAutenticado)
                 {
                     return RedirectToAction("Login", "Auth");
                 }
 
-                    var result = this._servicoDeToDo.ObtenhaItens().Result?
-                                                   .Where(t => (status != -1 ? t.Status == status : true) && (idList != null ? t.IdToDoList == idList : true));
+                var idPaia = Guid.NewGuid();
 
+                var tasks = new List<TarefaDTO>
+        {
+            new TarefaDTO
+            {
+                Id = Guid.NewGuid(),
+                Index = 1,
+                Nome = "Task 1",
+                Descricao = "Descrição da Task 1",
+                Status = 1,
+                DataInicio = DateTime.Now.AddDays(-1),
+                DataFim = DateTime.Now,
+            },
+            new TarefaDTO
+            {
+                Id = Guid.NewGuid(),
+                IdToDoList = idPaia,
+                Index = 1,
+                Nome = "Task 1",
+                Descricao = "Descrição da Task 1",
+                Status = 1,
+                DataInicio = DateTime.Now.AddDays(-1),
+                DataFim = DateTime.Now,
+                ListaPai = new ListaDTO { Id = idPaia, Nome = "Lista A" }
+            },
+            new TarefaDTO
+            {
+                Id = Guid.NewGuid(),
+                IdToDoList = idPaia,
+                Index = 2,
+                Nome = "Task 2",
+                Descricao = "Descrição da Task 2",
+                Status = 2,
+                DataInicio = DateTime.Now.AddDays(-2),
+                DataFim = DateTime.Now.AddDays(1),
+                ListaPai = new ListaDTO { Id =idPaia, Nome = "Lista A" }
+            },
+            new TarefaDTO
+            {
+                Id = Guid.NewGuid(),
+                IdToDoList = Guid.NewGuid(),
+                Index = 3,
+                Nome = "Task 3",
+                Descricao = "Descrição da Task 3",
+                Status = 3,
+                DataInicio = DateTime.Now,
+                DataFim = DateTime.Now.AddDays(2),
+                ListaPai = new ListaDTO { Id = Guid.NewGuid(), Nome = "Lista B" }
+            }
+        };
+                return View(tasks);
+            });
+        }
 
-                var lists = this._servicoDeToDo.ObtenhaLists().Result;
+        public async Task<IActionResult> ListaTarefa(int? status = null, Guid? idList = null)
+        {
+            return await MiddlewareDeRetorno(async () =>
+            {
+                var result = (await this._servicoDeToDo.ObtenhaItens(status, idList));
+
+                var lists = await this._servicoDeToDo.ObtenhaLists();
 
                 ViewBag.Status = status;
                 ViewBag.IdList = idList;
@@ -46,73 +104,72 @@ namespace UMBIT.ToDo.Web.Controllers
             });
         }
 
-
-        public IActionResult AddTask()
+        public async Task<IActionResult> AddTask()
         {
-            var lists = this._servicoDeToDo.ObtenhaLists().Result;
+            var lists = await this._servicoDeToDo.ObtenhaLists();
             ViewBag.Lists = lists;
-            return View(new TaskDTO());
+            return View(new AdicionarTarefaRequest());
         }
-        [HttpPost]
-        public IActionResult AddTask(TaskDTO taskDTO)
-        {
-            return MiddlewareDeRetorno(() =>
-            {
 
+        [HttpPost]
+        public async Task<IActionResult> AddTask(AdicionarTarefaRequest taskDTO)
+        {
+            return await MiddlewareDeRetorno(async () =>
+            {
                 if (!ModelState.IsValid)
                     return View(taskDTO);
 
+                await this._servicoDeToDo.AdicioneItem(taskDTO);
 
-                this._servicoDeToDo.AdicioneItem(taskDTO).Wait();
-
-                return RedirectToAction("Index");
+                return RedirectToAction("ListaTarefa");
 
             });
 
         }
 
-        public IActionResult EditTask(Guid id)
+        public async Task<IActionResult> EditTask(Guid id)
         {
-            return MiddlewareDeRetorno(() =>
+            return await MiddlewareDeRetorno(async () =>
             {
-                var lists = this._servicoDeToDo.ObtenhaLists().Result;
+                var lists = await this._servicoDeToDo.ObtenhaLists();
                 ViewBag.Lists = lists;
 
-                var result = this._servicoDeToDo.ObtenhaItem(id).Result;
+                var result = await this._servicoDeToDo.ObtenhaItem(id);
                 return View(result);
             });
         }
+
         [HttpPost]
-        public IActionResult EditTask(TaskDTO taskDTO)
+        public async Task<IActionResult> EditTask(AtualizarTarefaRequest taskDTO)
         {
-            return MiddlewareDeRetorno(() =>
+            return await MiddlewareDeRetorno(async () =>
             {
                 if (!ModelState.IsValid)
                     return View(taskDTO);
 
-                this._servicoDeToDo.EditItem(taskDTO).Wait();
+                await this._servicoDeToDo.EditItem(taskDTO);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("ListaTarefa");
 
             });
         }
 
-        public IActionResult DeleteTask(Guid id)
+        public async Task<IActionResult> DeleteTask(Guid id)
         {
-            return MiddlewareDeRetorno(() =>
+            return await MiddlewareDeRetorno(async () =>
             {
-                this._servicoDeToDo.DeleteItem(id).Wait();
+                await this._servicoDeToDo.DeleteItem(id);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("ListaTarefa");
             });
         }
-        public IActionResult DeleteList(Guid id)
+        public async Task<IActionResult> DeleteList(Guid id)
         {
-            return MiddlewareDeRetorno(() =>
+            return await MiddlewareDeRetorno(async () =>
             {
-                this._servicoDeToDo.DeleteList(id).Wait();
+                await this._servicoDeToDo.DeleteList(id);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("ListaTarefa");
             });
         }
 
@@ -120,56 +177,64 @@ namespace UMBIT.ToDo.Web.Controllers
         {
             return View();
         }
+
         [HttpPost]
-        public IActionResult AddList(ListTaskDTO list)
+        public async Task<IActionResult> AddList(AdicionarListaRequest list)
         {
-            return MiddlewareDeRetorno(() =>
+            return await MiddlewareDeRetorno(async () =>
             {
-                this._servicoDeToDo.AdicioneList(list).Wait();
-                return RedirectToAction("Index");
+                await this._servicoDeToDo.AdicioneList(list);
+                return RedirectToAction("ListaTarefa");
             });
         }
 
-
-        public IActionResult EditList(Guid id)
+        public async Task<IActionResult> EditList(Guid id)
         {
-            return MiddlewareDeRetorno(() =>
+            return await MiddlewareDeRetorno(async () =>
             {
-                var result = this._servicoDeToDo.ObtenhaList(id).Result;
+                var result = await this._servicoDeToDo.ObtenhaList(id);
                 return View(result);
             });
         }
 
         [HttpPost]
-        public IActionResult EditList(ListTaskDTO listTaskDTO)
+        public async Task<IActionResult> EditList(AtualizarListaRequest listTaskDTO)
         {
-            return MiddlewareDeRetorno(() =>
+            return await MiddlewareDeRetorno(async () =>
             {
                 if (!ModelState.IsValid)
                     return View(listTaskDTO);
 
-                this._servicoDeToDo.EditList(listTaskDTO).Wait();
+                await this._servicoDeToDo.EditList(listTaskDTO);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("ListaTarefa");
 
             });
         }
 
-
-        public IActionResult AltereStatus([FromQuery] int status, [FromQuery] Guid id)
+        public async Task<IActionResult> AltereStatus([FromQuery] int status, [FromQuery] Guid id)
         {
-            return MiddlewareDeRetorno(() =>
+            return await MiddlewareDeRetorno(async () =>
             {
 
                 var item = this._servicoDeToDo.ObtenhaItem(id).Result;
                 item.Status = status;
-                this._servicoDeToDo.EditItem(item).Wait();
+                await this._servicoDeToDo.EditItem(new AtualizarTarefaRequest()
+                {
+                    Id = id,
+                    Nome = item.Nome,
+                    Index = item.Index,
+                    Status = item.Status,
+                    DataFim = item.DataFim,
+                    DataInicio = item.DataInicio,
+                    Descricao = item.Descricao, 
+                    IdToDoList = item.IdToDoList,    
+                });
 
-                return RedirectToAction("Index");
+                return RedirectToAction("ListaTarefa");
 
             });
         }
-
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -178,7 +243,7 @@ namespace UMBIT.ToDo.Web.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        private string GerePieData(IEnumerable<TaskDTO>? taskDTOs)
+        private string GerePieData(IEnumerable<TarefaDTO>? taskDTOs)
         {
             string resultItems = "[ITEMS]";
             string items = "";
@@ -210,6 +275,47 @@ namespace UMBIT.ToDo.Web.Controllers
             catch (Exception ex)
             {
                 return RedirectToAction("Error");
+            }
+        }
+        protected ActionResult MiddlewareDeRetorno(Func<ActionResult> retorno, string erroMessage)
+        {
+            try
+            {
+                var res = retorno();
+
+                return res;
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = "Usuário ou senha inválidos.";
+                return View();
+            }
+        }
+        protected async Task<ActionResult> MiddlewareDeRetorno(Func<Task<ActionResult>> retorno)
+        {
+            try
+            {
+                var res = await retorno();
+
+                return res;
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Error");
+            }
+        }
+        protected async Task<ActionResult> MiddlewareDeRetorno(Func<Task<ActionResult>> retorno, string erroMessage)
+        {
+            try
+            {
+                var res = await retorno();
+
+                return res;
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = erroMessage;
+                return View();
             }
         }
 

@@ -119,6 +119,38 @@ namespace UMBIT.ToDo.API.Migrations
                     b.ToTable("ToDoList");
                 });
 
+            modelBuilder.Entity("UMBIT.ToDo.Dominio.Entidades.Token.ApiToken", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ApiSecret")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Audience")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("IdUsuario")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Kid")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ApiToken");
+                });
+
             modelBuilder.Entity("UMBIT.ToDo.Dominio.Entidades.ToDoItem", b =>
                 {
                     b.HasOne("UMBIT.ToDo.Dominio.Entidades.ToDoList", "ToDoList")

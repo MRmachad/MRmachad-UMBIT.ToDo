@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\UMBIT.ToDo.Core\UMBIT.ToDo.Core.csproj" />
+    <ProjectReference Include="..\UMBIT.ToDo.Core\UMBIT.ToDo.BuildingBlocks.Core.csproj" />
   </ItemGroup>
 
 </Project>

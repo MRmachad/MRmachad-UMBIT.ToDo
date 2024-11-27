@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using UMBIT.Nexus.Auth.Contrato;
 using UMBIT.Nexus.Auth.Dominio.Application.Queries.ToDo;
 using UMBIT.ToDo.API.DTOs;
 using UMBIT.ToDo.Core.API.Controllers;
@@ -7,17 +8,59 @@ using UMBIT.ToDo.Dominio.Entidades;
 using UMBIT.ToDo.Dominio.Interfaces;
 
 namespace UMBIT.ToDo.API.Controllers
-{
-    [ApiController]
-    [Route("[controller]")]
-    public class ToDoController : BaseController
+{    public class ToDoController : ToDoControllerBase
     {
         public ToDoController(IServiceProvider serviceProvider) : base(serviceProvider)
         {
         }
+        public override async Task<ActionResult<ICollection<TarefaDTO>>> ObterTarefa()
+        {
+            var response = await Mediator.EnviarQuery<ObterToDoQuery, IQueryable<ToDoItem>>(new ObterToDoQuery());
+            return UMBITCollectionResponseEntity<TarefaDTO, ToDoItem>(response);
+        }
+        public override async Task<IActionResult> AdicionarTarefa([FromBody] AdicionarTarefaRequest request)
+        {
+            var command = Mapper.Map<AdicioneToDoItemCommand>(new AdicioneToDoItemCommand()
+            {
+                Nome = request.Nome,
+                Index = request.Index,
+                Status = request.Status,
+                DataFim = request.DataFim,
+                Descricao = request.Descricao,
+                IdToDoList = request.IdToDoList,
+                DataInicio = request.DataInicio,
+            });
 
-        [HttpDelete("/delete-item/{id}")]
-        public async Task<IActionResult> DeleteItem([FromRoute] Guid id)
+            var response = await Mediator.EnviarComando(command);
+
+            return UMBITResponse(response);
+        }
+
+        public override async Task<ActionResult<TarefaDTO>> ObterUnicaTarefa(Guid id)
+        {
+            var response = await Mediator.EnviarQuery<ObterToDoPorIdQuery, ToDoItem>(new ObterToDoPorIdQuery(id));
+            return UMBITResponse<TarefaDTO, ToDoItem>(response);
+        }
+
+        public override async Task<IActionResult> AtualizarTarefa(Guid id, [FromBody] AtualizarTarefaRequest request)
+        {
+            var command = Mapper.Map<EditeToDoItemCommand>(new EditeToDoItemCommand()
+            {
+                Id = request.Id,
+                Nome = request.Nome,
+                Status = request.Status,
+                DataFim = request.DataFim,
+                Descricao = request.Descricao,
+                DataInicio = request.DataInicio,
+                IdToDoList = request.IdToDoList,
+            });
+
+            var response = await Mediator.EnviarComando(command);
+
+            return UMBITResponse(response);
+        }
+
+        public override async Task<IActionResult> RemoverTarefa(Guid id)
         {
             var command = Mapper.Map<DeleteToDoItemCommand>(new DeleteToDoItemCommand()
             {
@@ -28,8 +71,46 @@ namespace UMBIT.ToDo.API.Controllers
 
             return UMBITResponse(response);
         }
-        [HttpDelete("/delete-list/{id}")]
-        public async Task<IActionResult> DeleteList([FromRoute] Guid id)
+
+        public override async Task<ActionResult<ICollection<ListaDTO>>> ObterListaTarefa()
+        {
+            var response = await Mediator.EnviarQuery<ObterToDoListQuery, IQueryable<ToDoList>>(new ObterToDoListQuery());
+            return UMBITCollectionResponseEntity<ListaDTO, ToDoList>(response);
+        }
+
+        public override async Task<IActionResult> AdicionarListaTarefa([FromBody] AdicionarListaRequest request)
+        {
+            var command = Mapper.Map<AdicioneToDoListCommand>(new AdicioneToDoListCommand()
+            {
+                Nome = request.Nome,
+                Items = request.Tarefas?.Select(itemDTO => (itemDTO.Nome, itemDTO.Descricao, itemDTO.DataInicio, itemDTO.DataFim, itemDTO.Status))?.ToList()
+            });
+
+            var response = await Mediator.EnviarComando(command);
+
+            return UMBITResponse(response);
+        }
+
+        public override async Task<ActionResult<ListaDTO>> ObterUnicaListaTarefa(Guid id)
+        {
+            var response = await Mediator.EnviarQuery<ObterToDoListPorIdQuery, ToDoList>(new ObterToDoListPorIdQuery(id));
+            return UMBITResponse<ListaDTO, ToDoList>(response);
+        }
+
+        public override async Task<IActionResult> AtualizarListaTarefa(Guid id, [FromBody] AtualizarListaRequest request)
+        {
+            var command = Mapper.Map<EditeToDoListItemCommand>(new EditeToDoListItemCommand()
+            {
+                Id = request.Id,
+                Nome = request.Nome
+            });
+
+            var response = await Mediator.EnviarComando(command);
+
+            return UMBITResponse(response);
+        }
+
+        public override async Task<IActionResult> RemoverListaTarefa(Guid id)
         {
             var command = Mapper.Map<DeleteToDoListCommand>(new DeleteToDoListCommand()
             {
@@ -39,99 +120,6 @@ namespace UMBIT.ToDo.API.Controllers
             var response = await Mediator.EnviarComando(command);
 
             return UMBITResponse(response);
-        }
-
-        [HttpPost("/adicione-item")]
-        public async Task<IActionResult> AdicioneItem([FromBody] ToDoItemDTO itemDTO)
-        {
-            var command = Mapper.Map<AdicioneToDoItemCommand>(new AdicioneToDoItemCommand()
-            {
-                Nome = itemDTO.Nome,
-                Index = itemDTO.Index,
-                Status = itemDTO.Status,
-                DataFim = itemDTO.DataFim,
-                Descricao = itemDTO.Descricao,
-                IdToDoList = itemDTO.IdToDoList,
-                DataInicio = itemDTO.DataInicio,
-            });
-
-            var response = await Mediator.EnviarComando(command);
-
-            return UMBITResponse(response);
-        }
-
-        [HttpPost("/adicione-list")]
-        public async Task<IActionResult> AdicioneList([FromBody] ToDoListDTO toDoListDTO)
-        {
-            var command = Mapper.Map<AdicioneToDoListCommand>(new AdicioneToDoListCommand()
-            {
-                Nome = toDoListDTO.Nome,
-                Items = toDoListDTO.Items?.Select(itemDTO => (itemDTO.Nome, itemDTO.Descricao, itemDTO.DataInicio, itemDTO.DataFim, itemDTO.Status))?.ToList()
-            });
-
-            var response = await Mediator.EnviarComando(command);
-
-            return UMBITResponse(response);
-        }
-
-        [HttpPost("/edite-item")]
-        public async Task<IActionResult> EditeItem([FromBody] ToDoItemDTO toDoItemDTO)
-        {
-            var command = Mapper.Map<EditeToDoItemCommand>(new EditeToDoItemCommand()
-            {
-                Id = toDoItemDTO.Id,
-                Nome = toDoItemDTO.Nome,
-                Status = toDoItemDTO.Status,
-                DataFim = toDoItemDTO.DataFim,
-                Descricao = toDoItemDTO.Descricao,
-                DataInicio = toDoItemDTO.DataInicio,
-                IdToDoList = toDoItemDTO.IdToDoList,
-            });
-
-            var response = await Mediator.EnviarComando(command);
-
-            return UMBITResponse(response);
-        }
-
-        [HttpPost("/edite-list")]
-        public async Task<IActionResult> EditeLista([FromBody] ToDoListDTO toDoListDTO)
-        {
-            var command = Mapper.Map<EditeToDoListItemCommand>(new EditeToDoListItemCommand()
-            {
-                Id = toDoListDTO.Id,
-                Nome = toDoListDTO.Nome
-            });
-
-            var response = await Mediator.EnviarComando(command);
-
-            return UMBITResponse(response);
-        }
-
-        [HttpGet("/obtenha-item/{id}")]
-        public async Task<ActionResult<ToDoItem>> ObtenhaItem([FromRoute()] Guid id)
-        {
-            var response = await Mediator.EnviarQuery<ObterToDoPorIdQuery, ToDoItem>(new ObterToDoPorIdQuery(id));
-            return UMBITResponse<ToDoItem, ToDoItem>(response);
-        }
-
-        [HttpGet("/obtenha-list/{id}")]
-        public async Task<ActionResult<ToDoList>> ObtenhaLista([FromRoute()] Guid id)
-        {
-            var response = await Mediator.EnviarQuery<ObterToDoListPorIdQuery, ToDoList>(new ObterToDoListPorIdQuery(id));
-            return UMBITResponse<ToDoList, ToDoList>(response);
-
-        }
-        [HttpGet("/obtenha-item")]
-        public async Task<ActionResult<ICollection<ToDoItem>>> ObtenhaItem()
-        {
-            var response = await Mediator.EnviarQuery<ObterToDoQuery, IQueryable<ToDoItem>>(new ObterToDoQuery());
-            return UMBITCollectionResponseEntity<ToDoItem, ToDoItem>(response);
-        }
-        [HttpGet("/obtenha-list")]
-        public async Task<ActionResult<ICollection<ToDoList>>> ObtenhaLista()
-        {
-            var response = await Mediator.EnviarQuery<ObterToDoListQuery, IQueryable<ToDoList>>(new ObterToDoListQuery());
-            return UMBITCollectionResponseEntity<ToDoList, ToDoList>(response);
         }
     }
 }

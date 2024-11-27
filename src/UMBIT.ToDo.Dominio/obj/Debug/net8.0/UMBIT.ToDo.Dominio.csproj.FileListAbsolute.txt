@@ -1,10 +1,10 @@
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\bin\Debug\net8.0\UMBIT.ToDo.Dominio.deps.json
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\bin\Debug\net8.0\UMBIT.ToDo.Dominio.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\bin\Debug\net8.0\UMBIT.ToDo.Dominio.pdb
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\bin\Debug\net8.0\UMBIT.ToDo.Core.dll
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\bin\Debug\net8.0\UMBIT.ToDo.Fabrica.dll
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\bin\Debug\net8.0\UMBIT.ToDo.Core.pdb
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\bin\Debug\net8.0\UMBIT.ToDo.Fabrica.pdb
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Core.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Fabrica.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Core.pdb
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Fabrica.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\obj\Debug\net8.0\UMBIT.ToDo.Dominio.csproj.AssemblyReference.cache
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\obj\Debug\net8.0\UMBIT.ToDo.Dominio.GeneratedMSBuildEditorConfig.editorconfig
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Dominio\obj\Debug\net8.0\UMBIT.ToDo.Dominio.AssemblyInfoInputs.cache

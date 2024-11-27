@@ -1,6 +1,9 @@
-﻿@{
+﻿@using UMBIT.Nexus.Auth.Contrato
+@{
     ViewData["Title"] = "Login";
 }
+
+@model LoginRequestDTO
 
 <div class="d-flex align-items-center justify-content-center vh-100 bg-light">
     <div class="card shadow-lg p-4" style="width: 400px;">
@@ -21,7 +24,7 @@
                     <input type="text"
                            class="form-control"
                            id="username"
-                           name="username"
+                           name="User"
                            placeholder="Digite seu usuário"
                            required>
                 </div>
@@ -31,7 +34,7 @@
                     <input type="password"
                            class="form-control"
                            id="password"
-                           name="password"
+                           name="Password"
                            placeholder="Digite sua senha"
                            required>
                 </div>
@@ -41,7 +44,7 @@
 
             <hr class="my-4">
             <div class="text-center">
-                <small class="text-muted">Não tem uma conta? <a href="#" class="text-primary">Registre-se aqui</a>.</small>
+                <small class="text-muted">Não tem uma conta? <a asp-action="CreateUsuario" class="text-primary">Registre-se aqui</a>.</small>
             </div>
         </div>
     </div>

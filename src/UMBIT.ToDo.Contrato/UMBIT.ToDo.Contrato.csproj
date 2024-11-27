@@ -24,12 +24,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Content Include="Contratos\Apis\ToDo.json" />
 		<Content Include="Contratos\_base.json" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\UMBIT.ToDo.WebApi\UMBIT.ToDo.AspNet.csproj" />
-	  <ProjectReference Include="..\UMBIT.ToDo.Core\UMBIT.ToDo.Core.csproj" />
+	  <ProjectReference Include="..\UMBIT.ToDo.Core\UMBIT.ToDo.BuildingBlocks.Core.csproj" />
+	  <ProjectReference Include="..\UMBIT.ToDo.WebApi\UMBIT.ToDo.BuildingBlocks.WebAPI.csproj" />
 	</ItemGroup>
 
 	<Target Name="NSwag" Outputs="%(OpenApiToClientCode.Identity)" BeforeTargets="PrepareForBuild" Condition="'$(Configuration)' == 'Debug'">

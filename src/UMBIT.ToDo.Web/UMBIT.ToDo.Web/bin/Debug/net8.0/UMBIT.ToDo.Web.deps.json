@@ -12,8 +12,8 @@
           "NonFactors.Grid.Mvc6": "7.2.1",
           "Refit": "7.0.0",
           "Refit.HttpClientFactory": "7.0.0",
-          "UMBIT.ToDo.AspNet": "1.0.0",
-          "UMBIT.ToDo.Core": "1.0.0"
+          "UMBIT.ToDo.BuildingBlocks.Core": "1.0.0",
+          "UMBIT.ToDo.Contrato": "1.0.0"
         },
         "runtime": {
           "UMBIT.ToDo.Web.dll": {}
@@ -245,10 +245,10 @@
       "Microsoft.AspNetCore.Mvc.Analyzers/2.2.0": {},
       "Microsoft.AspNetCore.Mvc.ApiExplorer/2.2.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Mvc.Core": "2.2.0"
+          "Microsoft.AspNetCore.Mvc.Core": "2.2.5"
         }
       },
-      "Microsoft.AspNetCore.Mvc.Core/2.2.0": {
+      "Microsoft.AspNetCore.Mvc.Core/2.2.5": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Core": "2.2.0",
           "Microsoft.AspNetCore.Authorization.Policy": "2.2.0",
@@ -270,12 +270,12 @@
       "Microsoft.AspNetCore.Mvc.Cors/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Cors": "2.2.0",
-          "Microsoft.AspNetCore.Mvc.Core": "2.2.0"
+          "Microsoft.AspNetCore.Mvc.Core": "2.2.5"
         }
       },
       "Microsoft.AspNetCore.Mvc.DataAnnotations/2.2.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Mvc.Core": "2.2.0",
+          "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.Extensions.Localization": "2.2.0",
           "System.ComponentModel.Annotations": "4.5.0"
         }
@@ -283,7 +283,7 @@
       "Microsoft.AspNetCore.Mvc.Formatters.Json/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.JsonPatch": "2.2.0",
-          "Microsoft.AspNetCore.Mvc.Core": "2.2.0"
+          "Microsoft.AspNetCore.Mvc.Core": "2.2.5"
         }
       },
       "Microsoft.AspNetCore.Mvc.Localization/2.2.0": {
@@ -337,7 +337,7 @@
           "Microsoft.AspNetCore.Antiforgery": "2.2.0",
           "Microsoft.AspNetCore.Diagnostics.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Html.Abstractions": "2.2.0",
-          "Microsoft.AspNetCore.Mvc.Core": "2.2.0",
+          "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.AspNetCore.Mvc.DataAnnotations": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Formatters.Json": "2.2.0",
           "Microsoft.Extensions.WebEncoders": "2.2.0",
@@ -986,6 +986,7 @@
           "NonFactors.Grid.Core.Mvc6": "7.2.1"
         }
       },
+      "NSwag.MSBuild/14.0.7": {},
       "RabbitMQ.Client/7.0.0": {
         "dependencies": {
           "System.IO.Pipelines": "9.0.0",
@@ -1952,27 +1953,7 @@
           "System.Xml.XPath": "4.3.0"
         }
       },
-      "UMBIT.ToDo.AspNet/1.0.0": {
-        "dependencies": {
-          "AutoMapper": "13.0.1",
-          "FluentValidation": "11.11.0",
-          "MediatR": "12.4.1",
-          "Microsoft.AspNetCore.Mvc": "2.2.0",
-          "Microsoft.EntityFrameworkCore": "9.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0",
-          "Microsoft.Extensions.Options": "9.0.0",
-          "RabbitMQ.Client": "7.0.0",
-          "UMBIT.ToDo.Core": "1.0.0"
-        },
-        "runtime": {
-          "UMBIT.ToDo.AspNet.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "UMBIT.ToDo.Core/1.0.0": {
+      "UMBIT.ToDo.BuildingBlocks.Core/1.0.0": {
         "dependencies": {
           "AutoMapper": "13.0.1",
           "FluentValidation": "11.11.0",
@@ -1984,21 +1965,56 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0",
           "Microsoft.Extensions.Options": "9.0.0",
           "RabbitMQ.Client": "7.0.0",
-          "UMBIT.ToDo.Fabrica": "1.0.0"
+          "UMBIT.ToDo.BuildingBlocks.Fabrica": "1.0.0"
         },
         "runtime": {
-          "UMBIT.ToDo.Core.dll": {
+          "UMBIT.ToDo.BuildingBlocks.Core.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
       },
-      "UMBIT.ToDo.Fabrica/1.0.0": {
+      "UMBIT.ToDo.BuildingBlocks.Fabrica/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Mvc": "2.2.0"
         },
         "runtime": {
-          "UMBIT.ToDo.Fabrica.dll": {
+          "UMBIT.ToDo.BuildingBlocks.Fabrica.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "UMBIT.ToDo.BuildingBlocks.WebAPI/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "13.0.1",
+          "FluentValidation": "11.11.0",
+          "MediatR": "12.4.1",
+          "Microsoft.AspNetCore.Mvc": "2.2.0",
+          "Microsoft.EntityFrameworkCore": "9.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0",
+          "Microsoft.Extensions.Options": "9.0.0",
+          "RabbitMQ.Client": "7.0.0",
+          "UMBIT.ToDo.BuildingBlocks.Core": "1.0.0",
+          "UMBIT.ToDo.Core": "1.0.0"
+        },
+        "runtime": {
+          "UMBIT.ToDo.BuildingBlocks.WebAPI.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "UMBIT.ToDo.Contrato/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
+          "NSwag.MSBuild": "14.0.7",
+          "UMBIT.ToDo.BuildingBlocks.Core": "1.0.0",
+          "UMBIT.ToDo.BuildingBlocks.WebAPI": "1.0.0"
+        },
+        "runtime": {
+          "UMBIT.ToDo.Contrato.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -2215,12 +2231,12 @@
       "path": "microsoft.aspnetcore.mvc.apiexplorer/2.2.0",
       "hashPath": "microsoft.aspnetcore.mvc.apiexplorer.2.2.0.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Mvc.Core/2.2.0": {
+    "Microsoft.AspNetCore.Mvc.Core/2.2.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ALiY4a6BYsghw8PT5+VU593Kqp911U3w9f/dH9/ZoI3ezDsDAGiObqPu/HP1oXK80Ceu0XdQ3F0bx5AXBeuN/Q==",
-      "path": "microsoft.aspnetcore.mvc.core/2.2.0",
-      "hashPath": "microsoft.aspnetcore.mvc.core.2.2.0.nupkg.sha512"
+      "sha512": "sha512-/8sr8ixIUD57UFwUntha9bOwex7/AkZfdk1f9oNJG1Ek7p/uuKVa7fuHmYZpQOf35Oxrt+2Ku4WPwMSbNxOuWg==",
+      "path": "microsoft.aspnetcore.mvc.core/2.2.5",
+      "hashPath": "microsoft.aspnetcore.mvc.core.2.2.5.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.Cors/2.2.0": {
       "type": "package",
@@ -2718,6 +2734,13 @@
       "sha512": "sha512-veIWp7efQHcgFLzFSVkJGuTC1sGzuuabOGA5+r28x9ug7xQZHxdN6+opuVJHW76whThc7Wffl5I5sN8NYZ/zIQ==",
       "path": "nonfactors.grid.mvc6/7.2.1",
       "hashPath": "nonfactors.grid.mvc6.7.2.1.nupkg.sha512"
+    },
+    "NSwag.MSBuild/14.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KsMOTIaU9g7BY0WYIcfeqX599Jc5is8RnOfVxspl/pSiZ0eYo4DTnIu/bcg8m1W05TlykERZNYLU8OFW3/Q7Jg==",
+      "path": "nswag.msbuild/14.0.7",
+      "hashPath": "nswag.msbuild.14.0.7.nupkg.sha512"
     },
     "RabbitMQ.Client/7.0.0": {
       "type": "package",
@@ -3468,17 +3491,22 @@
       "path": "system.xml.xpath.xdocument/4.3.0",
       "hashPath": "system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
     },
-    "UMBIT.ToDo.AspNet/1.0.0": {
+    "UMBIT.ToDo.BuildingBlocks.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "UMBIT.ToDo.Core/1.0.0": {
+    "UMBIT.ToDo.BuildingBlocks.Fabrica/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "UMBIT.ToDo.Fabrica/1.0.0": {
+    "UMBIT.ToDo.BuildingBlocks.WebAPI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UMBIT.ToDo.Contrato/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

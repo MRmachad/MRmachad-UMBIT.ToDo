@@ -306,6 +306,9 @@
           "accessToken": {
             "type": "string"
           },
+          "ehAdm": {
+            "type": "boolean"
+          },
           "refreshToken": {
             "type": "string"
           },

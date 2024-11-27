@@ -2,6 +2,7 @@ using Refit;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using UMBIT.ToDo.Core.Seguranca.Bootstrapper;
+using UMBIT.ToDo.Web.Bootstrapper;
 using UMBIT.ToDo.Web.Middlewares;
 using UMBIT.ToDo.Web.services;
 
@@ -19,12 +20,14 @@ var refitSetting = new RefitSettings()
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
-builder.Services.AddSession(options =>
-{
-    options.IdleTimeout = TimeSpan.FromMinutes(30);
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
-});
+builder.Services
+    .AddSession(options =>
+    {
+        options.IdleTimeout = TimeSpan.FromMinutes(30);
+        options.Cookie.HttpOnly = true;
+        options.Cookie.IsEssential = true;
+    })
+    .AddAuthSession();
 builder.Services.AddTransient<ServicoExternoMiddleware>();
 builder.Services
     .AddRefitClient<IServicoToDo>(refitSetting)
@@ -35,6 +38,13 @@ builder.Services
     });
 builder.Services
     .AddRefitClient<IServicoAuth>(refitSetting)
+    .AddHttpMessageHandler<ServicoExternoMiddleware>()
+    .ConfigureHttpClient(c =>
+    {
+        c.BaseAddress = new Uri(builder.Configuration.GetSection("BaseAdressService").Value);
+    });
+builder.Services
+    .AddRefitClient<IServicoUser>(refitSetting)
     .AddHttpMessageHandler<ServicoExternoMiddleware>()
     .ConfigureHttpClient(c =>
     {

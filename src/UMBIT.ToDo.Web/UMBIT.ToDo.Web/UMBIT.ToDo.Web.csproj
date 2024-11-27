@@ -17,8 +17,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\UMBIT.ToDo.WebApi\UMBIT.ToDo.AspNet.csproj" />
-    <ProjectReference Include="..\..\UMBIT.ToDo.Core\UMBIT.ToDo.Core.csproj" />
+    <ProjectReference Include="..\..\UMBIT.ToDo.Contrato\UMBIT.ToDo.Contrato.csproj" />
+    <ProjectReference Include="..\..\UMBIT.ToDo.Core\UMBIT.ToDo.BuildingBlocks.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Utilitarios\" />
   </ItemGroup>
 
 </Project>

@@ -100,7 +100,7 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
                 Email = request.Email,
                 UserName = request.Email,
                 TwoFactorEnabled = _identitySettings.Value.TwoFactorEnabled,
-                EmailConfirmed = false,
+                EmailConfirmed = !_identitySettings.Value.RequireConfirmedEmail,
             };
 
             var result = await _userManager.CreateAsync(usuario, request.Senha);

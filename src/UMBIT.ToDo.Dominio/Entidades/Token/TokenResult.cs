@@ -3,6 +3,7 @@
     public class TokenResult
     {
         public bool EnabledTwoFactor { get; set; }
+        public bool EhAdm { get; set; }
         public string AccessToken { get; set; }
         public string RefreshToken { get; set; }
         public double ExpiresIn { get; set; }

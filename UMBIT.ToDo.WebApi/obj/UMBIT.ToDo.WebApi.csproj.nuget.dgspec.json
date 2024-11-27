@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\UMBIT.ToDo.WebApi\\UMBIT.ToDo.WebApi.csproj": {}
+    "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\UMBIT.ToDo.WebApi\\UMBIT.ToDo.WebAPI.csproj": {}
   },
   "projects": {
     "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Core\\UMBIT.ToDo.Core.csproj": {
@@ -178,12 +178,12 @@
         }
       }
     },
-    "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\UMBIT.ToDo.WebApi\\UMBIT.ToDo.WebApi.csproj": {
+    "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\UMBIT.ToDo.WebApi\\UMBIT.ToDo.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\UMBIT.ToDo.WebApi\\UMBIT.ToDo.WebApi.csproj",
-        "projectName": "UMBIT.ToDo.WebApi",
-        "projectPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\UMBIT.ToDo.WebApi\\UMBIT.ToDo.WebApi.csproj",
+        "projectUniqueName": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\UMBIT.ToDo.WebApi\\UMBIT.ToDo.WebAPI.csproj",
+        "projectName": "UMBIT.ToDo.WebAPI",
+        "projectPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\UMBIT.ToDo.WebApi\\UMBIT.ToDo.WebAPI.csproj",
         "packagesPath": "C:\\Users\\LeonardoSilva\\.nuget\\packages\\",
         "outputPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\UMBIT.ToDo.WebApi\\obj\\",
         "projectStyle": "PackageReference",

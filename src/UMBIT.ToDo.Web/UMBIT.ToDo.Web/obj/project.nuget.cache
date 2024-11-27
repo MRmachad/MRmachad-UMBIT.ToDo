@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "byZuxRXHLg4=",
+  "dgSpecHash": "tE8/V100wyI=",
   "success": true,
   "projectFilePath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web.csproj",
   "expectedPackageFiles": [
@@ -33,7 +33,7 @@
     "C:\\Users\\LeonardoSilva\\.nuget\\packages\\microsoft.aspnetcore.mvc.abstractions\\2.2.0\\microsoft.aspnetcore.mvc.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\LeonardoSilva\\.nuget\\packages\\microsoft.aspnetcore.mvc.analyzers\\2.2.0\\microsoft.aspnetcore.mvc.analyzers.2.2.0.nupkg.sha512",
     "C:\\Users\\LeonardoSilva\\.nuget\\packages\\microsoft.aspnetcore.mvc.apiexplorer\\2.2.0\\microsoft.aspnetcore.mvc.apiexplorer.2.2.0.nupkg.sha512",
-    "C:\\Users\\LeonardoSilva\\.nuget\\packages\\microsoft.aspnetcore.mvc.core\\2.2.0\\microsoft.aspnetcore.mvc.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\LeonardoSilva\\.nuget\\packages\\microsoft.aspnetcore.mvc.core\\2.2.5\\microsoft.aspnetcore.mvc.core.2.2.5.nupkg.sha512",
     "C:\\Users\\LeonardoSilva\\.nuget\\packages\\microsoft.aspnetcore.mvc.cors\\2.2.0\\microsoft.aspnetcore.mvc.cors.2.2.0.nupkg.sha512",
     "C:\\Users\\LeonardoSilva\\.nuget\\packages\\microsoft.aspnetcore.mvc.dataannotations\\2.2.0\\microsoft.aspnetcore.mvc.dataannotations.2.2.0.nupkg.sha512",
     "C:\\Users\\LeonardoSilva\\.nuget\\packages\\microsoft.aspnetcore.mvc.formatters.json\\2.2.0\\microsoft.aspnetcore.mvc.formatters.json.2.2.0.nupkg.sha512",
@@ -105,6 +105,7 @@
     "C:\\Users\\LeonardoSilva\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
     "C:\\Users\\LeonardoSilva\\.nuget\\packages\\nonfactors.grid.core.mvc6\\7.2.1\\nonfactors.grid.core.mvc6.7.2.1.nupkg.sha512",
     "C:\\Users\\LeonardoSilva\\.nuget\\packages\\nonfactors.grid.mvc6\\7.2.1\\nonfactors.grid.mvc6.7.2.1.nupkg.sha512",
+    "C:\\Users\\LeonardoSilva\\.nuget\\packages\\nswag.msbuild\\14.0.7\\nswag.msbuild.14.0.7.nupkg.sha512",
     "C:\\Users\\LeonardoSilva\\.nuget\\packages\\rabbitmq.client\\7.0.0\\rabbitmq.client.7.0.0.nupkg.sha512",
     "C:\\Users\\LeonardoSilva\\.nuget\\packages\\refit\\7.0.0\\refit.7.0.0.nupkg.sha512",
     "C:\\Users\\LeonardoSilva\\.nuget\\packages\\refit.httpclientfactory\\7.0.0\\refit.httpclientfactory.7.0.0.nupkg.sha512",

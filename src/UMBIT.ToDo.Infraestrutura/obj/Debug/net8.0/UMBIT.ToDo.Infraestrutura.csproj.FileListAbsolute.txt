@@ -1,12 +1,12 @@
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\bin\Debug\net8.0\UMBIT.ToDo.Infraestrutura.deps.json
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\bin\Debug\net8.0\UMBIT.ToDo.Infraestrutura.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\bin\Debug\net8.0\UMBIT.ToDo.Infraestrutura.pdb
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\bin\Debug\net8.0\UMBIT.ToDo.Core.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Core.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Fabrica.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\bin\Debug\net8.0\UMBIT.ToDo.Dominio.dll
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\bin\Debug\net8.0\UMBIT.ToDo.Fabrica.dll
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\bin\Debug\net8.0\UMBIT.ToDo.Core.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\bin\Debug\net8.0\UMBIT.ToDo.Dominio.pdb
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\bin\Debug\net8.0\UMBIT.ToDo.Fabrica.pdb
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Core.pdb
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Fabrica.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\obj\Debug\net8.0\UMBIT.ToDo.Infraestrutura.csproj.AssemblyReference.cache
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\obj\Debug\net8.0\UMBIT.ToDo.Infraestrutura.GeneratedMSBuildEditorConfig.editorconfig
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Infraestrutura\obj\Debug\net8.0\UMBIT.ToDo.Infraestrutura.AssemblyInfoInputs.cache

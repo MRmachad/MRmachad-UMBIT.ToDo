@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using UMBIT.Nexus.Auth.Contrato;
 using UMBIT.ToDo.Dominio.Entidades;
 
 namespace TSE.Nexus.Auth.API.Mapeadores
@@ -7,8 +8,8 @@ namespace TSE.Nexus.Auth.API.Mapeadores
     {
         public ToDoMapper()
         {
-            CreateMap<ToDoItem, ToDoItem>();
-            CreateMap<ToDoList, ToDoList>();
+            CreateMap<TarefaDTO, ToDoItem>().ReverseMap();
+            CreateMap<ListaDTO, ToDoList>().ReverseMap();
         }
     }
 }

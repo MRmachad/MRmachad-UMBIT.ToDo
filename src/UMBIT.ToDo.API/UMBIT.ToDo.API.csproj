@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -23,7 +23,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\UMBIT.ToDo.Contrato\UMBIT.ToDo.Contrato.csproj" />
-    <ProjectReference Include="..\UMBIT.ToDo.Core\UMBIT.ToDo.Core.csproj" />
     <ProjectReference Include="..\UMBIT.ToDo.Dominio\UMBIT.ToDo.Dominio.csproj" />
     <ProjectReference Include="..\UMBIT.ToDo.Infraestrutura\UMBIT.ToDo.Infraestrutura.csproj" />
   </ItemGroup>

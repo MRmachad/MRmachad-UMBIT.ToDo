@@ -1,38 +1,38 @@
 ﻿using Refit;
-using UMBIT.ToDo.Web.Models;
+using UMBIT.Nexus.Auth.Contrato;
 
 namespace UMBIT.ToDo.Web.services
 {
     public interface IServicoToDo
     {
-        [Post("/adicione-item")]
-        Task AdicioneItem([Body] TaskDTO taskDTO);
+        [Post("/tarefa")]
+        Task AdicioneItem([Body] AdicionarTarefaRequest request);
 
-        [Post("/edite-item")]
-        Task EditItem([Body] TaskDTO taskDTO);
+        [Put("/tarefa")]
+        Task EditItem([Body] AtualizarTarefaRequest request);
 
-        [Delete("/delete-item/{id}")]
+        [Delete("/tarefa/{id}")]
         Task DeleteItem([Refit.AliasAs("id")] Guid id);
 
-        [Get("/obtenha-item/{id}")]
-        Task<TaskDTO> ObtenhaItem([Refit.AliasAs("id")] Guid id);
+        [Get("/tarefa/{id}")]
+        Task<TarefaDTO> ObtenhaItem([Refit.AliasAs("id")] Guid id);
 
-        [Get("/obtenha-item")]
-        Task<List<TaskDTO>?> ObtenhaItens();
+        [Get("/tarefa?$filter=contains(cast(status,'Edm.String'), '{status}') AND contains(cast(idToDoList,'Edm.String'), '{idToDoList}')")]
+        Task<List<TarefaDTO>?> ObtenhaItens([AliasAs("status")] int? status, [Refit.AliasAs("idToDoList")] Guid? idToDoList);
 
-        [Post("/adicione-list")]
-        Task AdicioneList([Body] ListTaskDTO taskDTO);
+        [Post("/lista-tarefa")]
+        Task AdicioneList([Body] AdicionarListaRequest request);
 
-        [Post("/edite-list")]
-        Task EditList([Body] ListTaskDTO taskDTO);
+        [Put("/lista-tarefa")]
+        Task EditList([Body] AtualizarListaRequest request);
 
-        [Delete("/delete-list/{id}")]
+        [Delete("/lista-tarefa/{id}")]
         Task DeleteList([Refit.AliasAs("id")] Guid id);
 
-        [Get("/obtenha-list/{id}")]
-        Task<ListTaskDTO> ObtenhaList([Refit.AliasAs("id")] Guid id);
+        [Get("/lista-tarefa/{id}")]
+        Task<ListaDTO> ObtenhaList([Refit.AliasAs("id")] Guid id);
 
-        [Get("/obtenha-list")]
-        Task<List<ListTaskDTO>?> ObtenhaLists();
+        [Get("/lista-tarefa")]
+        Task<List<ListaDTO>?> ObtenhaLists();
     }
 }

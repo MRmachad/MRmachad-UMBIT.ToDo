@@ -10013,9 +10013,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\UMBIT.ToDo.WebApi\\UMBIT.ToDo.AspNet.csproj",
-      "projectName": "UMBIT.ToDo.AspNet",
-      "projectPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\UMBIT.ToDo.WebApi\\UMBIT.ToDo.AspNet.csproj",
+      "projectUniqueName": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\UMBIT.ToDo.WebApi\\UMBIT.ToDo.WebAPI.csproj",
+      "projectName": "UMBIT.ToDo.WebAPI",
+      "projectPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\UMBIT.ToDo.WebApi\\UMBIT.ToDo.WebAPI.csproj",
       "packagesPath": "C:\\Users\\LeonardoSilva\\.nuget\\packages\\",
       "outputPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\UMBIT.ToDo.WebApi\\obj\\",
       "projectStyle": "PackageReference",

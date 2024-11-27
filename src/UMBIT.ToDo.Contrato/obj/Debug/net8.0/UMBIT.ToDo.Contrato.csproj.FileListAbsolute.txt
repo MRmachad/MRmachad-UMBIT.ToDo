@@ -1,12 +1,6 @@
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\bin\Debug\net8.0\UMBIT.ToDo.Contrato.deps.json
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\bin\Debug\net8.0\UMBIT.ToDo.Contrato.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\bin\Debug\net8.0\UMBIT.ToDo.Contrato.pdb
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\bin\Debug\net8.0\UMBIT.ToDo.AspNet.dll
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\bin\Debug\net8.0\UMBIT.ToDo.Core.dll
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\bin\Debug\net8.0\UMBIT.ToDo.Fabrica.dll
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\bin\Debug\net8.0\UMBIT.ToDo.AspNet.pdb
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\bin\Debug\net8.0\UMBIT.ToDo.Core.pdb
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\bin\Debug\net8.0\UMBIT.ToDo.Fabrica.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\obj\Debug\net8.0\UMBIT.ToDo.Contrato.csproj.AssemblyReference.cache
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\obj\Debug\net8.0\UMBIT.ToDo.Contrato.GeneratedMSBuildEditorConfig.editorconfig
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\obj\Debug\net8.0\UMBIT.ToDo.Contrato.AssemblyInfoInputs.cache
@@ -18,3 +12,9 @@ D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\obj\Debug\net8.0\UMBIT
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\obj\Debug\net8.0\refint\UMBIT.ToDo.Contrato.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\obj\Debug\net8.0\UMBIT.ToDo.Contrato.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\obj\Debug\net8.0\ref\UMBIT.ToDo.Contrato.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Core.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Fabrica.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.WebAPI.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Core.pdb
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.WebAPI.pdb
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Contrato\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Fabrica.pdb

@@ -1,172 +1,137 @@
-﻿@using NonFactors.Mvc.Grid
-@{
-    int status = ViewBag.Status;
-    Guid? idList = ViewBag.IdList;
-    string pieData = ViewBag.PieData;
-    IEnumerable<ListTaskDTO> lists = ViewBag.Lists;
-    string setStatus = $" <select data-id=\"TASKID\" class=\"task-status-select\" name=\"select\">   <option value=\"0\" >Criado</option>    <option value=\"1\">Em andamento</option>   <option value=\"2\">Concluido</option>  </select>";
-
-    ViewData["Title"] = "Home Page";
-}
-@model IEnumerable<TaskDTO>
-
-
+﻿@using UMBIT.Nexus.Auth.Contrato
+@model IEnumerable<TarefaDTO>
 
 <style>
-    .listagem {
-        margin: 10px
-    }
-
-    .add-btn {
-        display: flex;
+    .status-toggle {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
         justify-content: center;
-        align-content: center;
-        height: 40px;
-        width: fit-content;
-        margin: 5px;
-        padding: 5px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        font-size: 0.85rem;
+    }
+    .status-completed {
+        background-color: #28a745;
+        color: #fff;
+    }
+    .status-in-progress {
+        background-color: #ffc107;
+        color: #fff;
+    }
+    .status-pending {
+        background-color: #dc3545;
+        color: #fff;
+    }
+    .task-item {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    .task-item:last-child {
+        border-bottom: none;
+    }
+    .task-title {
+        font-size: 1rem;
+        color: #555;
+    }
+    .task-desc {
+        font-size: 0.9rem;
+        color: #888;
     }
 </style>
 
-<div class="center">
-    <h1 class="display-4">Task To Do</h1>
-
-    <div class="row col-md-12 justify-content-end">
-        @if (idList != null)
+<div class="container mt-5">
+    <h1 class="mb-4">Lista de Tarefas</h1>
+    @foreach (var parentGroup in Model.GroupBy(task => task.IdToDoList))
+    {
+        if(parentGroup.Key != null && parentGroup.Key != Guid.Empty) 
         {
-            <a asp-action="DeleteList" asp-route-id="@idList" class="btn btn-danger add-btn">Excluir Lista</a>
-            <a asp-action="EditList" asp-route-id="@idList" class="btn btn-warning add-btn">Editar Lista</a>
-        }
-        <a asp-action="AddTask" class="btn btn-warning add-btn">Add Task</a>
-        <a asp-action="AddList" class="btn btn-warning add-btn">Add Lista</a>
-    </div>
+            var parent = parentGroup.First().ListaPai;
 
-    <div class="row col-lg-6 ms-2 align-self-start ">
-        <div class="row col-lg-4">
-            <select id="status-select" name="select">
-                <!option value="-1" @(status == -1 ? "selected" : "")> Geral</!option>
-                <!option value="0"  @(status == 0 ? "selected" : "")>Criado</!option>
-                <!option value="1"  @(status == 1 ? "selected" : "")>Em andamento</!option>
-                <!option value="2"  @(status == 2 ? "selected" : "")>Concluido</!option>
-            </select>
-        </div><div class="row col-lg-4 ms-2">
-            <select id="list-select" name="select">
-                <option value=" ">Todas as listas</option>
-                @if (lists != null)
+            <div class="mb-4">
+            <div class="d-flex align-items-center mb-2">
+                    <input type="checkbox" class="mr-2" id="list-checkbox-@parentGroup.Key.Value" onclick="toggleListTasks('@parentGroup.Key.Value')" />
+                    <label class="list-header" for="list-checkbox-@parentGroup.Key.Value">
+                    @parent.Nome
+                    </label>
+                </div>
+                <div class="ml-4">
+                @foreach (var task in parentGroup)
                 {
-                    foreach (var list in lists)
-                    {
-                        <!option value="@list.Id" @(idList != null && idList == list.Id ? "selected" : "")>@list.Nome</!option>
-                    }
+                            <div class="task-item d-flex align-items-baseline">
+                                <input type="checkbox" class="checkbox-column mr-3 list-checkbox-@parentGroup.Key.Value" id="task-checkbox-@task.Id" onclick="checkListStatus('@parentGroup.Key.Value')"/>
+                                <div class="flex-grow-1">
+                                    <div class="task-title">@task.Nome</div>
+                            @if (!string.IsNullOrWhiteSpace(task.Descricao))
+                            {
+                                            <div class="task-desc">@task.Descricao</div>
+                            }
+                                </div>
+                                <div>
+                                    <!-- Toggle Status -->
+                                                <div class="status-toggle @(task.Status == 1 ? "status-completed" : task.Status == 2 ? "status-in-progress" : "status-pending")" 
+                                         data-status="@task.Status" 
+                                         id="status-toggle-@task.Id" 
+                                         onclick="toggleStatus(this)">
+                                @(task.Status == 1 ? "Completed" : task.Status == 2 ? "In Progress" : "Pending")
+                                    </div>
+                                </div>
+                            </div>
                 }
-            </select>
-
-        </div>
-    </div>
-
-    <div class="listagem">
-        @(Html.Grid(Model)
-            .Build(columns =>
-            {
-                columns.Add(model => model.Titulo).Titled(Html.DisplayNameFor(model => model.Titulo));
-                columns.Add(model => model.Descricao).Titled(Html.DisplayNameFor(model => model.Descricao));
-                columns.Add(model => model.DataInicio.ToString("dd/MM/yyyy HH:mm:ss")).Titled(Html.DisplayNameFor(model => model.DataInicio));
-                columns.Add(model => model.DataFim.ToString("dd/MM/yyyy HH:mm:ss")).Titled(Html.DisplayNameFor(model => model.DataFim));
-                columns.Add(model => setStatus.Replace($"{model.Status}\"", "\" selected").Replace("TASKID", model.Id.ToString())).Titled(Html.DisplayNameFor(model => model.Status)).Encoded(false);
-                columns.Add(model => Html.ActionLink("Editar", "EditTask", new { id = model.Id })).Encoded(false);
-                columns.Add(model => Html.ActionLink("Excluir", "DeleteTask", new { id = model.Id })).Encoded(false);
-            })
-            .Using(GridFilterMode.Header)
-            .Empty("No data found")
-            .Filterable()
-            .Sortable()
-            .Pageable()
-            )
-
-    </div>
-    <div class="dashboards">
-        <div class="row">
-            <div id="pie-chart-container" style="width: 100%;height:400px;"></div>
-        </div>
-    </div>
+                </div>
+            </div>
+        }
+    }
 </div>
-
+    
 @section scripts {
+
     <script>
-        function setEdge(element, option) {
+        function toggleListTasks(listId) {
+            const listCheckbox = document.getElementById(`list-checkbox-${listId}`);
+            const taskCheckboxes = document.querySelectorAll(`.list-checkbox-${listId}`);
+            taskCheckboxes.forEach(checkbox => checkbox.checked = listCheckbox.checked);
+        } 
+        
+        function checkListStatus(listId) {
+            const listCheckbox = document.getElementById(`list-checkbox-${listId}`);
+            const taskCheckboxes = document.querySelectorAll(`.list-checkbox-${listId}`);
+            const allTasksChecked = Array.from(taskCheckboxes).every(checkbox => checkbox.checked);
 
-            var chartDom = document.getElementById(element);
-            var myChart = echarts.init(chartDom);
-
-            if (option && typeof option === 'object') {
-                myChart.setOption(option);
+            // Desmarca a lista se nem todas as tarefas estiverem marcadas
+            if (!allTasksChecked) {
+                listCheckbox.checked = false;
             }
         }
-    </script>
-    <script>
-        let optionPie = {
-            title: {
-                left: 'center'
-            },
-            tooltip: {
-                trigger: 'item'
-            },
-            legend: {
-                orient: 'vertical',
-                left: 'left'
-            },
-            series: [
-                {
-                    name: 'Access From',
-                    type: 'pie',
-                    radius: '50%',
-                    data: [
-                        { value: 1048, name: 'Search Engine' },
-                        { value: 735, name: 'Direct' },
-                        { value: 580, name: 'Email' },
-                        { value: 484, name: 'Union Ads' },
-                        { value: 300, name: 'Video Ads' }
-                    ],
-                    emphasis: {
-                        itemStyle: {
-                            shadowBlur: 10,
-                            shadowOffsetX: 0,
-                            shadowColor: 'rgba(0, 0, 0, 0.5)'
-                        }
-                    }
-                }
-            ]
-        };
-        @{
-            <text>
-                optionPie.series[0].data = @Html.Raw(pieData);
-            </text>
+
+        function toggleStatus(element) {
+            // Obtem o status atual
+            const currentStatus = parseInt(element.getAttribute('data-status'), 10);
+            const nextStatus = currentStatus === 3 ? 1 : currentStatus + 1;
+
+            // Atualiza o atributo de estado
+            element.setAttribute('data-status', nextStatus);
+
+            // Atualiza o estilo e o texto do botão
+            switch (nextStatus) {
+                case 1:
+                    element.className = 'status-toggle status-completed';
+                    element.textContent = 'Completed';
+                    break;
+                case 2:
+                    element.className = 'status-toggle status-in-progress';
+                    element.textContent = 'In Progress';
+                    break;
+                case 3:
+                    element.className = 'status-toggle status-pending';
+                    element.textContent = 'Pending';
+                    break;
+            }
+
+            // Aqui você pode enviar a alteração para o backend, caso necessário
+            console.log(`Task status updated: ${nextStatus}`);
         }
-    </script>
-    <script>
-
-        $("#status-select").on("change", function (el) {
-            let status = $(el.currentTarget).val();
-            let listid = $("#list-select").val();
-            var url = '@Url.Action("Index", "Home")' + `?status=${status}&idList=${listid}`;
-            location.href = url;
-        });
-
-        $("#list-select").on("change", function (el) {
-            let listid = $(el.currentTarget).val();
-            let status = $("#status-select").val();
-            var url = '@Url.Action("Index", "Home")' + `?status=${status}&idList=${listid}`;
-            location.href = url;
-        });
-
-        $(".task-status-select").on("change", function (el) {
-            let status = $(el.currentTarget).val();
-            let id = $(el.currentTarget).data("id");
-            fetch('@Url.Action("AltereStatus", "Home")' + `?id=${id}&status=${status}`, { method: 'POST' })
-                .catch(t => alert("erro em mundaça de status"))
-                .then(t => location.reload())
-        });
-
-        setEdge('pie-chart-container', optionPie)
     </script>
 }

@@ -1,26 +1,40 @@
 using Refit;
-using System.Text.Json.Serialization;
 using System.Text.Json;
-using UMBIT.ToDo.Web.services;
-using Microsoft.Extensions.DependencyInjection;
+using System.Text.Json.Serialization;
+using UMBIT.ToDo.Core.Seguranca.Bootstrapper;
 using UMBIT.ToDo.Web.Middlewares;
+using UMBIT.ToDo.Web.services;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var refitSetting = new RefitSettings()
+{
+    ContentSerializer = new SystemTextJsonContentSerializer(new JsonSerializerOptions()
+    {
+        IncludeFields = true,
+        WriteIndented = true,
+        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+    })
+};
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 builder.Services.AddTransient<ServicoExternoMiddleware>();
 builder.Services
-    .AddRefitClient<IServicoDeToDo>(new RefitSettings()
+    .AddRefitClient<IServicoToDo>(refitSetting)
+    .AddHttpMessageHandler<ServicoExternoMiddleware>()
+    .ConfigureHttpClient(c =>
     {
-        ContentSerializer = new SystemTextJsonContentSerializer(new JsonSerializerOptions()
-        {
-            IncludeFields = true,
-            WriteIndented = true,
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-        })
-    })
+        c.BaseAddress = new Uri(builder.Configuration.GetSection("BaseAdressService").Value);
+    });
+builder.Services
+    .AddRefitClient<IServicoAuth>(refitSetting)
     .AddHttpMessageHandler<ServicoExternoMiddleware>()
     .ConfigureHttpClient(c =>
     {
@@ -41,6 +55,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseSession();
 
 app.UseAuthorization();
 

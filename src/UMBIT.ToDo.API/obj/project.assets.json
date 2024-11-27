@@ -4179,12 +4179,35 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "UMBIT.ToDo.AspNet/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "AutoMapper": "13.0.1",
+          "FluentValidation": "11.11.0",
+          "MediatR": "12.4.1",
+          "Microsoft.AspNetCore.Mvc": "2.2.0",
+          "Microsoft.EntityFrameworkCore": "9.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0",
+          "Microsoft.Extensions.Options": "9.0.0",
+          "RabbitMQ.Client": "7.0.0",
+          "UMBIT.ToDo.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UMBIT.ToDo.AspNet.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UMBIT.ToDo.AspNet.dll": {}
+        }
+      },
       "UMBIT.ToDo.Contrato/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "NSwag.MSBuild": "14.0.7",
+          "UMBIT.ToDo.AspNet": "1.0.0",
           "UMBIT.ToDo.Core": "1.0.0"
         },
         "compile": {
@@ -4207,7 +4230,8 @@
           "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0",
           "Microsoft.Extensions.Options": "9.0.0",
-          "RabbitMQ.Client": "7.0.0"
+          "RabbitMQ.Client": "7.0.0",
+          "UMBIT.ToDo.Fabrica": "1.0.0"
         },
         "compile": {
           "bin/placeholder/UMBIT.ToDo.Core.dll": {}
@@ -4231,6 +4255,19 @@
         },
         "runtime": {
           "bin/placeholder/UMBIT.ToDo.Dominio.dll": {}
+        }
+      },
+      "UMBIT.ToDo.Fabrica/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc": "2.2.0"
+        },
+        "compile": {
+          "bin/placeholder/UMBIT.ToDo.Fabrica.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UMBIT.ToDo.Fabrica.dll": {}
         }
       },
       "UMBIT.ToDo.Infraestrutura/1.0.0": {
@@ -12408,6 +12445,11 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "UMBIT.ToDo.AspNet/1.0.0": {
+      "type": "project",
+      "path": "../../UMBIT.ToDo.WebApi/UMBIT.ToDo.AspNet.csproj",
+      "msbuildProject": "../../UMBIT.ToDo.WebApi/UMBIT.ToDo.AspNet.csproj"
+    },
     "UMBIT.ToDo.Contrato/1.0.0": {
       "type": "project",
       "path": "../UMBIT.ToDo.Contrato/UMBIT.ToDo.Contrato.csproj",
@@ -12422,6 +12464,11 @@
       "type": "project",
       "path": "../UMBIT.ToDo.Dominio/UMBIT.ToDo.Dominio.csproj",
       "msbuildProject": "../UMBIT.ToDo.Dominio/UMBIT.ToDo.Dominio.csproj"
+    },
+    "UMBIT.ToDo.Fabrica/1.0.0": {
+      "type": "project",
+      "path": "../UMBIT.ToDo.Fabrica/UMBIT.ToDo.Fabrica.csproj",
+      "msbuildProject": "../UMBIT.ToDo.Fabrica/UMBIT.ToDo.Fabrica.csproj"
     },
     "UMBIT.ToDo.Infraestrutura/1.0.0": {
       "type": "project",

@@ -2298,7 +2298,8 @@
           "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0",
           "Microsoft.Extensions.Options": "9.0.0",
-          "RabbitMQ.Client": "7.0.0"
+          "RabbitMQ.Client": "7.0.0",
+          "UMBIT.ToDo.Fabrica": "1.0.0"
         },
         "runtime": {
           "UMBIT.ToDo.Core.dll": {
@@ -2317,6 +2318,17 @@
         },
         "runtime": {
           "UMBIT.ToDo.Dominio.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "UMBIT.ToDo.Fabrica/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc": "2.2.0"
+        },
+        "runtime": {
+          "UMBIT.ToDo.Fabrica.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -3792,6 +3804,11 @@
       "sha512": ""
     },
     "UMBIT.ToDo.Dominio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UMBIT.ToDo.Fabrica/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

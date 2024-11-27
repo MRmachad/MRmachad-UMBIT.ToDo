@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using UMBIT.ToDo.Web.Basicos.Enumerador;
@@ -9,22 +10,30 @@ namespace UMBIT.ToDo.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IServicoToDo _servicoDeToDo;
         private readonly ILogger<HomeController> _logger;
-        private readonly IServicoDeToDo ServicoDeToDo;
-        public HomeController(ILogger<HomeController> logger, IServicoDeToDo servicoDeToDo)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        public HomeController(ILogger<HomeController> logger, IServicoToDo servicoDeToDo, IHttpContextAccessor httpContextAccessor)
         {
             _logger = logger;
-            this.ServicoDeToDo = servicoDeToDo;
+            _servicoDeToDo = servicoDeToDo;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public IActionResult Index(int status = -1, Guid? idList = null)
         {
             return MiddlewareDeRetorno(() =>
             {
-                var result = this.ServicoDeToDo.ObtenhaItens().Result
-                                               .Where(t => (status != -1 ? t.Status == status : true) && (idList != null ? t.IdToDoList == idList : true));
+                if (String.IsNullOrEmpty(_httpContextAccessor.HttpContext?.Session.GetString("AccessToken")))
+                {
+                    return RedirectToAction("Login", "Auth");
+                }
 
-                var lists = this.ServicoDeToDo.ObtenhaLists().Result;
+                    var result = this._servicoDeToDo.ObtenhaItens().Result?
+                                                   .Where(t => (status != -1 ? t.Status == status : true) && (idList != null ? t.IdToDoList == idList : true));
+
+
+                var lists = this._servicoDeToDo.ObtenhaLists().Result;
 
                 ViewBag.Status = status;
                 ViewBag.IdList = idList;
@@ -37,9 +46,10 @@ namespace UMBIT.ToDo.Web.Controllers
             });
         }
 
+
         public IActionResult AddTask()
         {
-            var lists = this.ServicoDeToDo.ObtenhaLists().Result;
+            var lists = this._servicoDeToDo.ObtenhaLists().Result;
             ViewBag.Lists = lists;
             return View(new TaskDTO());
         }
@@ -53,7 +63,7 @@ namespace UMBIT.ToDo.Web.Controllers
                     return View(taskDTO);
 
 
-                this.ServicoDeToDo.AdicioneItem(taskDTO).Wait();
+                this._servicoDeToDo.AdicioneItem(taskDTO).Wait();
 
                 return RedirectToAction("Index");
 
@@ -65,10 +75,10 @@ namespace UMBIT.ToDo.Web.Controllers
         {
             return MiddlewareDeRetorno(() =>
             {
-                var lists = this.ServicoDeToDo.ObtenhaLists().Result;
+                var lists = this._servicoDeToDo.ObtenhaLists().Result;
                 ViewBag.Lists = lists;
 
-                var result = this.ServicoDeToDo.ObtenhaItem(id).Result;
+                var result = this._servicoDeToDo.ObtenhaItem(id).Result;
                 return View(result);
             });
         }
@@ -80,7 +90,7 @@ namespace UMBIT.ToDo.Web.Controllers
                 if (!ModelState.IsValid)
                     return View(taskDTO);
 
-                this.ServicoDeToDo.EditItem(taskDTO).Wait();
+                this._servicoDeToDo.EditItem(taskDTO).Wait();
 
                 return RedirectToAction("Index");
 
@@ -91,7 +101,7 @@ namespace UMBIT.ToDo.Web.Controllers
         {
             return MiddlewareDeRetorno(() =>
             {
-                this.ServicoDeToDo.DeleteItem(id).Wait();
+                this._servicoDeToDo.DeleteItem(id).Wait();
 
                 return RedirectToAction("Index");
             });
@@ -100,7 +110,7 @@ namespace UMBIT.ToDo.Web.Controllers
         {
             return MiddlewareDeRetorno(() =>
             {
-                this.ServicoDeToDo.DeleteList(id).Wait();
+                this._servicoDeToDo.DeleteList(id).Wait();
 
                 return RedirectToAction("Index");
             });
@@ -115,7 +125,7 @@ namespace UMBIT.ToDo.Web.Controllers
         {
             return MiddlewareDeRetorno(() =>
             {
-                this.ServicoDeToDo.AdicioneList(list).Wait();
+                this._servicoDeToDo.AdicioneList(list).Wait();
                 return RedirectToAction("Index");
             });
         }
@@ -125,7 +135,7 @@ namespace UMBIT.ToDo.Web.Controllers
         {
             return MiddlewareDeRetorno(() =>
             {
-                var result = this.ServicoDeToDo.ObtenhaList(id).Result;
+                var result = this._servicoDeToDo.ObtenhaList(id).Result;
                 return View(result);
             });
         }
@@ -138,7 +148,7 @@ namespace UMBIT.ToDo.Web.Controllers
                 if (!ModelState.IsValid)
                     return View(listTaskDTO);
 
-                this.ServicoDeToDo.EditList(listTaskDTO).Wait();
+                this._servicoDeToDo.EditList(listTaskDTO).Wait();
 
                 return RedirectToAction("Index");
 
@@ -151,9 +161,9 @@ namespace UMBIT.ToDo.Web.Controllers
             return MiddlewareDeRetorno(() =>
             {
 
-                var item = this.ServicoDeToDo.ObtenhaItem(id).Result;
+                var item = this._servicoDeToDo.ObtenhaItem(id).Result;
                 item.Status = status;
-                this.ServicoDeToDo.EditItem(item).Wait();
+                this._servicoDeToDo.EditItem(item).Wait();
 
                 return RedirectToAction("Index");
 
@@ -180,7 +190,7 @@ namespace UMBIT.ToDo.Web.Controllers
 
                 foreach (var group in groups)
                 {
-                    list.Add( $"{{ value: {group.Count()}, name: '{EnumeradorStatus.Parse<EnumeradorStatus>(group.Key.ToString()).GetStatus()}' }} ");
+                    list.Add($"{{ value: {group.Count()}, name: '{EnumeradorStatus.Parse<EnumeradorStatus>(group.Key.ToString()).GetStatus()}' }} ");
                 }
 
                 items = String.Join(",", list);

@@ -3603,6 +3603,19 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "UMBIT.ToDo.Fabrica/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc": "2.2.0"
+        },
+        "compile": {
+          "bin/placeholder/UMBIT.ToDo.Fabrica.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UMBIT.ToDo.Fabrica.dll": {}
+        }
       }
     }
   },
@@ -9945,6 +9958,11 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "UMBIT.ToDo.Fabrica/1.0.0": {
+      "type": "project",
+      "path": "../UMBIT.ToDo.Fabrica/UMBIT.ToDo.Fabrica.csproj",
+      "msbuildProject": "../UMBIT.ToDo.Fabrica/UMBIT.ToDo.Fabrica.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -9958,7 +9976,8 @@
       "Microsoft.Extensions.Configuration.Abstractions >= 9.0.0",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 9.0.0",
       "Microsoft.Extensions.Options >= 9.0.0",
-      "RabbitMQ.Client >= 7.0.0"
+      "RabbitMQ.Client >= 7.0.0",
+      "UMBIT.ToDo.Fabrica >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -9988,7 +10007,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Fabrica\\UMBIT.ToDo.Fabrica.csproj": {
+              "projectPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Fabrica\\UMBIT.ToDo.Fabrica.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

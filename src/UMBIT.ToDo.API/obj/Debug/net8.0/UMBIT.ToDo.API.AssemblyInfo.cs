@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UMBIT.ToDo.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+595ae1e3fa0c3626b9207d5e073083ea74b9339c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da8796cb4879e26d391eb48233f406bc77374b78")]
 [assembly: System.Reflection.AssemblyProductAttribute("UMBIT.ToDo.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UMBIT.ToDo.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

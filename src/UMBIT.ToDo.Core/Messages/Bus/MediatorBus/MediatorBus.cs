@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using UMBIT.ToDo.Core.API.Models.Fabrica;
 using UMBIT.ToDo.Core.Basicos.Excecoes;
 using UMBIT.ToDo.Core.Messages.Messagem;
 using UMBIT.ToDo.Core.Messages.Messagem.Applications.Commands;
@@ -8,6 +7,7 @@ using UMBIT.ToDo.Core.Messages.Messagem.Applications.Events;
 using UMBIT.ToDo.Core.Messages.Messagem.Applications.Query;
 using UMBIT.ToDo.Core.Notificacao.Interfaces;
 using UMBIT.ToDo.Core.Repositorio.Interfaces.Database;
+using UMBIT.ToDo.Fabrica.Models;
 
 namespace UMBIT.ToDo.Core.Messages.Bus.MediatorBus
 {

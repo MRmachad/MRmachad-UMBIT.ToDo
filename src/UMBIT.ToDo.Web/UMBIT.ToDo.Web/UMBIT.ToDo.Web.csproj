@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\UMBIT.ToDo.WebApi\UMBIT.ToDo.AspNet.csproj" />
     <ProjectReference Include="..\..\UMBIT.ToDo.Core\UMBIT.ToDo.Core.csproj" />
   </ItemGroup>
 

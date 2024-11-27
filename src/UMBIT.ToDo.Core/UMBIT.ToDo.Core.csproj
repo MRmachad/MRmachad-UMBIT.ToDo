@@ -20,7 +20,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="API\Atributos\" />
+	  <ProjectReference Include="..\UMBIT.ToDo.Fabrica\UMBIT.ToDo.Fabrica.csproj" />
 	</ItemGroup>
 
 </Project>

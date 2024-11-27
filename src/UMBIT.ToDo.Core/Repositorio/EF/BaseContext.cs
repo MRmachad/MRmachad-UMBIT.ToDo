@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.DependencyInjection;
 using System.Text.Json;
-using UMBIT.ToDo.Core.API.Models.Fabrica;
 using UMBIT.ToDo.Core.Basicos.Utilitarios;
 using UMBIT.ToDo.Core.Repositorio.Application.Events.Operacoes.Base;
 using UMBIT.ToDo.Core.Repositorio.Data;
 using UMBIT.ToDo.Core.Repositorio.Interfaces;
+using UMBIT.ToDo.Fabrica.Models;
 
 namespace UMBIT.ToDo.Core.Repositorio.EF
 {

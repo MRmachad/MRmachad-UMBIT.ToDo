@@ -17,8 +17,8 @@ using UMBIT.ToDo.Core.Seguranca.Models;
 using UMBIT.ToDo.Dominio.Application.Commands.Autenticacao;
 using UMBIT.ToDo.Dominio.Application.Events.Autenticacao;
 using UMBIT.ToDo.Dominio.Configuradores;
-using UMBIT.ToDo.Dominio.Entidades.Basicos;
-using UMBIT.ToDo.Dominio.Entidades.Token;
+using UMBIT.ToDo.Dominio.Entidades.Auth.Basicos;
+using UMBIT.ToDo.Dominio.Entidades.Auth.Token;
 
 namespace UMBIT.ToDo.Dominio.Application.Commands
 {
@@ -281,9 +281,9 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
 
                 var token = new ApiToken
                 {
-                    IdUsuario = usuarioId,
                     Kid = GereKid(),
                     Audience = audience,
+                    IdUsuario = usuarioId,
                     ApiSecret = GereApiSecret()
                 };
 

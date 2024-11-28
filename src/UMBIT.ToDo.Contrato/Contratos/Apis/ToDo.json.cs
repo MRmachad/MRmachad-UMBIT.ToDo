@@ -89,6 +89,10 @@ namespace UMBIT.Nexus.Auth.Contrato
         [Microsoft.AspNetCore.Mvc.HttpDelete, Microsoft.AspNetCore.Mvc.Route("lista-tarefa/{id}")]
         public abstract System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.IActionResult> RemoverListaTarefa(System.Guid id);
 
+        /// <returns>Success</returns>
+        [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("avise-tarefa/{id}")]
+        public abstract System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.IActionResult> AviseTarefa(System.Guid id);
+
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.0.7.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
@@ -158,6 +162,12 @@ namespace UMBIT.Nexus.Auth.Contrato
         [System.Text.Json.Serialization.JsonPropertyName("idToDoList")]
         public System.Guid? IdToDoList { get; set; }
 
+        [System.Text.Json.Serialization.JsonPropertyName("idUsuario")]
+        public System.Guid IdUsuario { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("nomeUsuario")]
+        public string NomeUsuario { get; set; }
+
         [System.Text.Json.Serialization.JsonPropertyName("nome")]
         public string Nome { get; set; }
 
@@ -217,6 +227,12 @@ namespace UMBIT.Nexus.Auth.Contrato
 
         [System.Text.Json.Serialization.JsonPropertyName("id")]
         public System.Guid Id { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("idUsuario")]
+        public System.Guid IdUsuario { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("nomeUsuario")]
+        public string NomeUsuario { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("nome")]
         public string Nome { get; set; }

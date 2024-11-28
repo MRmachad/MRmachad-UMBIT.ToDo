@@ -115,3 +115,7 @@ D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\ne
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocksc.WebAPI.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocksc.ASPNet.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocksc.WebAPI.pdb
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Basicos.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Basicos.pdb
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Message.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Message.pdb

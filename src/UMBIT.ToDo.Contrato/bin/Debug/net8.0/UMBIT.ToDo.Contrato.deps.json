@@ -2203,6 +2203,14 @@
           "System.Xml.XPath": "4.3.0"
         }
       },
+      "UMBIT.ToDo.BuildingBlocks.Basicos/1.0.0": {
+        "runtime": {
+          "UMBIT.ToDo.BuildingBlocks.Basicos.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "UMBIT.ToDo.BuildingBlocks.Core/1.0.0": {
         "dependencies": {
           "AutoMapper": "13.0.1",
@@ -2213,8 +2221,8 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0",
-          "Microsoft.Extensions.Options": "9.0.0",
           "RabbitMQ.Client": "7.0.0",
+          "UMBIT.ToDo.BuildingBlocks.Basicos": "1.0.0",
           "UMBIT.ToDo.BuildingBlocks.Fabrica": "1.0.0"
         },
         "runtime": {
@@ -2235,6 +2243,19 @@
           }
         }
       },
+      "UMBIT.ToDo.BuildingBlocks.Message/1.0.0": {
+        "dependencies": {
+          "MediatR": "12.4.1",
+          "RabbitMQ.Client": "7.0.0",
+          "UMBIT.ToDo.BuildingBlocks.Core": "1.0.0"
+        },
+        "runtime": {
+          "UMBIT.ToDo.BuildingBlocks.Message.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "UMBIT.ToDo.BuildingBlocksc.WebAPI/1.0.0": {
         "dependencies": {
           "AutoMapper": "13.0.1",
@@ -2247,6 +2268,7 @@
           "Microsoft.Extensions.Options": "9.0.0",
           "RabbitMQ.Client": "7.0.0",
           "UMBIT.ToDo.BuildingBlocks.Core": "1.0.0",
+          "UMBIT.ToDo.BuildingBlocks.Message": "1.0.0",
           "UMBIT.ToDo.Core": "1.0.0"
         },
         "runtime": {
@@ -3678,12 +3700,22 @@
       "path": "system.xml.xpath.xdocument/4.3.0",
       "hashPath": "system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
     },
+    "UMBIT.ToDo.BuildingBlocks.Basicos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "UMBIT.ToDo.BuildingBlocks.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "UMBIT.ToDo.BuildingBlocks.Fabrica/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UMBIT.ToDo.BuildingBlocks.Message/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

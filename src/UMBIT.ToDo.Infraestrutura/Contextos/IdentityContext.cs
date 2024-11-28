@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using UMBIT.ToDo.Dominio.Entidades.Basicos;
+using UMBIT.ToDo.Dominio.Entidades.Auth.Basicos;
 
 namespace TSE.Nexus.Auth.Infraestrutura.Contexto
 {

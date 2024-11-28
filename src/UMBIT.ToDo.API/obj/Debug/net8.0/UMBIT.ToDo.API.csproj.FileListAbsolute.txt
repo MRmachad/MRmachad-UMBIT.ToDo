@@ -201,3 +201,14 @@ D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\ref\UMBIT.ToDo.API.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocksc.WebAPI.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocksc.WebAPI.pdb
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\Microsoft.AspNet.SignalR.Client.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Basicos.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Basicos.pdb
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\ConfigurationDebugViewEndpoint.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Message.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.SignalR.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.SignalR.pdb
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Message.pdb

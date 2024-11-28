@@ -4,7 +4,7 @@ using TSE.Nexus.Auth.API.Extensao;
 using TSE.Nexus.Auth.Infraestrutura.Contexto;
 using UMBIT.ToDo.Core.Basicos.Utilitarios;
 using UMBIT.ToDo.Dominio.Configuradores;
-using UMBIT.ToDo.Dominio.Entidades.Basicos;
+using UMBIT.ToDo.Dominio.Entidades.Auth.Basicos;
 
 namespace TSE.Nexus.Auth.API.Bootstrapper
 {

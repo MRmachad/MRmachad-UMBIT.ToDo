@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using UMBIT.ToDo.Core.Messages.Messagem.Interfaces;
 using UMBIT.ToDo.Dominio.Application.Events.Autenticacao;
-using UMBIT.ToDo.Dominio.Entidades.Basicos;
+using UMBIT.ToDo.Dominio.Entidades.Auth.Basicos;
 
 namespace UMBIT.ToDo.Dominio.Application.Events
 {

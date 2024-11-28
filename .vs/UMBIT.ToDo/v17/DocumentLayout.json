@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{08F5A47E-B095-400B-9920-A54A7465F09D}|src\\UMBIT.ToDo.BuildingBlocksc.ASPNet\\UMBIT.ToDo.BuildingBlocksc.ASPNet.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.buildingblocksc.aspnet\\middlewares\\servicoexternomiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08F5A47E-B095-400B-9920-A54A7465F09D}|src\\UMBIT.ToDo.BuildingBlocksc.ASPNet\\UMBIT.ToDo.BuildingBlocksc.ASPNet.csproj|solutionrelative:src\\umbit.todo.buildingblocksc.aspnet\\middlewares\\servicoexternomiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AAFC1FA7-BD32-4573-87BD-9DBCDC30B27B}|src\\UMBIT.ToDo.BuildingBlocks.Message\\UMBIT.ToDo.BuildingBlocks.Message.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.buildingblocks.message\\bus\\messagerbus\\imessagerbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AAFC1FA7-BD32-4573-87BD-9DBCDC30B27B}|src\\UMBIT.ToDo.BuildingBlocks.Message\\UMBIT.ToDo.BuildingBlocks.Message.csproj|solutionrelative:src\\umbit.todo.buildingblocks.message\\bus\\messagerbus\\imessagerbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAFC1FA7-BD32-4573-87BD-9DBCDC30B27B}|src\\UMBIT.ToDo.BuildingBlocks.Message\\UMBIT.ToDo.BuildingBlocks.Message.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.buildingblocks.message\\bus\\messagerbus\\messagerbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AAFC1FA7-BD32-4573-87BD-9DBCDC30B27B}|src\\UMBIT.ToDo.BuildingBlocks.Message\\UMBIT.ToDo.BuildingBlocks.Message.csproj|solutionrelative:src\\umbit.todo.buildingblocks.message\\bus\\messagerbus\\messagerbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAFC1FA7-BD32-4573-87BD-9DBCDC30B27B}|src\\UMBIT.ToDo.BuildingBlocks.Message\\UMBIT.ToDo.BuildingBlocks.Message.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.buildingblocks.message\\bus\\messagerbus\\models\\tsemessagebusconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AAFC1FA7-BD32-4573-87BD-9DBCDC30B27B}|src\\UMBIT.ToDo.BuildingBlocks.Message\\UMBIT.ToDo.BuildingBlocks.Message.csproj|solutionrelative:src\\umbit.todo.buildingblocks.message\\bus\\messagerbus\\models\\tsemessagebusconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|solutionrelative:src\\umbit.todo.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|solutionrelative:src\\umbit.todo.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1756A03-D2C0-4652-8D57-623F57A0AE8F}|src\\UMBIT.ToDo.BuildingBlocks.SignalR\\UMBIT.ToDo.BuildingBlocks.SignalR.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.buildingblocks.signalr\\modelos\\signalclientsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1756A03-D2C0-4652-8D57-623F57A0AE8F}|src\\UMBIT.ToDo.BuildingBlocks.SignalR\\UMBIT.ToDo.BuildingBlocks.SignalR.csproj|solutionrelative:src\\umbit.todo.buildingblocks.signalr\\modelos\\signalclientsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,23 +34,88 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IMessagerBus.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.BuildingBlocks.Message\\Bus\\MessagerBus\\IMessagerBus.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.BuildingBlocks.Message\\Bus\\MessagerBus\\IMessagerBus.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.BuildingBlocks.Message\\Bus\\MessagerBus\\IMessagerBus.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.BuildingBlocks.Message\\Bus\\MessagerBus\\IMessagerBus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T19:39:44.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MessagerBus.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.BuildingBlocks.Message\\Bus\\MessagerBus\\MessagerBus.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.BuildingBlocks.Message\\Bus\\MessagerBus\\MessagerBus.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.BuildingBlocks.Message\\Bus\\MessagerBus\\MessagerBus.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.BuildingBlocks.Message\\Bus\\MessagerBus\\MessagerBus.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBsAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T19:39:24.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TSEMessageBusConnectionFactory.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.BuildingBlocks.Message\\Bus\\MessagerBus\\Models\\TSEMessageBusConnectionFactory.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.BuildingBlocks.Message\\Bus\\MessagerBus\\Models\\TSEMessageBusConnectionFactory.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.BuildingBlocks.Message\\Bus\\MessagerBus\\Models\\TSEMessageBusConnectionFactory.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.BuildingBlocks.Message\\Bus\\MessagerBus\\Models\\TSEMessageBusConnectionFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T19:39:11.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.API\\appsettings.Development.json",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\appsettings.Development.json",
+              "RelativeToolTip": "src\\UMBIT.ToDo.API\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-28T19:38:42.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SignalClientSettings.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.BuildingBlocks.SignalR\\Modelos\\SignalClientSettings.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.BuildingBlocks.SignalR\\Modelos\\SignalClientSettings.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.BuildingBlocks.SignalR\\Modelos\\SignalClientSettings.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.BuildingBlocks.SignalR\\Modelos\\SignalClientSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T19:37:44.314Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ServicoExternoMiddleware.cs",
-              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.BuildingBlocksc.ASPNet\\Middlewares\\ServicoExternoMiddleware.cs",
-              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.BuildingBlocksc.ASPNet\\Middlewares\\ServicoExternoMiddleware.cs",
-              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.BuildingBlocksc.ASPNet\\Middlewares\\ServicoExternoMiddleware.cs",
-              "RelativeToolTip": "src\\UMBIT.ToDo.BuildingBlocksc.ASPNet\\Middlewares\\ServicoExternoMiddleware.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Program.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.API\\Program.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Program.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T12:26:29.499Z",
+              "WhenOpened": "2024-11-28T19:37:40.546Z",
               "EditorCaption": ""
             }
           ]

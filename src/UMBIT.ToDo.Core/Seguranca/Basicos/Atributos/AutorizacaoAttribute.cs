@@ -12,12 +12,16 @@ namespace UMBIT.ToDo.Core.Seguranca.Basicos.Atributos
     public class AutorizacaoAttribute : Attribute, IAuthorizationFilter
     {
 
+        private bool ApenasADM { get;set; }= false;
         private List<IPermissao> Permissoes { get; set; } = new();
 
         public AutorizacaoAttribute()
         {
         }
-
+        public AutorizacaoAttribute(bool apenasAdm = false)
+        {
+            this.ApenasADM = apenasAdm; 
+        }
         public AutorizacaoAttribute(Type TPermissao, Type TEnum, params int[] indentificadoresDePermissao)
         {
             try
@@ -47,6 +51,8 @@ namespace UMBIT.ToDo.Core.Seguranca.Basicos.Atributos
             {
                 var contextoPrincipal = new ContextoPrincipal(context.HttpContext);
                 var principal = contextoPrincipal.ObtenhaPrincipal();
+
+                if (ApenasADM && principal != null && principal.EhAdministrador()) return;
 
                 bool isAuthorized = principal != null && PossuiPermissoesRequeridas(principal);
 

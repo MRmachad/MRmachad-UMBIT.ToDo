@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using UMBIT.Nexus.Auth.Contrato;
+using UMBIT.ToDo.Core.Seguranca.Basicos.Atributos;
 using UMBIT.ToDo.Dominio.Application.Commands.Usuarios;
 using UMBIT.ToDo.Dominio.Application.Queries.Usuarios;
-using UMBIT.ToDo.Dominio.Entidades.Basicos;
+using UMBIT.ToDo.Dominio.Entidades.Auth.Basicos;
 
 namespace UMBIT.ToDo.API.Controllers
 {
@@ -28,12 +29,14 @@ namespace UMBIT.ToDo.API.Controllers
             return UMBITResponse(response);
         }
 
+        [Autorizacao(true)]
         public override async Task<IActionResult> RemoverUsuario(Guid id)
         {
             var resposta = await Mediator.EnviarComando(new RemoverUsuarioCommand(id));
             return UMBITResponse(resposta);
         }
 
+        [Autorizacao(true)]
         public override async Task<ActionResult<ICollection<UsuarioResponseDTO>>> Usuarios()
         {
             var usuarios = await Mediator.EnviarQuery<ObterUsuariosQuery, IQueryable<Usuario>>(new ObterUsuariosQuery());

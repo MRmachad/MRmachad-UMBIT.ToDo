@@ -1,21 +1,30 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UMBIT.Nexus.Auth.Contrato;
 using UMBIT.Nexus.Auth.Dominio.Application.Queries.ToDo;
-using UMBIT.ToDo.API.DTOs;
-using UMBIT.ToDo.Core.API.Controllers;
+using UMBIT.ToDo.Core.Seguranca.Basicos.Atributos;
+using UMBIT.ToDo.Core.Seguranca.Models;
 using UMBIT.ToDo.Dominio.Application.Commands.ToDo;
-using UMBIT.ToDo.Dominio.Entidades;
-using UMBIT.ToDo.Dominio.Interfaces;
+using UMBIT.ToDo.Dominio.Entidades.ToDo;
 
 namespace UMBIT.ToDo.API.Controllers
-{    public class ToDoController : ToDoControllerBase
+{
+    [Authorize]
+    public class ToDoController : ToDoControllerBase
     {
-        public ToDoController(IServiceProvider serviceProvider) : base(serviceProvider)
+        private ContextoPrincipal _contextoPrincipal;
+        public ToDoController(IServiceProvider serviceProvider, ContextoPrincipal contextoPrincipal) : base(serviceProvider)
         {
+            _contextoPrincipal = contextoPrincipal;
         }
+
         public override async Task<ActionResult<ICollection<TarefaDTO>>> ObterTarefa()
         {
             var response = await Mediator.EnviarQuery<ObterToDoQuery, IQueryable<ToDoItem>>(new ObterToDoQuery());
+
+            if (!_contextoPrincipal.ObtenhaPrincipal()!.EhAdministrador())
+                response.Dados!.Where(t => t.IdUsuario.ToString() == _contextoPrincipal.ObtenhaPrincipal()!.Id);
+
             return UMBITCollectionResponseEntity<TarefaDTO, ToDoItem>(response);
         }
         public override async Task<IActionResult> AdicionarTarefa([FromBody] AdicionarTarefaRequest request)
@@ -75,6 +84,10 @@ namespace UMBIT.ToDo.API.Controllers
         public override async Task<ActionResult<ICollection<ListaDTO>>> ObterListaTarefa()
         {
             var response = await Mediator.EnviarQuery<ObterToDoListQuery, IQueryable<ToDoList>>(new ObterToDoListQuery());
+
+            if (!_contextoPrincipal.ObtenhaPrincipal()!.EhAdministrador())
+                response.Dados!.Where(t => t.IdUsuario.ToString() == _contextoPrincipal.ObtenhaPrincipal()!.Id);
+
             return UMBITCollectionResponseEntity<ListaDTO, ToDoList>(response);
         }
 
@@ -115,6 +128,19 @@ namespace UMBIT.ToDo.API.Controllers
             var command = Mapper.Map<DeleteToDoListCommand>(new DeleteToDoListCommand()
             {
                 Id = id
+            });
+
+            var response = await Mediator.EnviarComando(command);
+
+            return UMBITResponse(response);
+        }
+
+        [Autorizacao(true)]
+        public override async Task<IActionResult> AviseTarefa(Guid id)
+        {
+            var command = Mapper.Map<AviseToDoCommand>(new AviseToDoCommand()
+            {
+                IdUsuario = id
             });
 
             var response = await Mediator.EnviarComando(command);

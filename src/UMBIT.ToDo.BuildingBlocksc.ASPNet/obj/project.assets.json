@@ -3603,6 +3603,16 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "UMBIT.ToDo.BuildingBlocks.Basicos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/UMBIT.ToDo.BuildingBlocks.Basicos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UMBIT.ToDo.BuildingBlocks.Basicos.dll": {}
+        }
+      },
       "UMBIT.ToDo.BuildingBlocks.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -3615,8 +3625,8 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0",
-          "Microsoft.Extensions.Options": "9.0.0",
-          "RabbitMQ.Client": "7.0.0",
+          "RabbitMQ.Client": "6.8.1",
+          "UMBIT.ToDo.BuildingBlocks.Basicos": "1.0.0",
           "UMBIT.ToDo.BuildingBlocks.Fabrica": "1.0.0"
         },
         "compile": {
@@ -3637,6 +3647,21 @@
         },
         "runtime": {
           "bin/placeholder/UMBIT.ToDo.BuildingBlocks.Fabrica.dll": {}
+        }
+      },
+      "UMBIT.ToDo.BuildingBlocks.Message/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "MediatR": "12.4.1",
+          "RabbitMQ.Client": "6.8.1",
+          "UMBIT.ToDo.BuildingBlocks.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UMBIT.ToDo.BuildingBlocks.Message.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UMBIT.ToDo.BuildingBlocks.Message.dll": {}
         }
       },
       "UMBIT.ToDo.BuildingBlocks.WebAPI/1.0.0": {
@@ -3676,6 +3701,7 @@
           "Microsoft.Extensions.Options": "9.0.0",
           "RabbitMQ.Client": "7.0.0",
           "UMBIT.ToDo.BuildingBlocks.Core": "1.0.0",
+          "UMBIT.ToDo.BuildingBlocks.Message": "1.0.0",
           "UMBIT.ToDo.Core": "1.0.0"
         },
         "compile": {
@@ -10063,6 +10089,11 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
+    "UMBIT.ToDo.BuildingBlocks.Basicos/1.0.0": {
+      "type": "project",
+      "path": "../UMBIT.ToDo.BuildingBlocks.Basicos/UMBIT.ToDo.BuildingBlocks.Basicos.csproj",
+      "msbuildProject": "../UMBIT.ToDo.BuildingBlocks.Basicos/UMBIT.ToDo.BuildingBlocks.Basicos.csproj"
+    },
     "UMBIT.ToDo.BuildingBlocks.Core/1.0.0": {
       "type": "project",
       "path": "../UMBIT.ToDo.Core/UMBIT.ToDo.BuildingBlocks.Core.csproj",
@@ -10072,6 +10103,11 @@
       "type": "project",
       "path": "../UMBIT.ToDo.Fabrica/UMBIT.ToDo.BuildingBlocks.Fabrica.csproj",
       "msbuildProject": "../UMBIT.ToDo.Fabrica/UMBIT.ToDo.BuildingBlocks.Fabrica.csproj"
+    },
+    "UMBIT.ToDo.BuildingBlocks.Message/1.0.0": {
+      "type": "project",
+      "path": "../UMBIT.ToDo.BuildingBlocks.Message/UMBIT.ToDo.BuildingBlocks.Message.csproj",
+      "msbuildProject": "../UMBIT.ToDo.BuildingBlocks.Message/UMBIT.ToDo.BuildingBlocks.Message.csproj"
     },
     "UMBIT.ToDo.BuildingBlocks.WebAPI/1.0.0": {
       "type": "project",

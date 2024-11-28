@@ -3,8 +3,80 @@
   "WorkspaceRootPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{08F5A47E-B095-400B-9920-A54A7465F09D}|src\\UMBIT.ToDo.BuildingBlocksc.ASPNet\\UMBIT.ToDo.BuildingBlocksc.ASPNet.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.buildingblocksc.aspnet\\middlewares\\servicoexternomiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08F5A47E-B095-400B-9920-A54A7465F09D}|src\\UMBIT.ToDo.BuildingBlocksc.ASPNet\\UMBIT.ToDo.BuildingBlocksc.ASPNet.csproj|solutionrelative:src\\umbit.todo.buildingblocksc.aspnet\\middlewares\\servicoexternomiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.api\\controllers\\autenticacaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|solutionrelative:src\\umbit.todo.api\\controllers\\autenticacaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|solutionrelative:src\\umbit.todo.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1756A03-D2C0-4652-8D57-623F57A0AE8F}|src\\UMBIT.ToDo.BuildingBlocks.SignalR\\UMBIT.ToDo.BuildingBlocks.SignalR.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.buildingblocks.signalr\\bootstrapper\\signalrconfigurate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1756A03-D2C0-4652-8D57-623F57A0AE8F}|src\\UMBIT.ToDo.BuildingBlocks.SignalR\\UMBIT.ToDo.BuildingBlocks.SignalR.csproj|solutionrelative:src\\umbit.todo.buildingblocks.signalr\\bootstrapper\\signalrconfigurate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A0E6275-86E8-4905-82F5-4B5C1C4E4B53}|src\\UMBIT.ToDo.Core\\UMBIT.ToDo.BuildingBlocks.Core.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.core\\workers\\bootstrapper\\workersconfigurate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A0E6275-86E8-4905-82F5-4B5C1C4E4B53}|src\\UMBIT.ToDo.Core\\UMBIT.ToDo.BuildingBlocks.Core.csproj|solutionrelative:src\\umbit.todo.core\\workers\\bootstrapper\\workersconfigurate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.api\\hub\\apphub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|solutionrelative:src\\umbit.todo.api\\hub\\apphub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.api\\bootstrapper\\segurancaconfigurate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|solutionrelative:src\\umbit.todo.api\\bootstrapper\\segurancaconfigurate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|solutionrelative:src\\umbit.todo.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9386937F-CB18-434D-A9FC-6ABC623D9AB6}|src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.web\\umbit.todo.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9386937F-CB18-434D-A9FC-6ABC623D9AB6}|src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web.csproj|solutionrelative:src\\umbit.todo.web\\umbit.todo.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.api\\controllers\\todocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|solutionrelative:src\\umbit.todo.api\\controllers\\todocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.api\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|solutionrelative:src\\umbit.todo.api\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A0E6275-86E8-4905-82F5-4B5C1C4E4B53}|src\\UMBIT.ToDo.Core\\UMBIT.ToDo.BuildingBlocks.Core.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.core\\seguranca\\basicos\\atributos\\autorizacaoattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A0E6275-86E8-4905-82F5-4B5C1C4E4B53}|src\\UMBIT.ToDo.Core\\UMBIT.ToDo.BuildingBlocks.Core.csproj|solutionrelative:src\\umbit.todo.core\\seguranca\\basicos\\atributos\\autorizacaoattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4325DA91-ED56-40E0-AB30-9BBFA4962E45}|src\\UMBIT.ToDo.Dominio\\UMBIT.ToDo.Dominio.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.dominio\\application\\commands\\todocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4325DA91-ED56-40E0-AB30-9BBFA4962E45}|src\\UMBIT.ToDo.Dominio\\UMBIT.ToDo.Dominio.csproj|solutionrelative:src\\umbit.todo.dominio\\application\\commands\\todocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4325DA91-ED56-40E0-AB30-9BBFA4962E45}|src\\UMBIT.ToDo.Dominio\\UMBIT.ToDo.Dominio.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.dominio\\application\\commands\\todo\\avisetodocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4325DA91-ED56-40E0-AB30-9BBFA4962E45}|src\\UMBIT.ToDo.Dominio\\UMBIT.ToDo.Dominio.csproj|solutionrelative:src\\umbit.todo.dominio\\application\\commands\\todo\\avisetodocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4325DA91-ED56-40E0-AB30-9BBFA4962E45}|src\\UMBIT.ToDo.Dominio\\UMBIT.ToDo.Dominio.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.dominio\\application\\commands\\autenticacaocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4325DA91-ED56-40E0-AB30-9BBFA4962E45}|src\\UMBIT.ToDo.Dominio\\UMBIT.ToDo.Dominio.csproj|solutionrelative:src\\umbit.todo.dominio\\application\\commands\\autenticacaocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4325DA91-ED56-40E0-AB30-9BBFA4962E45}|src\\UMBIT.ToDo.Dominio\\UMBIT.ToDo.Dominio.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.dominio\\application\\commands\\usuarioscommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4325DA91-ED56-40E0-AB30-9BBFA4962E45}|src\\UMBIT.ToDo.Dominio\\UMBIT.ToDo.Dominio.csproj|solutionrelative:src\\umbit.todo.dominio\\application\\commands\\usuarioscommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D84AD6D-134A-458B-B713-BDB2F55AF20C}|src\\UMBIT.ToDo.Contrato\\UMBIT.ToDo.Contrato.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.contrato\\contratos\\apis\\todo.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3D84AD6D-134A-458B-B713-BDB2F55AF20C}|src\\UMBIT.ToDo.Contrato\\UMBIT.ToDo.Contrato.csproj|solutionrelative:src\\umbit.todo.contrato\\contratos\\apis\\todo.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D84AD6D-134A-458B-B713-BDB2F55AF20C}|src\\UMBIT.ToDo.Contrato\\UMBIT.ToDo.Contrato.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.contrato\\contratos\\apis\\todo.json.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D84AD6D-134A-458B-B713-BDB2F55AF20C}|src\\UMBIT.ToDo.Contrato\\UMBIT.ToDo.Contrato.csproj|solutionrelative:src\\umbit.todo.contrato\\contratos\\apis\\todo.json.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4325DA91-ED56-40E0-AB30-9BBFA4962E45}|src\\UMBIT.ToDo.Dominio\\UMBIT.ToDo.Dominio.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.dominio\\entidades\\todo\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4325DA91-ED56-40E0-AB30-9BBFA4962E45}|src\\UMBIT.ToDo.Dominio\\UMBIT.ToDo.Dominio.csproj|solutionrelative:src\\umbit.todo.dominio\\entidades\\todo\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4325DA91-ED56-40E0-AB30-9BBFA4962E45}|src\\UMBIT.ToDo.Dominio\\UMBIT.ToDo.Dominio.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.dominio\\workers\\avisoworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4325DA91-ED56-40E0-AB30-9BBFA4962E45}|src\\UMBIT.ToDo.Dominio\\UMBIT.ToDo.Dominio.csproj|solutionrelative:src\\umbit.todo.dominio\\workers\\avisoworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +86,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,15 +94,249 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ServicoExternoMiddleware.cs",
-              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.BuildingBlocksc.ASPNet\\Middlewares\\ServicoExternoMiddleware.cs",
-              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.BuildingBlocksc.ASPNet\\Middlewares\\ServicoExternoMiddleware.cs",
-              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.BuildingBlocksc.ASPNet\\Middlewares\\ServicoExternoMiddleware.cs",
-              "RelativeToolTip": "src\\UMBIT.ToDo.BuildingBlocksc.ASPNet\\Middlewares\\ServicoExternoMiddleware.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "SignalRConfigurate.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.BuildingBlocks.SignalR\\Bootstrapper\\SignalRConfigurate.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.BuildingBlocks.SignalR\\Bootstrapper\\SignalRConfigurate.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.BuildingBlocks.SignalR\\Bootstrapper\\SignalRConfigurate.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.BuildingBlocks.SignalR\\Bootstrapper\\SignalRConfigurate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T12:26:29.499Z",
+              "WhenOpened": "2024-11-28T19:34:33.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WorkersConfigurate.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Core\\Workers\\Bootstrapper\\WorkersConfigurate.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.Core\\Workers\\Bootstrapper\\WorkersConfigurate.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Core\\Workers\\Bootstrapper\\WorkersConfigurate.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.Core\\Workers\\Bootstrapper\\WorkersConfigurate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T19:33:18.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppHub.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Hub\\AppHub.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.API\\Hub\\AppHub.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Hub\\AppHub.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.API\\Hub\\AppHub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T19:33:01.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SegurancaConfigurate.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Bootstrapper\\SegurancaConfigurate.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.API\\Bootstrapper\\SegurancaConfigurate.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Bootstrapper\\SegurancaConfigurate.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.API\\Bootstrapper\\SegurancaConfigurate.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAAsAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T19:29:28.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.API\\appsettings.Development.json",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\appsettings.Development.json",
+              "RelativeToolTip": "src\\UMBIT.ToDo.API\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-28T19:28:20.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Program.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.API\\Program.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Program.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T19:20:49.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\Program.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\Program.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\Program.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\Program.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T19:20:31.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AutenticacaoController.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Controllers\\AutenticacaoController.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.API\\Controllers\\AutenticacaoController.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Controllers\\AutenticacaoController.cs*",
+              "RelativeToolTip": "src\\UMBIT.ToDo.API\\Controllers\\AutenticacaoController.cs*",
+              "ViewState": "AgIAADsAAAAAAAAAAAAswEoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T19:12:30.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UsuariosController.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Controllers\\UsuariosController.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.API\\Controllers\\UsuariosController.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Controllers\\UsuariosController.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.API\\Controllers\\UsuariosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T19:07:16.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AutorizacaoAttribute.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Core\\Seguranca\\Basicos\\Atributos\\AutorizacaoAttribute.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.Core\\Seguranca\\Basicos\\Atributos\\AutorizacaoAttribute.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Core\\Seguranca\\Basicos\\Atributos\\AutorizacaoAttribute.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.Core\\Seguranca\\Basicos\\Atributos\\AutorizacaoAttribute.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwDoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T19:06:31.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AutenticacaoCommandHandler.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Dominio\\Application\\Commands\\AutenticacaoCommandHandler.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.Dominio\\Application\\Commands\\AutenticacaoCommandHandler.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Dominio\\Application\\Commands\\AutenticacaoCommandHandler.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.Dominio\\Application\\Commands\\AutenticacaoCommandHandler.cs",
+              "ViewState": "AgIAAPEAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T18:57:22.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "UsuariosCommandHandler.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Dominio\\Application\\Commands\\UsuariosCommandHandler.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.Dominio\\Application\\Commands\\UsuariosCommandHandler.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Dominio\\Application\\Commands\\UsuariosCommandHandler.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.Dominio\\Application\\Commands\\UsuariosCommandHandler.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T18:57:15.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ToDoCommandHandler.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Dominio\\Application\\Commands\\ToDoCommandHandler.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.Dominio\\Application\\Commands\\ToDoCommandHandler.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Dominio\\Application\\Commands\\ToDoCommandHandler.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.Dominio\\Application\\Commands\\ToDoCommandHandler.cs",
+              "ViewState": "AgIAAPEAAAAAAAAAAADwvxIBAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T18:55:48.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AviseToDoCommand.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Dominio\\Application\\Commands\\ToDo\\AviseToDoCommand.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.Dominio\\Application\\Commands\\ToDo\\AviseToDoCommand.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Dominio\\Application\\Commands\\ToDo\\AviseToDoCommand.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.Dominio\\Application\\Commands\\ToDo\\AviseToDoCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T18:55:31.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ToDo.json.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Contrato\\Contratos\\Apis\\ToDo.json.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.Contrato\\Contratos\\Apis\\ToDo.json.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Contrato\\Contratos\\Apis\\ToDo.json.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.Contrato\\Contratos\\Apis\\ToDo.json.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T18:54:04.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ToDoItem.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Dominio\\Entidades\\ToDo\\ToDoItem.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.Dominio\\Entidades\\ToDo\\ToDoItem.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Dominio\\Entidades\\ToDo\\ToDoItem.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.Dominio\\Entidades\\ToDo\\ToDoItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T18:53:24.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ToDo.json",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Contrato\\Contratos\\Apis\\ToDo.json",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.Contrato\\Contratos\\Apis\\ToDo.json",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Contrato\\Contratos\\Apis\\ToDo.json",
+              "RelativeToolTip": "src\\UMBIT.ToDo.Contrato\\Contratos\\Apis\\ToDo.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAP4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-28T18:49:59.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ToDoController.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Controllers\\ToDoController.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.API\\Controllers\\ToDoController.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\Controllers\\ToDoController.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.API\\Controllers\\ToDoController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAIkAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T18:49:31.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AvisoWorker.cs",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Dominio\\Workers\\AvisoWorker.cs",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.Dominio\\Workers\\AvisoWorker.cs",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Dominio\\Workers\\AvisoWorker.cs",
+              "RelativeToolTip": "src\\UMBIT.ToDo.Dominio\\Workers\\AvisoWorker.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T18:46:36.596Z",
               "EditorCaption": ""
             }
           ]

@@ -1,7 +1,11 @@
-﻿using MediatR;
+﻿using Azure;
+using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using System.Collections.Generic;
+using TSE.Nexus.SDK.Messages.Bus.MessagerBus;
+using UMBIT.ToDo.Core.Basicos.Excecoes;
 using UMBIT.ToDo.Core.Messages.Messagem;
 using UMBIT.ToDo.Core.Messages.Messagem.Applications.Commands;
 using UMBIT.ToDo.Core.Messages.Messagem.Interfaces;
@@ -11,8 +15,9 @@ using UMBIT.ToDo.Core.Seguranca.Models;
 using UMBIT.ToDo.Dominio.Application.Commands.ToDo;
 using UMBIT.ToDo.Dominio.Basicos.Enum;
 using UMBIT.ToDo.Dominio.Configuradores;
-using UMBIT.ToDo.Dominio.Entidades;
-using UMBIT.ToDo.Dominio.Entidades.Basicos;
+using UMBIT.ToDo.Dominio.Entidades.Auth.Basicos;
+using UMBIT.ToDo.Dominio.Entidades.ToDo;
+using UMBIT.ToDo.Dominio.Workers;
 
 namespace UMBIT.ToDo.Dominio.Application.Commands
 {
@@ -24,11 +29,13 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
         IUMBITCommandRequestHandler<DeleteToDoListCommand>,
         IUMBITCommandRequestHandler<EditeToDoItemCommand>,
         IUMBITCommandRequestHandler<EditeToDoListItemCommand>,
-        IUMBITCommandRequestHandler<FinalizeToDoItemCommand>
+        IUMBITCommandRequestHandler<FinalizeToDoItemCommand>,
+        IUMBITCommandRequestHandler<AviseToDoCommand>
     {
         private readonly UserManager<Usuario> _userManager;
         private readonly ContextoPrincipal _contextoPrincipal;
         private readonly IOptions<IdentitySettings> _identitySettings;
+        private readonly IMessagerBus _messagerBus;
 
         private readonly IRepositorio<ToDoItem> RepositorioToDoItem;
         private readonly IRepositorio<ToDoList> RepositorioToDoList;
@@ -38,14 +45,35 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
             INotificador notificador,
             ContextoPrincipal contextoPrincipal,
             UserManager<Usuario> userManager,
-            IOptions<IdentitySettings> identitySettings) : base(unidadeDeTrabalho, notificador)
+            IOptions<IdentitySettings> identitySettings,
+            IMessagerBus messagerBus) : base(unidadeDeTrabalho, notificador)
         {
             _userManager = userManager;
             _identitySettings = identitySettings;
             _contextoPrincipal = contextoPrincipal;
+            _messagerBus = messagerBus;
             RepositorioToDoList = UnidadeDeTrabalho.ObterRepositorio<ToDoList>();
             RepositorioToDoItem = UnidadeDeTrabalho.ObterRepositorio<ToDoItem>();
 
+        }
+
+        public async Task<UMBITMessageResponse> Handle(AviseToDoCommand request, CancellationToken cancellationToken)
+        {
+            try
+            {
+                if (!(await this.RepositorioToDoItem.Query().AnyAsync(t => t.IdUsuario == request.IdUsuario && (t.Status == EnumeradorStatus.EmAndamento || t.Status == EnumeradorStatus.Criado))))
+                {
+                    this.AdicionarErro("O usuario não pode ser notificado pois não há tarefas pendentes");
+                    return CommandResponse();
+                }
+
+                this._messagerBus.Publish<AvisoWorker.AvisoMessage>(new AvisoWorker.AvisoMessage(request.IdUsuario)); 
+                return CommandResponse();
+            }
+            catch (Exception ex)
+            {
+                throw new ExcecaoBasicaUMBIT("Erro ao realizar aviso",ex);
+            }
         }
 
         async Task<UMBITMessageResponse> IRequestHandler<AdicioneToDoItemCommand, UMBITMessageResponse>.Handle(AdicioneToDoItemCommand request, CancellationToken cancellationToken)
@@ -60,8 +88,9 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
                     IdToDoList = request.IdToDoList,
                     DataFim = request.DataFim,
                     DataInicio = request.DataInicio,
+                    NomeUsuario = _contextoPrincipal.ObtenhaPrincipal()!.User,
+                    IdUsuario = new Guid(_contextoPrincipal.ObtenhaPrincipal()!.Id),
                     Status = Enum.Parse<EnumeradorStatus>(request.Status.ToString()),
-
                 };
 
                 await RepositorioToDoItem.Adicionar(toDoItem);
@@ -70,10 +99,9 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
                 return CommandResponse();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw new ExcecaoBasicaUMBIT("Erro ao adicionar item", ex);
             }
         }
 
@@ -85,6 +113,8 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
 
                 toDolist.Id = Guid.NewGuid();
                 toDolist.Nome = request.Nome;
+                toDolist.NomeUsuario = _contextoPrincipal.ObtenhaPrincipal()!.User;
+                toDolist.IdUsuario = new Guid(_contextoPrincipal.ObtenhaPrincipal()!.Id);
 
                 await RepositorioToDoList.Adicionar(toDolist);
 
@@ -93,13 +123,14 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
                     {
                         var toDoItem = new ToDoItem()
                         {
-
                             Nome = toDoItemList.Nome,
                             IdToDoList = toDolist.Id,
                             DataFim = toDoItemList.DataFim,
                             Descricao = toDoItemList.Descricao,
                             DataInicio = toDoItemList.DataInicio,
                             Index = request.Items.IndexOf(toDoItemList),
+                            NomeUsuario = _contextoPrincipal.ObtenhaPrincipal()!.User,
+                            IdUsuario = new Guid(_contextoPrincipal.ObtenhaPrincipal()!.Id),
                             Status = Enum.Parse<EnumeradorStatus>(toDoItemList.Status.ToString()),
 
                         };
@@ -110,10 +141,9 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
                 await UnidadeDeTrabalho.SalveAlteracoes();
                 return CommandResponse();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw new ExcecaoBasicaUMBIT("Erro ao adicionar lista", ex);
             }
         }
 
@@ -121,16 +151,24 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
         {
             try
             {
+
                 var item = await RepositorioToDoItem.Query().SingleAsync(t => t.Id == request.Id);
+
+                if (_contextoPrincipal.ObtenhaPrincipal() != null && !_contextoPrincipal.ObtenhaPrincipal()!.EhAdministrador() && item.IdUsuario.ToString() != _contextoPrincipal.ObtenhaPrincipal()!.Id)
+                {
+                    AdicionarErro("O Recurso só pode ser acessado pelo usuario que o criou");
+                    return CommandResponse();
+                }
+
                 RepositorioToDoItem.Remover(item);
 
                 await UnidadeDeTrabalho.SalveAlteracoes();
                 return CommandResponse();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw new ExcecaoBasicaUMBIT("Erro ao deletar tarefa", ex);
             }
         }
 
@@ -138,17 +176,22 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
         {
             try
             {
-
                 var list = await RepositorioToDoList.Query().SingleAsync(t => t.Id == request.Id);
+
+                if (_contextoPrincipal.ObtenhaPrincipal() != null && !_contextoPrincipal.ObtenhaPrincipal()!.EhAdministrador() && list.IdUsuario.ToString() != _contextoPrincipal.ObtenhaPrincipal()!.Id)
+                {
+                    AdicionarErro("O Recurso só pode ser acessado pelo usuario que o criou");
+                    return CommandResponse();
+                }
+
                 RepositorioToDoList.Remover(list);
 
                 await UnidadeDeTrabalho.SalveAlteracoes();
                 return CommandResponse();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw new ExcecaoBasicaUMBIT("Erro ao deletar lista", ex);
             }
         }
 
@@ -157,6 +200,12 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
             try
             {
                 var item = await RepositorioToDoItem.Query().SingleAsync(t => t.Id == request.Id);
+
+                if (_contextoPrincipal.ObtenhaPrincipal() != null && !_contextoPrincipal.ObtenhaPrincipal()!.EhAdministrador() && item.IdUsuario.ToString() != _contextoPrincipal.ObtenhaPrincipal()!.Id)
+                {
+                    AdicionarErro("O Recurso só pode ser acessado pelo usuario que o criou");
+                    return CommandResponse();
+                }
 
                 item.Nome = request.Nome;
                 item.Descricao = request.Descricao;
@@ -170,10 +219,9 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
                 await UnidadeDeTrabalho.SalveAlteracoes();
                 return CommandResponse();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw new ExcecaoBasicaUMBIT("Erro ao editar tarefa", ex);
             }
         }
 
@@ -181,8 +229,13 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
         {
             try
             {
-
                 var item = await RepositorioToDoList.Query().SingleAsync(t => t.Id == request.Id);
+
+                if (_contextoPrincipal.ObtenhaPrincipal() != null && !_contextoPrincipal.ObtenhaPrincipal()!.EhAdministrador() && item.IdUsuario.ToString() != _contextoPrincipal.ObtenhaPrincipal()!.Id)
+                {
+                    AdicionarErro("O Recurso só pode ser acessado pelo usuario que o criou");
+                    return CommandResponse();
+                }
 
                 item.Nome = request.Nome;
 
@@ -191,10 +244,9 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
                 await UnidadeDeTrabalho.SalveAlteracoes();
                 return CommandResponse();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw new ExcecaoBasicaUMBIT("Erro ao editar lista", ex);
             }
         }
 
@@ -205,6 +257,12 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
 
                 var item = await RepositorioToDoItem.Query().SingleAsync(t => t.Id == request.Id);
 
+                if (_contextoPrincipal.ObtenhaPrincipal() != null && !_contextoPrincipal.ObtenhaPrincipal()!.EhAdministrador() && item.IdUsuario.ToString() != _contextoPrincipal.ObtenhaPrincipal()!.Id)
+                {
+                    AdicionarErro("O Recurso só pode ser acessado pelo usuario que o criou");
+                    return CommandResponse();
+                }
+
                 item.Status = EnumeradorStatus.Concluido;
 
                 RepositorioToDoItem.Atualizar(item);
@@ -212,10 +270,9 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
                 await UnidadeDeTrabalho.SalveAlteracoes();
                 return CommandResponse();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw new ExcecaoBasicaUMBIT("Erro ao finalizar tarefa", ex);
             }
         }
     }

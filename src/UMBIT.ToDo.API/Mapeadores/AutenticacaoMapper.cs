@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using UMBIT.Nexus.Auth.Contrato;
 using UMBIT.ToDo.Dominio.Application.Commands.Autenticacao;
-using UMBIT.ToDo.Dominio.Entidades.Basicos;
-using UMBIT.ToDo.Dominio.Entidades.Configuracao;
-using UMBIT.ToDo.Dominio.Entidades.Token;
+using UMBIT.ToDo.Dominio.Entidades.Auth.Basicos;
+using UMBIT.ToDo.Dominio.Entidades.Auth.Configuracao;
+using UMBIT.ToDo.Dominio.Entidades.Auth.Token;
 
 namespace TSE.Nexus.Auth.API.Mapeadores
 {

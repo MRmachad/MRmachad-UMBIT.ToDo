@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using UMBIT.ToDo.Core.Repositorio.EF;
-using UMBIT.ToDo.Dominio.Entidades.Token;
+using UMBIT.ToDo.Dominio.Entidades.Auth.Token;
 
 namespace TSE.Nexus.Auth.Infraestrutura.ConfiguracaoDeEntidades
 {

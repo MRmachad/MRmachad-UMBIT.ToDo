@@ -34,6 +34,8 @@ export interface AtualizarTarefaRequest {
 export interface TarefaDTO {
     id: string;
     idToDoList: string | undefined;
+    idUsuario: string;
+    nomeUsuario: string;
     nome: string;
     status: number;
     descricao: string;
@@ -57,6 +59,8 @@ export interface AtualizarListaRequest {
 
 export interface ListaDTO {
     id: string;
+    idUsuario: string;
+    nomeUsuario: string;
     nome: string;
     index: number;
     dataCriacao: Date;

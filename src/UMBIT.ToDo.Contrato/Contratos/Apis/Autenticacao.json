@@ -80,37 +80,6 @@
         }
       }
     },
-    "/refresh-token": {
-      "post": {
-        "tags": [
-          "Autenticacao"
-        ],
-        "operationId": "RefreshToken",
-        "description": "Atualizar Token",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RefreshTokenRequestDTO"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TokenResponseDTO"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/auth-status": {
       "get": {
         "tags": [

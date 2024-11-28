@@ -6,8 +6,8 @@ using UMBIT.ToDo.Core.Messages.Messagem.Interfaces;
 using UMBIT.ToDo.Core.Notificacao.Interfaces;
 using UMBIT.ToDo.Core.Repositorio.Interfaces.Database;
 using UMBIT.ToDo.Dominio.Application.Queries.Configuracao;
-using UMBIT.ToDo.Dominio.Entidades.Basicos;
-using UMBIT.ToDo.Dominio.Entidades.Configuracao;
+using UMBIT.ToDo.Dominio.Entidades.Auth.Basicos;
+using UMBIT.ToDo.Dominio.Entidades.Auth.Configuracao;
 
 namespace UMBIT.ToDo.Dominio.Application.Queries
 {

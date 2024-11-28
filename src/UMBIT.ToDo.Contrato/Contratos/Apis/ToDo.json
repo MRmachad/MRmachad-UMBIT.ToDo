@@ -252,6 +252,30 @@
           }
         }
       }
+    },
+    "/avise-tarefa/{id}": {
+      "post": {
+        "tags": [
+          "ToDo"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "operationId": "AviseTarefa",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -339,6 +363,13 @@
             "format": "uuid",
             "nullable": true
           },
+          "idUsuario": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nomeUsuario": {
+            "type": "string"
+          },
           "nome": {
             "type": "string"
           },
@@ -412,6 +443,13 @@
           "id": {
             "type": "string",
             "format": "uuid"
+          },
+          "idUsuario": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nomeUsuario": {
+            "type": "string"
           },
           "nome": {
             "type": "string"

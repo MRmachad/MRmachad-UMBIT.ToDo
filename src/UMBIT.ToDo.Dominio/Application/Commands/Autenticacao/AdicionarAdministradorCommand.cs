@@ -27,10 +27,12 @@ namespace UMBIT.ToDo.Dominio.Application.Commands.Autenticacao
 
         protected override void Validadors(ValidatorCommand<AdicionarAdministradorCommand> validator)
         {
-            validator
-                .RuleFor(cmd => cmd.Nome)
-                .NotEmpty().WithMessage("Nome é obrigatório")
-                .Must(nome => !string.IsNullOrEmpty(nome) && nome.Split(' ').Length >= 2).WithMessage("Nome deve conter ao menos nome e sobrenome.");
+            validator.
+                RuleFor(usuario => usuario.Nome)
+               .NotEmpty().WithMessage("O nome do usuário é obrigatório.")
+               .Matches(@"^[a-zA-Z][a-zA-Z0-9._]{0,29}$")
+               .WithMessage("O nome deve ser alfanumérico, iniciar com uma letra, pode conter ponto/underline e ter no máximo 30 caracteres.");
+
 
             validator
                 .RuleFor(cmd => cmd.Email)

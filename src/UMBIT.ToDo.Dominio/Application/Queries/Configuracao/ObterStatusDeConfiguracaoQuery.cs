@@ -1,5 +1,5 @@
 ﻿using UMBIT.ToDo.Core.Messages.Messagem.Applications.Query;
-using UMBIT.ToDo.Dominio.Entidades.Configuracao;
+using UMBIT.ToDo.Dominio.Entidades.Auth.Configuracao;
 
 namespace UMBIT.ToDo.Dominio.Application.Queries.Configuracao
 {

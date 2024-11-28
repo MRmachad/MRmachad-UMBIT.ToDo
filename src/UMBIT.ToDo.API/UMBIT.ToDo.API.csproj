@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\UMBIT.ToDo.BuildingBlocks.SignalR\UMBIT.ToDo.BuildingBlocks.SignalR.csproj" />
     <ProjectReference Include="..\UMBIT.ToDo.Contrato\UMBIT.ToDo.Contrato.csproj" />
     <ProjectReference Include="..\UMBIT.ToDo.Dominio\UMBIT.ToDo.Dominio.csproj" />
     <ProjectReference Include="..\UMBIT.ToDo.Infraestrutura\UMBIT.ToDo.Infraestrutura.csproj" />

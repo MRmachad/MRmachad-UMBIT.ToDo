@@ -1,5 +1,5 @@
 ﻿using UMBIT.ToDo.Core.Messages.Messagem.Applications.Query;
-using UMBIT.ToDo.Dominio.Entidades;
+using UMBIT.ToDo.Dominio.Entidades.ToDo;
 
 namespace UMBIT.Nexus.Auth.Dominio.Application.Queries.ToDo
 {

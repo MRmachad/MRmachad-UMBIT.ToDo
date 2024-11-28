@@ -50,13 +50,6 @@ namespace UMBIT.Nexus.Auth.Contrato
         public abstract System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.ActionResult<TokenResponseDTO>> Login([Microsoft.AspNetCore.Mvc.FromBody] LoginRequestDTO body);
 
         /// <remarks>
-        /// Atualizar Token
-        /// </remarks>
-        /// <returns>Success</returns>
-        [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("refresh-token")]
-        public abstract System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.ActionResult<TokenResponseDTO>> RefreshToken([Microsoft.AspNetCore.Mvc.FromBody] RefreshTokenRequestDTO body);
-
-        /// <remarks>
         /// Obter status do modelo de autenticação
         /// </remarks>
         /// <returns>Success</returns>

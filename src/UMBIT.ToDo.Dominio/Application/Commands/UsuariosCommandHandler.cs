@@ -10,7 +10,7 @@ using UMBIT.ToDo.Core.Repositorio.Interfaces.Database;
 using UMBIT.ToDo.Core.Seguranca.Models;
 using UMBIT.ToDo.Dominio.Application.Commands.Usuarios;
 using UMBIT.ToDo.Dominio.Configuradores;
-using UMBIT.ToDo.Dominio.Entidades.Basicos;
+using UMBIT.ToDo.Dominio.Entidades.Auth.Basicos;
 
 namespace UMBIT.ToDo.Dominio.Application.Commands
 {

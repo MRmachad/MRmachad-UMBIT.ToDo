@@ -13,8 +13,8 @@ using UMBIT.ToDo.Core.Notificacao.Interfaces;
 using UMBIT.ToDo.Core.Repositorio.Interfaces.Database;
 using UMBIT.ToDo.Core.Seguranca.Models;
 using UMBIT.ToDo.Dominio.Application.Queries.Tokens;
-using UMBIT.ToDo.Dominio.Entidades.Basicos;
-using UMBIT.ToDo.Dominio.Entidades.Token;
+using UMBIT.ToDo.Dominio.Entidades.Auth.Basicos;
+using UMBIT.ToDo.Dominio.Entidades.Auth.Token;
 
 namespace UMBIT.ToDo.Dominio.Application.Queries
 {

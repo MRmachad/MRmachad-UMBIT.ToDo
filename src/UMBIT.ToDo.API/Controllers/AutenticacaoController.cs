@@ -7,9 +7,9 @@ using UMBIT.ToDo.Dominio.Application.Commands.Autenticacao;
 using UMBIT.ToDo.Dominio.Application.Queries.Configuracao;
 using UMBIT.ToDo.Dominio.Application.Queries.Tokens;
 using UMBIT.ToDo.Dominio.Application.Queries.Usuarios;
-using UMBIT.ToDo.Dominio.Entidades.Basicos;
-using UMBIT.ToDo.Dominio.Entidades.Configuracao;
-using UMBIT.ToDo.Dominio.Entidades.Token;
+using UMBIT.ToDo.Dominio.Entidades.Auth.Basicos;
+using UMBIT.ToDo.Dominio.Entidades.Auth.Configuracao;
+using UMBIT.ToDo.Dominio.Entidades.Auth.Token;
 
 namespace UMBIT.ToDo.API.Controllers
 {
@@ -64,22 +64,6 @@ namespace UMBIT.ToDo.API.Controllers
             var tokenResult = await Mediator.EnviarQuery<ObterTokenDeUsuarioQuery, TokenResult>(new ObterTokenDeUsuarioQuery(login.User));
             return UMBITResponse<TokenResponseDTO, TokenResult>(tokenResult);
         }
-
-
-        public override async Task<ActionResult<TokenResponseDTO>> RefreshToken([FromBody] RefreshTokenRequestDTO refreshTokenRequest)
-        {
-            var command = Mapper.Map<AtualizarSessaoDeUsuarioCommand>(refreshTokenRequest);
-            var response = await Mediator.EnviarComando(command);
-
-            if (!response.Result.IsValid)
-                return UMBITResponse<TokenResponseDTO>();
-
-            var email = ObtenhaEmail(refreshTokenRequest.Token);
-
-            var tokenResult = await Mediator.EnviarQuery<ObterTokenDeUsuarioQuery, TokenResult>(new ObterTokenDeUsuarioQuery(email));
-            return UMBITResponse<TokenResponseDTO, TokenResult>(tokenResult);
-        }
-
         public override async Task<IActionResult> Logout()
         {
             var principal = _contextoPrincipal.ObtenhaPrincipal();
@@ -88,13 +72,6 @@ namespace UMBIT.ToDo.API.Controllers
 
             var response = await Mediator.EnviarComando(new RemoverTokensDeUsuarioCommand(principal.Email));
             return UMBITResponse(response);
-        }
-
-        [HttpPost, Route("chaves/obtenha")]
-        public async Task<IActionResult> ObtenhaChaves([FromBody] SecretRequest secretRequest)
-        {
-            var tokens = await Mediator.EnviarQuery<ObterChavesQuery, ICollection<string>>(new ObterChavesQuery(secretRequest.Kid));
-            return Ok(tokens.Dados);
         }
 
         private string ObtenhaEmail(string token)

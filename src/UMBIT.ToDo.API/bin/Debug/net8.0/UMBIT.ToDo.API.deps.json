@@ -2322,7 +2322,7 @@
           }
         }
       },
-      "UMBIT.ToDo.BuildingBlocks.WebAPI/1.0.0": {
+      "UMBIT.ToDo.BuildingBlocksc.WebAPI/1.0.0": {
         "dependencies": {
           "AutoMapper": "13.0.1",
           "FluentValidation": "11.11.0",
@@ -2337,7 +2337,7 @@
           "UMBIT.ToDo.Core": "1.0.0"
         },
         "runtime": {
-          "UMBIT.ToDo.BuildingBlocks.WebAPI.dll": {
+          "UMBIT.ToDo.BuildingBlocksc.WebAPI.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -2348,7 +2348,7 @@
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "NSwag.MSBuild": "14.0.7",
           "UMBIT.ToDo.BuildingBlocks.Core": "1.0.0",
-          "UMBIT.ToDo.BuildingBlocks.WebAPI": "1.0.0"
+          "UMBIT.ToDo.BuildingBlocksc.WebAPI": "1.0.0"
         },
         "runtime": {
           "UMBIT.ToDo.Contrato.dll": {
@@ -3997,7 +3997,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "UMBIT.ToDo.BuildingBlocks.WebAPI/1.0.0": {
+    "UMBIT.ToDo.BuildingBlocksc.WebAPI/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

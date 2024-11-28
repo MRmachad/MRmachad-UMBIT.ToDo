@@ -3775,6 +3775,43 @@
           "bin/placeholder/UMBIT.ToDo.BuildingBlocks.WebAPI.dll": {}
         }
       },
+      "UMBIT.ToDo.BuildingBlocksc.ASPNet/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "UMBIT.ToDo.BuildingBlocks.WebAPI": "1.0.0",
+          "UMBIT.ToDo.BuildingBlocksc.WebAPI": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UMBIT.ToDo.BuildingBlocksc.ASPNet.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UMBIT.ToDo.BuildingBlocksc.ASPNet.dll": {}
+        }
+      },
+      "UMBIT.ToDo.BuildingBlocksc.WebAPI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "AutoMapper": "13.0.1",
+          "FluentValidation": "11.11.0",
+          "MediatR": "12.4.1",
+          "Microsoft.AspNetCore.Mvc": "2.2.0",
+          "Microsoft.EntityFrameworkCore": "9.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0",
+          "Microsoft.Extensions.Options": "9.0.0",
+          "RabbitMQ.Client": "7.0.0",
+          "UMBIT.ToDo.BuildingBlocks.Core": "1.0.0",
+          "UMBIT.ToDo.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UMBIT.ToDo.BuildingBlocksc.WebAPI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UMBIT.ToDo.BuildingBlocksc.WebAPI.dll": {}
+        }
+      },
       "UMBIT.ToDo.Contrato/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -3782,7 +3819,7 @@
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "NSwag.MSBuild": "14.0.7",
           "UMBIT.ToDo.BuildingBlocks.Core": "1.0.0",
-          "UMBIT.ToDo.BuildingBlocks.WebAPI": "1.0.0"
+          "UMBIT.ToDo.BuildingBlocksc.WebAPI": "1.0.0"
         },
         "compile": {
           "bin/placeholder/UMBIT.ToDo.Contrato.dll": {}
@@ -10790,6 +10827,16 @@
       "path": "../../UMBIT.ToDo.WebApi/UMBIT.ToDo.BuildingBlocks.WebAPI.csproj",
       "msbuildProject": "../../UMBIT.ToDo.WebApi/UMBIT.ToDo.BuildingBlocks.WebAPI.csproj"
     },
+    "UMBIT.ToDo.BuildingBlocksc.ASPNet/1.0.0": {
+      "type": "project",
+      "path": "../../UMBIT.ToDo.BuildingBlocksc.ASPNet/UMBIT.ToDo.BuildingBlocksc.ASPNet.csproj",
+      "msbuildProject": "../../UMBIT.ToDo.BuildingBlocksc.ASPNet/UMBIT.ToDo.BuildingBlocksc.ASPNet.csproj"
+    },
+    "UMBIT.ToDo.BuildingBlocksc.WebAPI/1.0.0": {
+      "type": "project",
+      "path": "../../UMBIT.ToDo.WebApi/UMBIT.ToDo.BuildingBlocksc.WebAPI.csproj",
+      "msbuildProject": "../../UMBIT.ToDo.WebApi/UMBIT.ToDo.BuildingBlocksc.WebAPI.csproj"
+    },
     "UMBIT.ToDo.Contrato/1.0.0": {
       "type": "project",
       "path": "../../UMBIT.ToDo.Contrato/UMBIT.ToDo.Contrato.csproj",
@@ -10812,7 +10859,7 @@
       "NonFactors.Grid.Mvc6 >= 7.2.1",
       "Refit >= 7.0.0",
       "Refit.HttpClientFactory >= 7.0.0",
-      "UMBIT.ToDo.BuildingBlocks.Core >= 1.0.0",
+      "UMBIT.ToDo.BuildingBlocksc.ASPNet >= 1.0.0",
       "UMBIT.ToDo.Contrato >= 1.0.0"
     ]
   },
@@ -10844,11 +10891,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.BuildingBlocksc.ASPNet\\UMBIT.ToDo.BuildingBlocksc.ASPNet.csproj": {
+              "projectPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.BuildingBlocksc.ASPNet\\UMBIT.ToDo.BuildingBlocksc.ASPNet.csproj"
+            },
             "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Contrato\\UMBIT.ToDo.Contrato.csproj": {
               "projectPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Contrato\\UMBIT.ToDo.Contrato.csproj"
-            },
-            "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Core\\UMBIT.ToDo.BuildingBlocks.Core.csproj": {
-              "projectPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Core\\UMBIT.ToDo.BuildingBlocks.Core.csproj"
             }
           }
         }

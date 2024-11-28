@@ -4215,7 +4215,7 @@
           "bin/placeholder/UMBIT.ToDo.BuildingBlocks.Fabrica.dll": {}
         }
       },
-      "UMBIT.ToDo.BuildingBlocks.WebAPI/1.0.0": {
+      "UMBIT.ToDo.BuildingBlocksc.WebAPI/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
@@ -4232,10 +4232,10 @@
           "UMBIT.ToDo.Core": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/UMBIT.ToDo.BuildingBlocks.WebAPI.dll": {}
+          "bin/placeholder/UMBIT.ToDo.BuildingBlocksc.WebAPI.dll": {}
         },
         "runtime": {
-          "bin/placeholder/UMBIT.ToDo.BuildingBlocks.WebAPI.dll": {}
+          "bin/placeholder/UMBIT.ToDo.BuildingBlocksc.WebAPI.dll": {}
         }
       },
       "UMBIT.ToDo.Contrato/1.0.0": {
@@ -4245,7 +4245,7 @@
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "NSwag.MSBuild": "14.0.7",
           "UMBIT.ToDo.BuildingBlocks.Core": "1.0.0",
-          "UMBIT.ToDo.BuildingBlocks.WebAPI": "1.0.0"
+          "UMBIT.ToDo.BuildingBlocksc.WebAPI": "1.0.0"
         },
         "compile": {
           "bin/placeholder/UMBIT.ToDo.Contrato.dll": {}
@@ -12491,10 +12491,10 @@
       "path": "../UMBIT.ToDo.Fabrica/UMBIT.ToDo.BuildingBlocks.Fabrica.csproj",
       "msbuildProject": "../UMBIT.ToDo.Fabrica/UMBIT.ToDo.BuildingBlocks.Fabrica.csproj"
     },
-    "UMBIT.ToDo.BuildingBlocks.WebAPI/1.0.0": {
+    "UMBIT.ToDo.BuildingBlocksc.WebAPI/1.0.0": {
       "type": "project",
-      "path": "../UMBIT.ToDo.WebApi/UMBIT.ToDo.BuildingBlocks.WebAPI.csproj",
-      "msbuildProject": "../UMBIT.ToDo.WebApi/UMBIT.ToDo.BuildingBlocks.WebAPI.csproj"
+      "path": "../UMBIT.ToDo.WebApi/UMBIT.ToDo.BuildingBlocksc.WebAPI.csproj",
+      "msbuildProject": "../UMBIT.ToDo.WebApi/UMBIT.ToDo.BuildingBlocksc.WebAPI.csproj"
     },
     "UMBIT.ToDo.Contrato/1.0.0": {
       "type": "project",

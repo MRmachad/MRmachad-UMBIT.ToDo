@@ -5,6 +5,22 @@
       "PackagePath": "staticwebassets\\UMBIT.ToDo.Web.bundle.scp.css"
     },
     {
+      "Id": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\wwwroot\\css\\BrightTheme.min.css",
+      "PackagePath": "staticwebassets\\css\\BrightTheme.min.css"
+    },
+    {
+      "Id": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\wwwroot\\css\\PNotify.css",
+      "PackagePath": "staticwebassets\\css\\PNotify.css"
+    },
+    {
+      "Id": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\wwwroot\\css\\PNotifyBootstrap4.css",
+      "PackagePath": "staticwebassets\\css\\PNotifyBootstrap4.css"
+    },
+    {
+      "Id": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\wwwroot\\css\\animate.min.css",
+      "PackagePath": "staticwebassets\\css\\animate.min.css"
+    },
+    {
       "Id": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\wwwroot\\css\\mvc-grid.css",
       "PackagePath": "staticwebassets\\css\\mvc-grid.css"
     },
@@ -17,8 +33,24 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\wwwroot\\js\\PNotify.js",
+      "PackagePath": "staticwebassets\\js\\PNotify.js"
+    },
+    {
+      "Id": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\wwwroot\\js\\PNotify.min.js",
+      "PackagePath": "staticwebassets\\js\\PNotify.min.js"
+    },
+    {
+      "Id": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\wwwroot\\js\\PNotifyBootstrap4.js",
+      "PackagePath": "staticwebassets\\js\\PNotifyBootstrap4.js"
+    },
+    {
       "Id": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\wwwroot\\js\\mvc-grid-lang.js",
       "PackagePath": "staticwebassets\\js\\mvc-grid-lang.js"
+    },
+    {
+      "Id": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\wwwroot\\js\\pnotify.animate.js",
+      "PackagePath": "staticwebassets\\js\\pnotify.animate.js"
     },
     {
       "Id": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\wwwroot\\js\\site.js",

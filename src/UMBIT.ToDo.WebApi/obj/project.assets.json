@@ -10060,9 +10060,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.WebApi\\UMBIT.ToDo.BuildingBlocks.WebAPI.csproj",
-      "projectName": "UMBIT.ToDo.BuildingBlocks.WebAPI",
-      "projectPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.WebApi\\UMBIT.ToDo.BuildingBlocks.WebAPI.csproj",
+      "projectUniqueName": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.WebApi\\UMBIT.ToDo.BuildingBlocksc.WebAPI.csproj",
+      "projectName": "UMBIT.ToDo.BuildingBlocksc.WebAPI",
+      "projectPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.WebApi\\UMBIT.ToDo.BuildingBlocksc.WebAPI.csproj",
       "packagesPath": "C:\\Users\\LeonardoSilva\\.nuget\\packages\\",
       "outputPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.WebApi\\obj\\",
       "projectStyle": "PackageReference",

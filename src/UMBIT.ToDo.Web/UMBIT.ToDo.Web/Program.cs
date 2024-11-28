@@ -1,6 +1,7 @@
 using Refit;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using UMBIT.Nexus.Auth.Contrato;
 using UMBIT.ToDo.Core.Seguranca.Bootstrapper;
 using UMBIT.ToDo.Web.Bootstrapper;
 using UMBIT.ToDo.Web.Middlewares;
@@ -27,7 +28,10 @@ builder.Services
         options.Cookie.HttpOnly = true;
         options.Cookie.IsEssential = true;
     })
-    .AddAuthSession();
+    .AddAuthSession((t) =>
+    {
+        return JsonSerializer.Deserialize<TokenResponseDTO>(t)?.AccessToken;
+    });
 builder.Services.AddTransient<ServicoExternoMiddleware>();
 builder.Services
     .AddRefitClient<IServicoToDo>(refitSetting)

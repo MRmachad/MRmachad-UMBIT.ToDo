@@ -8006,9 +8006,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Fabrica\\UMBIT.ToDo.Fabrica.csproj",
-      "projectName": "UMBIT.ToDo.Fabrica",
-      "projectPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Fabrica\\UMBIT.ToDo.Fabrica.csproj",
+      "projectUniqueName": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Fabrica\\UMBIT.ToDo.BuildingBlocks.Fabrica.csproj",
+      "projectName": "UMBIT.ToDo.BuildingBlocks.Fabrica",
+      "projectPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Fabrica\\UMBIT.ToDo.BuildingBlocks.Fabrica.csproj",
       "packagesPath": "C:\\Users\\LeonardoSilva\\.nuget\\packages\\",
       "outputPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Fabrica\\obj\\",
       "projectStyle": "PackageReference",

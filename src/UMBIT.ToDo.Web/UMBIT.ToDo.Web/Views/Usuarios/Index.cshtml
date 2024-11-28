@@ -1,5 +1,5 @@
 ﻿@using UMBIT.Nexus.Auth.Contrato
-@using static UMBIT.ToDo.Web.Bootstrapper.AuthConfigurate
+@using static UMBIT.ToDo.Web.Bootstrapper.ContextConfigurate
 @model IEnumerable<UsuarioResponseDTO>
 
 @inject AuthSessionContext authSessionContext
@@ -55,7 +55,7 @@
                                 }
                             </td>
                             <td>
-                                @if (authSessionContext.GetAuthContext()?.UsuarioToken.Id != user.Id.ToString())
+                                @if (authSessionContext.GetAuthContext<TokenResponseDTO>()?.UsuarioToken.Id != user.Id.ToString())
                                 {
                                     <a onclick="deleteUser('@user.Id')"
                                        class="btn btn-sm btn-danger">

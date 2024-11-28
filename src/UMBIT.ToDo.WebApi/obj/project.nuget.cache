@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LsuErG4nzp0=",
+  "dgSpecHash": "b4f4ra4oJ3I=",
   "success": true,
-  "projectFilePath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.WebApi\\UMBIT.ToDo.BuildingBlocks.WebAPI.csproj",
+  "projectFilePath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.WebApi\\UMBIT.ToDo.BuildingBlocksc.WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LeonardoSilva\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\LeonardoSilva\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",

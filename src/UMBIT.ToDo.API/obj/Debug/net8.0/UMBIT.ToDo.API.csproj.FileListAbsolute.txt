@@ -169,7 +169,6 @@ D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\runtimes\b
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Core.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Fabrica.dll
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.WebAPI.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.Contrato.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.Dominio.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.Infraestrutura.dll
@@ -178,7 +177,6 @@ D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.Infraestrutura.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Core.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Fabrica.pdb
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.WebAPI.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.csproj.AssemblyReference.cache
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.GeneratedMSBuildEditorConfig.editorconfig
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.AssemblyInfoInputs.cache
@@ -201,3 +199,5 @@ D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\refint\UMB
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\UMBIT.ToDo.API.genruntimeconfig.cache
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\obj\Debug\net8.0\ref\UMBIT.ToDo.API.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocksc.WebAPI.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.API\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocksc.WebAPI.pdb

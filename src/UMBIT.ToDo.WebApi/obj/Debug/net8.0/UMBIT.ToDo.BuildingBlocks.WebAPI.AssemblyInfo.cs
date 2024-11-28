@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UMBIT.ToDo.BuildingBlocks.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c67b6dcdc11b1e13011a7b4835bb524551cf858")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dffcaec68ab70503b0f92b10153c6d288feb5454")]
 [assembly: System.Reflection.AssemblyProductAttribute("UMBIT.ToDo.BuildingBlocks.WebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UMBIT.ToDo.BuildingBlocks.WebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

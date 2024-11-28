@@ -1,24 +1,23 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using UMBIT.Nexus.Auth.Contrato;
+using UMBIT.ToDo.Core.API.Controllers;
 using UMBIT.ToDo.Web.Basicos.Enumerador;
 using UMBIT.ToDo.Web.Basicos.Extensores;
 using UMBIT.ToDo.Web.Models;
 using UMBIT.ToDo.Web.services;
-using static UMBIT.ToDo.Web.Bootstrapper.AuthConfigurate;
+using static UMBIT.ToDo.Web.Bootstrapper.ContextConfigurate;
 
 namespace UMBIT.ToDo.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : ASPBaseController
     {
         private readonly IServicoToDo _servicoDeToDo;
         private readonly ILogger<HomeController> _logger;
-        private readonly AuthSessionContext _authSessionContext;
-        public HomeController(ILogger<HomeController> logger, IServicoToDo servicoDeToDo, AuthSessionContext authSessionContext)
+        public HomeController(ILogger<HomeController> logger, IServicoToDo servicoDeToDo, AuthSessionContext authSessionContext) : base(authSessionContext)
         {
             _logger = logger;
             _servicoDeToDo = servicoDeToDo;
-            _authSessionContext = authSessionContext;
         }
 
         public IActionResult Index(int status = -1, Guid? idList = null)
@@ -106,9 +105,12 @@ namespace UMBIT.ToDo.Web.Controllers
 
         public async Task<IActionResult> AddTask()
         {
-            var lists = await this._servicoDeToDo.ObtenhaLists();
-            ViewBag.Lists = lists;
-            return View(new AdicionarTarefaRequest());
+            return await MiddlewareDeRetorno(async () =>
+            {
+                var lists = await this._servicoDeToDo.ObtenhaLists();
+                ViewBag.Lists = lists;
+                return View(new AdicionarTarefaRequest());
+            });
         }
 
         [HttpPost]
@@ -227,8 +229,8 @@ namespace UMBIT.ToDo.Web.Controllers
                     Status = item.Status,
                     DataFim = item.DataFim,
                     DataInicio = item.DataInicio,
-                    Descricao = item.Descricao, 
-                    IdToDoList = item.IdToDoList,    
+                    Descricao = item.Descricao,
+                    IdToDoList = item.IdToDoList,
                 });
 
                 return RedirectToAction("ListaTarefa");
@@ -264,60 +266,6 @@ namespace UMBIT.ToDo.Web.Controllers
             return resultItems.Replace("ITEMS", items);
         }
 
-        protected ActionResult MiddlewareDeRetorno(Func<ActionResult> retorno)
-        {
-            try
-            {
-                var res = retorno();
-
-                return res;
-            }
-            catch (Exception ex)
-            {
-                return RedirectToAction("Error");
-            }
-        }
-        protected ActionResult MiddlewareDeRetorno(Func<ActionResult> retorno, string erroMessage)
-        {
-            try
-            {
-                var res = retorno();
-
-                return res;
-            }
-            catch (Exception ex)
-            {
-                ViewBag.Error = "Usuário ou senha inválidos.";
-                return View();
-            }
-        }
-        protected async Task<ActionResult> MiddlewareDeRetorno(Func<Task<ActionResult>> retorno)
-        {
-            try
-            {
-                var res = await retorno();
-
-                return res;
-            }
-            catch (Exception ex)
-            {
-                return RedirectToAction("Error");
-            }
-        }
-        protected async Task<ActionResult> MiddlewareDeRetorno(Func<Task<ActionResult>> retorno, string erroMessage)
-        {
-            try
-            {
-                var res = await retorno();
-
-                return res;
-            }
-            catch (Exception ex)
-            {
-                ViewBag.Error = erroMessage;
-                return View();
-            }
-        }
 
     }
 }

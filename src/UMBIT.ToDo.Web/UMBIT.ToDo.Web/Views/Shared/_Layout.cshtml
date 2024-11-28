@@ -1,7 +1,11 @@
-﻿@using static UMBIT.ToDo.Web.Bootstrapper.AuthConfigurate
+﻿@using System.Text.Json
+@using UMBIT.Nexus.Auth.Contrato
+@using UMBIT.ToDo.Core.Basicos.Notificacoes
+@using static UMBIT.ToDo.Web.Bootstrapper.ContextConfigurate
 
 @inject AuthSessionContext authSessionContext
-
+@{
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,14 +16,20 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link href="~/css/mvc-grid.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/UMBIT.ToDo.Web.styles.css" asp-append-version="true" />
+    <link href="~/css/animate.min.css" rel="stylesheet" />
+    <link href="~/css/brighttheme.min.css" rel="stylesheet" />
+    <link href="~/css/pnotify.css" rel="stylesheet" />
+    <link href="~/css/pnotifybootstrap4.css" rel="stylesheet" />
+
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 @if (authSessionContext.EhAutenticado)
                 {
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Olá @authSessionContext.GetAuthContext()?.UsuarioToken.Nome</a>
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Olá @(authSessionContext.GetAuthContext<TokenResponseDTO>()?.UsuarioToken.Nome)</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -32,7 +42,7 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ListaTarefa">Gerenciamento de Tarefas</a>
                             </li>
-                            @if (authSessionContext.GetAuthContext()?.EhAdm ?? false)
+                            @if (authSessionContext.GetAuthContext<TokenResponseDTO>()?.EhAdm ?? false)
                             {
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Index">Usuarios</a>
@@ -60,26 +70,57 @@
 
     <footer class="border-top footer text-muted">
     </footer>
-
-    @section Scripts {
-        <script src="~/lib/mvc-grid/mvc-grid.js"></script>
-        <script src="~/js/mvc-grid-lang.js"></script>
-
-        <script>
-            document.querySelectorAll(".mvc-grid").forEach(element => new MvcGrid(element));
-        </script>
-    }
+    <script src="~/js/pnotify.min.js"></script>
+    <script src="~/js/pnotify.js"></script>
+    <script src="~/js/pnotifybootstrap4.js"></script>
+    <script src="~/lib/mvc-grid/mvc-grid.js"></script>
+    <script src="~/js/mvc-grid-lang.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/lib/echarts/echarts.common.js"></script>
     <script src="~/lib/echarts/echarts.common.min.js"></script>
-    <script src="~/lib/echarts/echarts.esm.js"></script>
-    <script src="~/lib/echarts/echarts.esm.min.js"></script>
     <script src="~/lib/echarts/echarts.js"></script>
     <script src="~/lib/echarts/echarts.min.js"></script>
     <script src="~/lib/echarts/echarts.simple.js"></script>
     <script src="~/lib/echarts/echarts.simple.min.js"></script>
+
+    <script>
+        document.querySelectorAll(".mvc-grid").forEach(element => new MvcGrid(element));
+    </script>
+    <script>
+        $(document).ready(function () {
+
+         if (typeof window.maxOpenWait === 'undefined') {
+                  window.maxOpenWait = new PNotify.Stack({
+                    dir1: "down",
+                    dir2: "left",
+                    firstpos1: 25,
+                    firstpos2: 25,
+                    modal: false,
+                    maxOpen: 3,
+                    maxStrategy: 'wait',
+                    maxClosureCausesWait: false
+                  });
+        }
+
+            var notifications = @Html.Raw(TempData["Notifications"] ?? "[]");
+
+            notifications.forEach((notification) => {
+                PNotify.notice({
+                    title: notification.titulo,
+                    text: notification.mensagem,
+                    stack: window.maxOpenWait,
+                    delay: 5000,
+                    closer: true,
+                    animation: 'fade',
+                    buttons: {
+                        closerHover: true
+                    }
+                });
+            });
+        });
+    </script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

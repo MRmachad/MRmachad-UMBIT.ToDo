@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xq7yRsbjn30=",
+  "dgSpecHash": "pLcYRdxlexk=",
   "success": true,
-  "projectFilePath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Fabrica\\UMBIT.ToDo.Fabrica.csproj",
+  "projectFilePath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Fabrica\\UMBIT.ToDo.BuildingBlocks.Fabrica.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LeonardoSilva\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\LeonardoSilva\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

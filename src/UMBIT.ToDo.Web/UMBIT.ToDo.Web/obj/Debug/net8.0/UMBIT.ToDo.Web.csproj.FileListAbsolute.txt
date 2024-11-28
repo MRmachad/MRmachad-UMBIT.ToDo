@@ -81,12 +81,10 @@ D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\ne
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Core.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Fabrica.dll
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.WebAPI.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\UMBIT.ToDo.Contrato.dll
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\UMBIT.ToDo.Contrato.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Core.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.Fabrica.pdb
-D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocks.WebAPI.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\obj\Debug\net8.0\UMBIT.ToDo.Web.csproj.AssemblyReference.cache
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\obj\Debug\net8.0\UMBIT.ToDo.Web.GeneratedMSBuildEditorConfig.editorconfig
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\obj\Debug\net8.0\UMBIT.ToDo.Web.AssemblyInfoInputs.cache
@@ -113,3 +111,7 @@ D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\obj\Debug\ne
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\obj\Debug\net8.0\UMBIT.ToDo.Web.pdb
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\obj\Debug\net8.0\UMBIT.ToDo.Web.genruntimeconfig.cache
 D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\obj\Debug\net8.0\ref\UMBIT.ToDo.Web.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocksc.ASPNet.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocksc.WebAPI.dll
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocksc.ASPNet.pdb
+D:\Dev\_ByMySelf\UMBIT\UMBIT.ToDo\src\UMBIT.ToDo.Web\UMBIT.ToDo.Web\bin\Debug\net8.0\UMBIT.ToDo.BuildingBlocksc.WebAPI.pdb

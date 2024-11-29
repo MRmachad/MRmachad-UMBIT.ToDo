@@ -129,6 +129,39 @@
         }
       }
     },
+    "/tarefa/{id}/atualizar-status": {
+      "put": {
+        "tags": [ "ToDo" ],
+        "operationId": "AtualizarStatusTarefa",
+        "description": "Atualizar Status Tarefa",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AtualizarStatusTarefaRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/lista-tarefa": {
       "get": {
         "tags": [ "ToDo" ],
@@ -350,6 +383,20 @@
           }
         }
       },
+      "AtualizarStatusTarefaRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
       "TarefaDTO": {
         "type": "object",
         "additionalProperties": false,
@@ -400,7 +447,7 @@
             "type": "string",
             "format": "date-time"
           },
-          "ListaPai": {
+          "toDoList": {
             "$ref": "#/components/schemas/ListaDTO",
             "nullable": true
           }

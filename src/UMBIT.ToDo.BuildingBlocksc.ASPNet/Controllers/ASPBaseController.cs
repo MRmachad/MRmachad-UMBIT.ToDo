@@ -1,9 +1,11 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Text.Json;
 using UMBIT.ToDo.BuildingBlocksc.ASPNet.Basicos.Exececoes;
 using UMBIT.ToDo.Core.Basicos.Excecoes;
 using UMBIT.ToDo.Core.Basicos.Notificacoes;
+using static System.Collections.Specialized.BitVector32;
 using static UMBIT.ToDo.Web.Bootstrapper.ContextConfigurate;
 
 namespace UMBIT.ToDo.Core.API.Controllers
@@ -16,7 +18,7 @@ namespace UMBIT.ToDo.Core.API.Controllers
             _authSessionContext = authSessionContext;
         }
 
-        protected ActionResult MiddlewareDeRetorno(Func<ActionResult> retorno)
+        protected ActionResult MiddlewareDeRetorno(Func<ActionResult> retorno, string action = null, string controller = null)
         {
             try
             {
@@ -28,7 +30,6 @@ namespace UMBIT.ToDo.Core.API.Controllers
             {
                 TempData["Notifications"] = ex.APIReposta?.Erros;
 
-                return base.View();
             }
             catch (ExcecaoBasicaUMBIT ex)
             {
@@ -36,41 +37,15 @@ namespace UMBIT.ToDo.Core.API.Controllers
                 {
                     new NotificacaoPadrao { Titulo ="Erro Generico!", Mensagem = ex.Message },
                 };
-                return base.View();
             }
             catch (Exception ex)
             {
                 return RedirectToAction("Error", "Home");
             }
-        }
-        protected ActionResult MiddlewareDeRetorno(Func<ActionResult> retorno, string erroMessage)
-        {
-            try
-            {
-                var res = retorno();
 
-                return res;
-            }
-            catch (ExcecaoServicoExterno ex)
-            {
-                TempData["Notifications"] = ex.APIReposta?.Erros;
-
-                return base.View();
-            }
-            catch (ExcecaoBasicaUMBIT ex)
-            {
-                TempData["Notifications"] = new List<NotificacaoPadrao>
-                {
-                    new NotificacaoPadrao { Titulo ="Erro Generico!", Mensagem = ex.Message },
-                };
-                return base.View();
-            }
-            catch (Exception ex)
-            {
-                return RedirectToAction("Error", "Home");
-            }
+            return TrateResultado(action, controller);
         }
-        protected async Task<ActionResult> MiddlewareDeRetorno(Func<Task<ActionResult>> retorno)
+        protected async Task<ActionResult> MiddlewareDeRetorno(Func<Task<ActionResult>> retorno, string action = null, string controller = null)
         {
             try
             {
@@ -82,7 +57,6 @@ namespace UMBIT.ToDo.Core.API.Controllers
             {
                 TempData["Notifications"] = JsonSerializer.Serialize(ex.APIReposta?.Erros.ToList());
 
-                return RedirectToAction(RouteData.Values["action"].ToString(), RouteData.Values);
             }
             catch (ExcecaoBasicaUMBIT ex)
             {
@@ -90,39 +64,20 @@ namespace UMBIT.ToDo.Core.API.Controllers
                 {
                     new NotificacaoPadrao { Titulo ="Erro Generico!", Mensagem = ex.Message },
                 };
-                return base.View();
+
             }
             catch (Exception ex)
             {
                 return RedirectToAction("Error", "Home");
             }
+
+            return TrateResultado(action, controller);
         }
-        protected async Task<ActionResult> MiddlewareDeRetorno(Func<Task<ActionResult>> retorno, string erroMessage)
+
+        private ActionResult TrateResultado(string action = null, string controller = null)
         {
-            try
-            {
-                var res = await retorno();
+            return RedirectToAction(action ?? RouteData.Values["action"].ToString(), action ?? RouteData.Values["controller"].ToString());
 
-                return res;
-            }
-            catch (ExcecaoServicoExterno ex)
-            {
-                TempData["Notifications"] = ex.APIReposta?.Erros;
-
-                return base.View();
-            }
-            catch (ExcecaoBasicaUMBIT ex)
-            {
-                TempData["Notifications"] = new List<NotificacaoPadrao>
-                {
-                    new NotificacaoPadrao { Titulo ="Erro!", Mensagem = ex.Message },
-                };
-                return base.View();
-            }
-            catch (Exception ex)
-            {
-                return RedirectToAction("Error", "Home");
-            }
         }
     }
 

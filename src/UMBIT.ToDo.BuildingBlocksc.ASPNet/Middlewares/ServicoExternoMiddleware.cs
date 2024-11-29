@@ -57,7 +57,7 @@ namespace UMBIT.ToDo.Web.Middlewares
                 else if (response.IsSuccessStatusCode)
                     return TenteRepostaComum(response, stringResposta);
 
-                throw new ExcecaoServicoExterno($"Falha no uso do serviço, {response.RequestMessage?.RequestUri?.AbsolutePath} respondeu {response.ReasonPhrase}.");
+                throw new Exception($"Falha no uso do serviço, {response.RequestMessage?.RequestUri?.AbsolutePath} respondeu {response.ReasonPhrase}.");
             }
             catch(ExcecaoServicoExterno ex)
             {
@@ -69,7 +69,7 @@ namespace UMBIT.ToDo.Web.Middlewares
             }
             catch (Exception ex)
             {
-                throw new ExcecaoBasicaUMBIT($"Erro no uso do serviço, algo de errado aconteceu em {response.RequestMessage?.RequestUri?.AbsolutePath}.", ex);
+                throw new Exception($"Erro no uso do serviço, algo de errado aconteceu em {response.RequestMessage?.RequestUri?.AbsolutePath}.", ex);
             }
         }
 

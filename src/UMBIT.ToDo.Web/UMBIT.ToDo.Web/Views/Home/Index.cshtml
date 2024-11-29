@@ -13,29 +13,36 @@
         transition: background-color 0.3s ease, color 0.3s ease;
         font-size: 0.85rem;
     }
+
     .status-completed {
         background-color: #28a745;
         color: #fff;
     }
+
     .status-in-progress {
         background-color: #ffc107;
         color: #fff;
     }
+
     .status-pending {
         background-color: #dc3545;
         color: #fff;
     }
+
     .task-item {
         padding: 10px;
         border-bottom: 1px solid #ddd;
     }
-    .task-item:last-child {
-        border-bottom: none;
-    }
+
+        .task-item:last-child {
+            border-bottom: none;
+        }
+
     .task-title {
         font-size: 1rem;
         color: #555;
     }
+
     .task-desc {
         font-size: 0.9rem;
         color: #888;
@@ -44,48 +51,82 @@
 
 <div class="container mt-5">
     <h1 class="mb-4">Lista de Tarefas</h1>
+    <div id="status-buttons" class="mb-3 d-flex justify-content-end" style="display: none;">
+        <button class="btn btn-primary mr-2" onclick="setSelectedTasksStatus(0)">Definir como Pendente</button>
+        <button class=" btn btn-warning mr-2" onclick="setSelectedTasksStatus(1)">Definir como Em Progresso</button>
+        <button class=" btn btn-success" onclick="setSelectedTasksStatus(2)">Definir como Completo</button>
+    </div>
     @foreach (var parentGroup in Model.GroupBy(task => task.IdToDoList))
     {
-        if(parentGroup.Key != null && parentGroup.Key != Guid.Empty) 
+        if (parentGroup.Key != null && parentGroup.Key != Guid.Empty)
         {
-            var parent = parentGroup.First().ListaPai;
+            var parent = parentGroup.First().ToDoList;
 
             <div class="mb-4">
-            <div class="d-flex align-items-center mb-2">
+                <div class="d-flex align-items-center mb-2">
                     <input type="checkbox" class="mr-2" id="list-checkbox-@parentGroup.Key.Value" onclick="toggleListTasks('@parentGroup.Key.Value')" />
                     <label class="list-header" for="list-checkbox-@parentGroup.Key.Value">
-                    @parent.Nome
+                        @parent.Nome
                     </label>
                 </div>
                 <div class="ml-4">
-                @foreach (var task in parentGroup)
-                {
-                            <div class="task-item d-flex align-items-baseline">
-                                <input type="checkbox" class="checkbox-column mr-3 list-checkbox-@parentGroup.Key.Value" id="task-checkbox-@task.Id" onclick="checkListStatus('@parentGroup.Key.Value')"/>
-                                <div class="flex-grow-1">
-                                    <div class="task-title">@task.Nome</div>
-                            @if (!string.IsNullOrWhiteSpace(task.Descricao))
-                            {
-                                            <div class="task-desc">@task.Descricao</div>
-                            }
-                                </div>
-                                <div>
-                                    <!-- Toggle Status -->
-                                                <div class="status-toggle @(task.Status == 1 ? "status-completed" : task.Status == 2 ? "status-in-progress" : "status-pending")" 
-                                         data-status="@task.Status" 
-                                         id="status-toggle-@task.Id" 
-                                         onclick="toggleStatus(this)">
-                                @(task.Status == 1 ? "Completed" : task.Status == 2 ? "In Progress" : "Pending")
-                                    </div>
+                    @foreach (var task in parentGroup)
+                    {
+                        <div class="task-item d-flex align-items-baseline">
+                            <input type="checkbox" class="checkbox-column mr-3 list-checkbox-@parentGroup.Key.Value" id="task-checkbox-@task.Id" onclick="checkListStatus('@parentGroup.Key.Value')" />
+                            <div class="flex-grow-1">
+                                <div class="task-title">@task.Nome</div>
+                                @if (!string.IsNullOrWhiteSpace(task.Descricao))
+                                {
+                                    <div class="task-desc">@task.Descricao</div>
+                                }
+                            </div>
+                            <div>
+                                <!-- Toggle Status -->
+                                <div class="status-toggle @(task.Status == 2 ? "status-completed" : task.Status == 1 ? "status-in-progress" : "status-pending")"
+                                     data-status="@task.Status"                                     
+                                     data-id="@task.Id"
+                                     id="status-toggle-@task.Id"
+                                     onclick="toggleStatus(this)">
+                                    @(task.Status == 2 ? "Completa" : task.Status == 1 ? "Em Progresso" : "Pendete")
                                 </div>
                             </div>
-                }
+                        </div>
+                    }
                 </div>
             </div>
         }
+        else
+        {
+            foreach(var task in parentGroup)
+            {
+            <div class="mb-4">
+                        <div class="task-item d-flex align-items-baseline">
+                            <input type="checkbox" class="checkbox-column mr-3" id="task-checkbox-@task.Id" />
+                            <div class="flex-grow-1">
+                                <div class="task-title">@task.Nome</div>
+                                @if (!string.IsNullOrWhiteSpace(task.Descricao))
+                                {
+                                    <div class="task-desc">@task.Descricao</div>
+                                }
+                            </div>
+                            <div>
+                                <!-- Toggle Status -->
+                                <div class="status-toggle @(task.Status == 2 ? "status-completed" : task.Status == 1 ? "status-in-progress" : "status-pending")"
+                                     data-status="@task.Status"
+                                     data-id="@task.Id"
+                                     id="status-toggle-@task.Id"
+                                     onclick="toggleStatus(this)">
+                                    @(task.Status == 2 ? "Completa" : task.Status == 1 ? "Em Progresso" : "Pedente")
+                                </div>
+                            </div>
+                        </div>
+            </div>
+            }
+        }
     }
 </div>
-    
+
 @section scripts {
 
     <script>
@@ -93,8 +134,8 @@
             const listCheckbox = document.getElementById(`list-checkbox-${listId}`);
             const taskCheckboxes = document.querySelectorAll(`.list-checkbox-${listId}`);
             taskCheckboxes.forEach(checkbox => checkbox.checked = listCheckbox.checked);
-        } 
-        
+        }
+
         function checkListStatus(listId) {
             const listCheckbox = document.getElementById(`list-checkbox-${listId}`);
             const taskCheckboxes = document.querySelectorAll(`.list-checkbox-${listId}`);
@@ -109,29 +150,56 @@
         function toggleStatus(element) {
             // Obtem o status atual
             const currentStatus = parseInt(element.getAttribute('data-status'), 10);
-            const nextStatus = currentStatus === 3 ? 1 : currentStatus + 1;
+            const id = element.getAttribute('data-id');
+            const nextStatus = currentStatus === 2 ? 0 : currentStatus + 1;
 
-            // Atualiza o atributo de estado
-            element.setAttribute('data-status', nextStatus);
+            fetch('@Url.Action("AltereStatus", "Home")' + `?id=${id}&status=${nextStatus}`, { method: 'POST' })
+                .catch(t => alert("erro em mundaça de status"))
+                .then(t => location.reload())
+            
+        }
 
-            // Atualiza o estilo e o texto do botão
-            switch (nextStatus) {
-                case 1:
-                    element.className = 'status-toggle status-completed';
-                    element.textContent = 'Completed';
-                    break;
-                case 2:
-                    element.className = 'status-toggle status-in-progress';
-                    element.textContent = 'In Progress';
-                    break;
-                case 3:
-                    element.className = 'status-toggle status-pending';
-                    element.textContent = 'Pending';
-                    break;
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const taskCheckboxes = document.querySelectorAll('.task-checkbox');
+            const statusButtons = document.getElementById('status-buttons');
+
+            // Função para verificar se há pelo menos uma tarefa selecionada
+            function updateButtonsVisibility() {
+                const isAnyTaskChecked = Array.from(taskCheckboxes).some(checkbox => checkbox.checked);
+                statusButtons.style.display = isAnyTaskChecked ? 'flex' : 'none';
             }
 
-            // Aqui você pode enviar a alteração para o backend, caso necessário
-            console.log(`Task status updated: ${nextStatus}`);
-        }
+            // Adiciona listeners a todas as checkboxes de tarefas
+            taskCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateButtonsVisibility);
+            });
+
+            // Função para definir o status das tarefas selecionadas
+            window.setSelectedTasksStatus = function (status) {
+                const selectedTasks = Array.from(taskCheckboxes)
+                    .filter(checkbox => checkbox.checked)
+                    .map(checkbox => checkbox.id.replace('task-checkbox-', ''));
+
+                if (selectedTasks.length > 0) {
+                    fetch('@Url.Action("UpdateTasksStatus", "Home")', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ taskIds: selectedTasks, status }),
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            location.reload(); // Atualiza a página após sucesso
+                        } else {
+                            alert('Erro ao atualizar status das tarefas.');
+                        }
+                    })
+                    .catch(error => alert('Erro ao conectar ao servidor.'));
+                }
+            };
+        });
     </script>
 }

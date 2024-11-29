@@ -29,7 +29,7 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
         IUMBITCommandRequestHandler<DeleteToDoListCommand>,
         IUMBITCommandRequestHandler<EditeToDoItemCommand>,
         IUMBITCommandRequestHandler<EditeToDoListItemCommand>,
-        IUMBITCommandRequestHandler<FinalizeToDoItemCommand>,
+        IUMBITCommandRequestHandler<AtualizarStatusToDoItemCommand>,
         IUMBITCommandRequestHandler<AviseToDoCommand>
     {
         private readonly UserManager<Usuario> _userManager;
@@ -67,12 +67,12 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
                     return CommandResponse();
                 }
 
-                this._messagerBus.Publish<AvisoWorker.AvisoMessage>(new AvisoWorker.AvisoMessage(request.IdUsuario)); 
+                this._messagerBus.Publish<AvisoWorker.AvisoMessage>(new AvisoWorker.AvisoMessage(request.IdUsuario));
                 return CommandResponse();
             }
             catch (Exception ex)
             {
-                throw new ExcecaoBasicaUMBIT("Erro ao realizar aviso",ex);
+                throw new ExcecaoBasicaUMBIT("Erro ao realizar aviso", ex);
             }
         }
 
@@ -250,11 +250,10 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
             }
         }
 
-        async Task<UMBITMessageResponse> IRequestHandler<FinalizeToDoItemCommand, UMBITMessageResponse>.Handle(FinalizeToDoItemCommand request, CancellationToken cancellationToken)
+        async Task<UMBITMessageResponse> IRequestHandler<AtualizarStatusToDoItemCommand, UMBITMessageResponse>.Handle(AtualizarStatusToDoItemCommand request, CancellationToken cancellationToken)
         {
             try
             {
-
                 var item = await RepositorioToDoItem.Query().SingleAsync(t => t.Id == request.Id);
 
                 if (_contextoPrincipal.ObtenhaPrincipal() != null && !_contextoPrincipal.ObtenhaPrincipal()!.EhAdministrador() && item.IdUsuario.ToString() != _contextoPrincipal.ObtenhaPrincipal()!.Id)
@@ -263,7 +262,7 @@ namespace UMBIT.ToDo.Dominio.Application.Commands
                     return CommandResponse();
                 }
 
-                item.Status = EnumeradorStatus.Concluido;
+                item.Status = (EnumeradorStatus)request.Status;
 
                 RepositorioToDoItem.Atualizar(item);
 

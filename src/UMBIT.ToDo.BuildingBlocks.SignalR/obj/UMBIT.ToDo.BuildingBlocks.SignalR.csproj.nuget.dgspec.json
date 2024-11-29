@@ -121,15 +121,15 @@
             },
             "Microsoft.AspNetCore.SignalR.Client": {
               "target": "Package",
-              "version": "[6.0.32, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.AspNetCore.SignalR.Common": {
               "target": "Package",
-              "version": "[6.0.32, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.AspNetCore.SignalR.Protocols.Json": {
               "target": "Package",
-              "version": "[6.0.32, )"
+              "version": "[9.0.0, )"
             }
           },
           "imports": [

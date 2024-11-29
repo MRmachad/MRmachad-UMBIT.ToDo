@@ -19,7 +19,9 @@ namespace UMBIT.ToDo.Core.Seguranca.Models
 
         public ContextoPrincipal(HttpContext httpContext)
         {
-            HttpContext = httpContext;
+            HttpContext = httpContext; 
+            BearerToken = httpContext?.Request?.Headers["Authorization"].FirstOrDefault(t => t!.StartsWith(BEARER_SCHEME))?.Substring(BEARER_SCHEME.Length).Trim();
+
         }
 
         public Principal? ObtenhaPrincipal()

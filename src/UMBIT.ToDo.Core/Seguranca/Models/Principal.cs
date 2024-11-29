@@ -15,7 +15,7 @@ namespace UMBIT.ToDo.Core.Seguranca.Models
 
             Id = userPrincipal.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
             Email = userPrincipal.FindFirst(ClaimTypes.Email)?.Value ?? string.Empty;
-            User = userPrincipal.FindFirst(ClaimTypes.Name)?.Value ?? string.Empty;
+            User = userPrincipal.FindFirst("name")?.Value ?? string.Empty;
             Claims = userPrincipal.Claims.ToList();
         }
 

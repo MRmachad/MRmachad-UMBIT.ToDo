@@ -20,66 +20,79 @@ namespace UMBIT.ToDo.Web.Controllers
             _servicoDeToDo = servicoDeToDo;
         }
 
-        public IActionResult Index(int status = -1, Guid? idList = null)
+        public async Task<IActionResult> Index()
         {
-            return MiddlewareDeRetorno(() =>
+            return await MiddlewareDeRetorno(async () =>
             {
                 if (!_authSessionContext.EhAutenticado)
                 {
                     return RedirectToAction("Login", "Auth");
                 }
 
-                var idPaia = Guid.NewGuid();
+                var tasks = await this._servicoDeToDo.ObtenhaTarefasPendentes();
+
+                if (tasks == null || !tasks.Any())
+                    return RedirectToAction(nameof(IndexDemo));
+
+                return View(tasks);
+            });
+        }
+        public async Task<IActionResult> IndexDemo()
+        {
+            return await MiddlewareDeRetorno(async () =>
+            {
+                var idListA = Guid.NewGuid();
 
                 var tasks = new List<TarefaDTO>
-        {
-            new TarefaDTO
-            {
-                Id = Guid.NewGuid(),
-                Index = 1,
-                Nome = "Task 1",
-                Descricao = "Descrição da Task 1",
-                Status = 1,
-                DataInicio = DateTime.Now.AddDays(-1),
-                DataFim = DateTime.Now,
-            },
-            new TarefaDTO
-            {
-                Id = Guid.NewGuid(),
-                IdToDoList = idPaia,
-                Index = 1,
-                Nome = "Task 1",
-                Descricao = "Descrição da Task 1",
-                Status = 1,
-                DataInicio = DateTime.Now.AddDays(-1),
-                DataFim = DateTime.Now,
-                ListaPai = new ListaDTO { Id = idPaia, Nome = "Lista A" }
-            },
-            new TarefaDTO
-            {
-                Id = Guid.NewGuid(),
-                IdToDoList = idPaia,
-                Index = 2,
-                Nome = "Task 2",
-                Descricao = "Descrição da Task 2",
-                Status = 2,
-                DataInicio = DateTime.Now.AddDays(-2),
-                DataFim = DateTime.Now.AddDays(1),
-                ListaPai = new ListaDTO { Id =idPaia, Nome = "Lista A" }
-            },
-            new TarefaDTO
-            {
-                Id = Guid.NewGuid(),
-                IdToDoList = Guid.NewGuid(),
-                Index = 3,
-                Nome = "Task 3",
-                Descricao = "Descrição da Task 3",
-                Status = 3,
-                DataInicio = DateTime.Now,
-                DataFim = DateTime.Now.AddDays(2),
-                ListaPai = new ListaDTO { Id = Guid.NewGuid(), Nome = "Lista B" }
-            }
-        };
+                {
+                    new TarefaDTO
+                    {
+                        Id = Guid.NewGuid(),
+                        Index = 1,
+                        Nome = "Você pode marcar as tarefas que deseja mudar status de uma só vez",
+                        Descricao = "Descrição da Task 1",
+                        Status = 1,
+                        DataInicio = DateTime.Now.AddDays(-1),
+                        DataFim = DateTime.Now,
+                    },
+                    new TarefaDTO
+                    {
+                        Id = Guid.NewGuid(),
+                        IdToDoList = idListA,
+                        Index = 1,
+                        Nome = "Serão mostradas as Tarefas pendentes",
+                        Descricao = "Descrição da Task 1",
+                        Status = 1,
+                        DataInicio = DateTime.Now.AddDays(-1),
+                        DataFim = DateTime.Now,
+                        ToDoList = new ListaDTO { Id = idListA, Nome = "Aqui aparecerão suas Lista" }
+                    },
+                    new TarefaDTO
+                    {
+                        Id = Guid.NewGuid(),
+                        IdToDoList = idListA,
+                        Index = 2,
+                        Nome = "Vá a tela de gerenciamento e crie novas tarefas ",
+                        Descricao = "Descrição da Task 2",
+                        Status = 2,
+                        DataInicio = DateTime.Now.AddDays(-2),
+                        DataFim = DateTime.Now.AddDays(1),
+                        ToDoList = new ListaDTO { Id =idListA, Nome = "Aqui aparecerão suas Lista" }
+                    },
+                    new TarefaDTO
+                    {
+                        Id = Guid.NewGuid(),
+                        IdToDoList = Guid.NewGuid(),
+                        Index = 3,
+                        Nome = "Caso não for o adminitrador vc só poderá ver as suas listas",
+                        Descricao = "Descrição da Task 3",
+                        Status = 2,
+                        DataInicio = DateTime.Now,
+                        DataFim = DateTime.Now.AddDays(2),
+                        ToDoList = new ListaDTO { Id = Guid.NewGuid(), Nome = "Lista B" }
+                    }
+                };
+
                 return View(tasks);
             });
         }
@@ -88,7 +101,16 @@ namespace UMBIT.ToDo.Web.Controllers
         {
             return await MiddlewareDeRetorno(async () =>
             {
-                var result = (await this._servicoDeToDo.ObtenhaItens(status, idList));
+                List<TarefaDTO>? result;
+
+                if (status != null && idList != null)
+                    result = (await this._servicoDeToDo.ObtenhaTarefas(status.Value, idList.Value));
+                else if (status != null)
+                    result = (await this._servicoDeToDo.ObtenhaTarefas(status.Value));
+                else if (idList != null)
+                    result = (await this._servicoDeToDo.ObtenhaTarefas(idList.Value));
+                else result = (await this._servicoDeToDo.ObtenhaTarefas());
+
 
                 var lists = await this._servicoDeToDo.ObtenhaLists();
 
@@ -136,8 +158,18 @@ namespace UMBIT.ToDo.Web.Controllers
                 var lists = await this._servicoDeToDo.ObtenhaLists();
                 ViewBag.Lists = lists;
 
-                var result = await this._servicoDeToDo.ObtenhaItem(id);
-                return View(result);
+                var tarefa = await this._servicoDeToDo.ObtenhaItem(id);
+                return View(new AtualizarTarefaRequest()
+                {
+                    Status = tarefa.Status,
+                    DataFim = tarefa.DataFim,
+                    DataInicio = tarefa.DataInicio,
+                    Id = tarefa.Id,
+                    Nome = tarefa.Nome,
+                    Descricao = tarefa.Descricao,
+                    IdToDoList = tarefa.IdToDoList,
+                    Index = tarefa.Index
+                });
             });
         }
 
@@ -149,7 +181,7 @@ namespace UMBIT.ToDo.Web.Controllers
                 if (!ModelState.IsValid)
                     return View(taskDTO);
 
-                await this._servicoDeToDo.EditItem(taskDTO);
+                await this._servicoDeToDo.EditItem(taskDTO.Id, taskDTO);
 
                 return RedirectToAction("ListaTarefa");
 
@@ -163,7 +195,7 @@ namespace UMBIT.ToDo.Web.Controllers
                 await this._servicoDeToDo.DeleteItem(id);
 
                 return RedirectToAction("ListaTarefa");
-            });
+            }, nameof(ListaTarefa));
         }
         public async Task<IActionResult> DeleteList(Guid id)
         {
@@ -172,7 +204,7 @@ namespace UMBIT.ToDo.Web.Controllers
                 await this._servicoDeToDo.DeleteList(id);
 
                 return RedirectToAction("ListaTarefa");
-            });
+            }, nameof(ListaTarefa));
         }
 
         public IActionResult AddList()
@@ -194,8 +226,12 @@ namespace UMBIT.ToDo.Web.Controllers
         {
             return await MiddlewareDeRetorno(async () =>
             {
-                var result = await this._servicoDeToDo.ObtenhaList(id);
-                return View(result);
+                var lista = await this._servicoDeToDo.ObtenhaList(id);
+                return View(new AtualizarListaRequest()
+                {
+                    Nome = lista.Nome,
+                    Id = lista.Id,
+                });
             });
         }
 
@@ -219,23 +255,17 @@ namespace UMBIT.ToDo.Web.Controllers
             return await MiddlewareDeRetorno(async () =>
             {
 
-                var item = this._servicoDeToDo.ObtenhaItem(id).Result;
+                var item = await this._servicoDeToDo.ObtenhaItem(id);
                 item.Status = status;
-                await this._servicoDeToDo.EditItem(new AtualizarTarefaRequest()
+                await this._servicoDeToDo.EditStatus(id, new AtualizarStatusTarefaRequest()
                 {
                     Id = id,
-                    Nome = item.Nome,
-                    Index = item.Index,
-                    Status = item.Status,
-                    DataFim = item.DataFim,
-                    DataInicio = item.DataInicio,
-                    Descricao = item.Descricao,
-                    IdToDoList = item.IdToDoList,
+                    Status = item.Status
                 });
 
                 return RedirectToAction("ListaTarefa");
 
-            });
+            }, nameof(ListaTarefa));
         }
 
 

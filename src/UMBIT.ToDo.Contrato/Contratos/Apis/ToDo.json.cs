@@ -60,6 +60,13 @@ namespace UMBIT.Nexus.Auth.Contrato
         [Microsoft.AspNetCore.Mvc.HttpDelete, Microsoft.AspNetCore.Mvc.Route("tarefa/{id}")]
         public abstract System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.IActionResult> RemoverTarefa(System.Guid id);
 
+        /// <remarks>
+        /// Atualizar Status Tarefa
+        /// </remarks>
+        /// <returns>Success</returns>
+        [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("tarefa/{id}/atualizar-status")]
+        public abstract System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.IActionResult> AtualizarStatusTarefa(System.Guid id, [Microsoft.AspNetCore.Mvc.FromBody] AtualizarStatusTarefaRequest body);
+
         /// <returns>Success</returns>
         [Microsoft.AspNetCore.Mvc.HttpGet, Microsoft.AspNetCore.Mvc.Route("lista-tarefa")]
         public abstract System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.ActionResult<System.Collections.Generic.ICollection<ListaDTO>>> ObterListaTarefa();
@@ -153,6 +160,18 @@ namespace UMBIT.Nexus.Auth.Contrato
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.0.7.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class AtualizarStatusTarefaRequest
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public System.Guid Id { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("status")]
+        public int Status { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.0.7.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class TarefaDTO
     {
 
@@ -192,8 +211,8 @@ namespace UMBIT.Nexus.Auth.Contrato
         [System.Text.Json.Serialization.JsonPropertyName("dataAtualizacao")]
         public System.DateTime DataAtualizacao { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("ListaPai")]
-        public ListaDTO ListaPai { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("toDoList")]
+        public ListaDTO ToDoList { get; set; }
 
     }
 

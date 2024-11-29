@@ -1,3 +1,4 @@
+using Azure.Core;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UMBIT.Nexus.Auth.Contrato;
@@ -9,7 +10,7 @@ using UMBIT.ToDo.Dominio.Entidades.ToDo;
 
 namespace UMBIT.ToDo.API.Controllers
 {
-    [Authorize]
+    [Autorizacao]
     public class ToDoController : ToDoControllerBase
     {
         private ContextoPrincipal _contextoPrincipal;
@@ -141,6 +142,19 @@ namespace UMBIT.ToDo.API.Controllers
             var command = Mapper.Map<AviseToDoCommand>(new AviseToDoCommand()
             {
                 IdUsuario = id
+            });
+
+            var response = await Mediator.EnviarComando(command);
+
+            return UMBITResponse(response);
+        }
+
+        public override async Task<IActionResult> AtualizarStatusTarefa(Guid id, [FromBody] AtualizarStatusTarefaRequest request)
+        {
+            var command = Mapper.Map<AtualizarStatusToDoItemCommand>(new AtualizarStatusToDoItemCommand()
+            {
+                Id = request.Id,
+                Status = request.Status
             });
 
             var response = await Mediator.EnviarComando(command);

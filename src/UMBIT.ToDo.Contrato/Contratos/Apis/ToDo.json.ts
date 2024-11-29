@@ -31,6 +31,11 @@ export interface AtualizarTarefaRequest {
     dataFim: Date;
 }
 
+export interface AtualizarStatusTarefaRequest {
+    id: string;
+    status: number;
+}
+
 export interface TarefaDTO {
     id: string;
     idToDoList: string | undefined;
@@ -44,7 +49,7 @@ export interface TarefaDTO {
     dataFim: Date;
     dataCriacao: Date;
     dataAtualizacao: Date;
-    ListaPai: ListaDTO | undefined;
+    toDoList: ListaDTO | undefined;
 }
 
 export interface AdicionarListaRequest {

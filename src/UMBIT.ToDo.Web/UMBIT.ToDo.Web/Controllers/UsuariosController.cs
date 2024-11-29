@@ -31,5 +31,16 @@ namespace UMBIT.ToDo.Web.Controllers
             });
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Aviso(Guid id)
+        {
+            return await MiddlewareDeRetorno(async () =>
+            {
+                await _serviceUser.RemoverUsuario(id);
+
+                return Json(new { success = true, message = "Usuário removido com sucesso." });
+            });
+        }
+
     }
 }

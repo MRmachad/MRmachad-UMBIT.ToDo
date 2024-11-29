@@ -62,6 +62,11 @@
                                         <i class="fas fa-trash"></i> Excluir
                                     </a>
 
+                                    <a onclick="avise('@user.Id')"
+                                       class="btn btn-sm btn-warning">
+                                        <i class="fas fa-arrow"></i> Notificar
+                                    </a>
+
                                 }
                             </td>
                         </tr>
@@ -83,15 +88,29 @@
                     type: 'DELETE',
                     success: function (response) {
                         if (response.success) {
-                            // Remover a linha da tabela
                             $('#user-' + userId).remove();
-                            alert(response.message); // Exibir mensagem de sucesso
+                            alert(response.message); 
                         } else {
-                            alert(response.message); // Exibir mensagem de erro
+                            alert(response.message); 
                         }
                     },
                     error: function () {
                         alert('Erro ao tentar excluir o usuário.');
+                    }
+                });
+            }
+        }
+        function avise(userId) {
+            if (confirm('Tem certeza que deseja notificar este usuário?')) {
+                // Enviar requisição DELETE com AJAX
+                $.ajax({
+                    url: '/Usuarios/Aviso/' + userId,
+                    type: 'POST',
+                    success: function (response) {
+                        alert(response.message);
+                    },
+                    error: function () {
+                        alert('Erro ao tentar notificar usuário.');
                     }
                 });
             }

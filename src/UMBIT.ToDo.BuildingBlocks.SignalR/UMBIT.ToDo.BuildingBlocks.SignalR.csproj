@@ -9,9 +9,9 @@
 	<ItemGroup>
 		<PackageReference Include="ConfigurationDebugViewEndpoint" Version="1.1.0" />
 		<PackageReference Include="Microsoft.AspNet.SignalR.Client" Version="2.4.3" />
-		<PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="6.0.32" />
-		<PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="6.0.32" />
-		<PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.Json" Version="6.0.32" />
+		<PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="9.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="9.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.Json" Version="9.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>

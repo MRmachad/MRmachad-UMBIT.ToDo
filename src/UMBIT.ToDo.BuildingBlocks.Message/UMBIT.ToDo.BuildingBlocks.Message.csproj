@@ -8,11 +8,15 @@
 
 	<ItemGroup>
 		<PackageReference Include="MediatR" Version="12.4.1" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.0" />
 		<PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
+		<PackageReference Include="Microsoft.Extensions.Options" Version="9.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\UMBIT.ToDo.Core\UMBIT.ToDo.BuildingBlocks.Core.csproj" />
+	  <ProjectReference Include="..\UMBIT.ToDo.BuildingBlocks.Basicos\UMBIT.ToDo.BuildingBlocks.Basicos.csproj" />
+	  <ProjectReference Include="..\UMBIT.ToDo.BuildingBlocks.Repositorio\UMBIT.ToDo.BuildingBlocks.Repositorio.csproj" />
 	</ItemGroup>
 	
 </Project>

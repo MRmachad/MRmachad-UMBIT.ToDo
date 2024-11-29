@@ -33,20 +33,7 @@ namespace UMBIT.ToDo.API.Bootstrapper
                 c.CustomSchemaIds(type => type.ToString());
                 c.SwaggerDoc(versao, new OpenApiInfo { Title = ProjetoAssemblyHelper.NameProjetoInterface, Version = versao });
             });
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                    .AddJwtBearer(x =>
-                    {
-                        x.SaveToken = true;
-                        x.RequireHttpsMetadata = false;
-                        x.TokenValidationParameters = new TokenValidationParameters
-                        {
-                            ValidateIssuer = false,
-                            ValidateAudience = false,
-                            ValidateLifetime = false,
-                            ValidateIssuerSigningKey = false,
-                            SignatureValidator = (token, _) => new JsonWebToken(token)
-                        };
-                    });
+
             services.AddAuthorization();
             return services;
         }

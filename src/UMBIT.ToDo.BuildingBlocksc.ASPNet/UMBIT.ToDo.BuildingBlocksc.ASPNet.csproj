@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\UMBIT.ToDo.WebApi\UMBIT.ToDo.BuildingBlocks.WebAPI.csproj" />
     <ProjectReference Include="..\UMBIT.ToDo.WebApi\UMBIT.ToDo.BuildingBlocksc.WebAPI.csproj" />
   </ItemGroup>
 

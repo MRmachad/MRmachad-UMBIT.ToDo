@@ -141,30 +141,30 @@
         };
         @{
             <text>
-                        optionPie.series[0].data = @Html.Raw(pieData);
+                    optionPie.series[0].data = @Html.Raw(pieData);
             </text>
         }
     </script>
     <script>
 
-                $("#status-select").on("change", function (el) {
-                    let status = $(el.currentTarget).val();
-                    let listid = $("#list-select").val();
-                var url = '@Url.Action("Index", "ListaTarefa")' + `?status=${status}&idList=${listid}`;
-                    location.href = url;
-                });
+            $("#status-select").on("change", function (el) {
+                let status = $(el.currentTarget).val();
+                let listid = $("#list-select").val();
+                var url = '@Url.Action("ListaTarefa", "Home")' + `?status=${status}&idList=${listid}`;
+                location.href = url;
+            });
 
         $("#list-select").on("change", function (el) {
             let listid = $(el.currentTarget).val();
             let status = $("#status-select").val();
-            var url = '@Url.Action("Index", "ListaTarefa")' + `?status=${status}&idList=${listid}`;
+            var url = '@Url.Action("ListaTarefa", "Home")' + `?status=${status}&idList=${listid}`;
             location.href = url;
         });
 
         $(".task-status-select").on("change", function (el) {
             let status = $(el.currentTarget).val();
             let id = $(el.currentTarget).data("id");
-            fetch('@Url.Action("AltereStatus", "ListaTarefa")' + `?id=${id}&status=${status}`, { method: 'POST' })
+            fetch('@Url.Action("AltereStatus", "Home")' + `?id=${id}&status=${status}`, { method: 'POST' })
                 .catch(t => alert("erro em mundaça de status"))
                 .then(t => location.reload())
         });

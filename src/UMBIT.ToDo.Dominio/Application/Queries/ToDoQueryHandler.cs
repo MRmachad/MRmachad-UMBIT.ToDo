@@ -28,13 +28,13 @@ namespace UMBIT.ToDo.Dominio.Application.Queries
 
         async Task<UMBITMessageResponse<ToDoItem>> IRequestHandler<ObterToDoPorIdQuery, UMBITMessageResponse<ToDoItem>>.Handle(ObterToDoPorIdQuery request, CancellationToken cancellationToken)
         {
-            var result = await this.RepositorioToDoItem.Query().SingleOrDefaultAsync(t => t.Id == request.Id);
+            var result = await this.RepositorioToDoItem.Query().Include(t => t.ToDoList).SingleOrDefaultAsync(t => t.Id == request.Id);
             return QueryResponse(result);
         }
 
         Task<UMBITMessageResponse<IQueryable<ToDoItem>>> IRequestHandler<ObterToDoQuery, UMBITMessageResponse<IQueryable<ToDoItem>>>.Handle(ObterToDoQuery request, CancellationToken cancellationToken)
         {
-            var result = this.RepositorioToDoItem.Query();
+            var result = this.RepositorioToDoItem.Query().Include(t => t.ToDoList).AsQueryable();
             return TaskQueryResponse(result);
         }
 

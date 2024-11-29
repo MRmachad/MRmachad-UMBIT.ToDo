@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UMBIT.ToDo.Contrato")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27fed4cfc63e28d15239d1c446f148d9991e975c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1855055f513e868461bf1608f5a9f35f171f2b9f")]
 [assembly: System.Reflection.AssemblyProductAttribute("UMBIT.ToDo.Contrato")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UMBIT.ToDo.Contrato")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

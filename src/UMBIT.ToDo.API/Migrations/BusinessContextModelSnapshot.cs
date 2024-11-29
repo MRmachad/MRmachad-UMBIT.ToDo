@@ -58,68 +58,7 @@ namespace UMBIT.ToDo.API.Migrations
                     b.ToTable("SetTrackEvent");
                 });
 
-            modelBuilder.Entity("UMBIT.ToDo.Dominio.Entidades.ToDoItem", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("DataAtualizacao")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DataCriacao")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DataFim")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DataInicio")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Descricao")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("IdToDoList")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Index")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IdToDoList");
-
-                    b.ToTable("ToDoItem");
-                });
-
-            modelBuilder.Entity("UMBIT.ToDo.Dominio.Entidades.ToDoList", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("DataAtualizacao")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DataCriacao")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ToDoList");
-                });
-
-            modelBuilder.Entity("UMBIT.ToDo.Dominio.Entidades.Token.ApiToken", b =>
+            modelBuilder.Entity("UMBIT.ToDo.Dominio.Entidades.Auth.Token.ApiToken", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -151,9 +90,84 @@ namespace UMBIT.ToDo.API.Migrations
                     b.ToTable("ApiToken");
                 });
 
-            modelBuilder.Entity("UMBIT.ToDo.Dominio.Entidades.ToDoItem", b =>
+            modelBuilder.Entity("UMBIT.ToDo.Dominio.Entidades.ToDo.ToDoItem", b =>
                 {
-                    b.HasOne("UMBIT.ToDo.Dominio.Entidades.ToDoList", "ToDoList")
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataFim")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataInicio")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("IdToDoList")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("IdUsuario")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Index")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NomeUsuario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdToDoList");
+
+                    b.ToTable("ToDoItem");
+                });
+
+            modelBuilder.Entity("UMBIT.ToDo.Dominio.Entidades.ToDo.ToDoList", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("IdUsuario")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NomeUsuario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ToDoList");
+                });
+
+            modelBuilder.Entity("UMBIT.ToDo.Dominio.Entidades.ToDo.ToDoItem", b =>
+                {
+                    b.HasOne("UMBIT.ToDo.Dominio.Entidades.ToDo.ToDoList", "ToDoList")
                         .WithMany("ToDoItems")
                         .HasForeignKey("IdToDoList")
                         .OnDelete(DeleteBehavior.Restrict);
@@ -161,7 +175,7 @@ namespace UMBIT.ToDo.API.Migrations
                     b.Navigation("ToDoList");
                 });
 
-            modelBuilder.Entity("UMBIT.ToDo.Dominio.Entidades.ToDoList", b =>
+            modelBuilder.Entity("UMBIT.ToDo.Dominio.Entidades.ToDo.ToDoList", b =>
                 {
                     b.Navigation("ToDoItems");
                 });

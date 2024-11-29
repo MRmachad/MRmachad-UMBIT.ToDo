@@ -1,7 +1,7 @@
 ﻿
 using MediatR;
 
-namespace UMBIT.ToDo.Core.Repositorio.Application.Events.Operacoes.Base
+namespace UMBIT.ToDo.BuildingBlocks.Repositorio.Application.Events.Operacoes.Base
 {
     public abstract class DomainEvent : INotification
     {

@@ -1,57 +1,34 @@
 {
-  "version": "3.1",
+  "version": "3.9",
   "services": {
-    "service-todo": {
-      "build": {
-        "context": ".",
-        "dockerfile": ".\\src\\UMBIT.ToDo.API\\Dockerfile"
-      },
-      "container_name": "service-todo",
-      "restart": "unless-stopped",
-      "ports": [
-        "5050:8080"
-      ],
+    "sqlserver": {
+      "image": "mcr.microsoft.com/mssql/server:2022-latest",
+      "container_name": "sqlserver",
       "environment": {
-        "DATA_MODE": "MySQL",
-        "ConnectionStrings__default": "Server=mariaAppProd;Port=3306;User=root;Password=qwerty;Database=servicePROD"
+        "ACCEPT_EULA": "Y",
+        "SA_PASSWORD": "QWER!@#$qwer1234"
       },
-      "depends_on": [
-        "mariaAppProd"
-      ]
-    },
-    "web": {
-      "build": {
-        "context": ".",
-        "dockerfile": ".\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\Dockerfile"
-      },
-      "restart": "unless-stopped",
-      "container_name": "web",
       "ports": [
-        "5220:8080"
-      ],
-      "environment": {
-        "DATA_MODE": "MySQL",
-        "BaseAdressService": "http://service-todo:8080/",
-        "ConnectionStrings__default": "Server=mariaAppProd;Port=3306;User=root;Password=qwerty;Database=servicePROD"
-      },
-      "depends_on": [
-        "service-todo",
-        "mariaAppProd"
-      ]
-    },
-    "mariaAppProd": {
-      "image": "mariadb",
-      "container_name": "mariaAppProd",
-      "restart": "unless-stopped",
-      "ports": [
-        "3466:3306"
+        "1433:1433"
       ],
       "volumes": [
-        "./vols/mariadb_data:/var/lib/mysql"
-      ],
+        "sqlserver_data:/var/opt/mssql"
+      ]
+    },
+    "rabbitmq": {
+      "image": "rabbitmq:management",
+      "container_name": "rabbitmq",
       "environment": {
-        "MYSQL_ROOT_PASSWORD": "qwerty"
-      }
+        "RABBITMQ_DEFAULT_USER": "guest",
+        "RABBITMQ_DEFAULT_PASS": "guest"
+      },
+      "ports": [
+        "5672:5672",
+        "15672:15672"
+      ]
     }
+  },
+  "volumes": {
+    "sqlserver_data": {}
   }
 }

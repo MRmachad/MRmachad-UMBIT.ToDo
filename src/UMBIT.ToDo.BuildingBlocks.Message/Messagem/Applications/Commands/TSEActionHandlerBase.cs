@@ -1,7 +1,7 @@
-﻿using UMBIT.ToDo.Core.Notificacao.Interfaces;
-using UMBIT.ToDo.Core.Repositorio.Interfaces.Database;
+﻿using UMBIT.ToDo.BuildingBlocks.Core.Notificacao.Interfaces;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Interfaces.Database;
 
-namespace UMBIT.ToDo.Core.Messages.Messagem.Applications.Commands
+namespace UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Commands
 {
     public abstract class UMBITActionHandlerBase
     {

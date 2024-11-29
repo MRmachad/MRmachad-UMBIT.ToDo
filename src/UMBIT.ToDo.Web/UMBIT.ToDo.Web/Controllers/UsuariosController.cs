@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using UMBIT.Nexus.Auth.Contrato;
-using UMBIT.ToDo.Core.API.Controllers;
+using UMBIT.ToDo.BuildingBlocksc.ASPNet.Basicos.Exececoes;
+using UMBIT.ToDo.BuildingBlocksc.ASPNet.Controllers;
 using UMBIT.ToDo.Web.services;
-using static UMBIT.ToDo.Web.Bootstrapper.ContextConfigurate;
+using static UMBIT.ToDo.BuildingBlocksc.ASPNet.Bootstrapper.ContextConfigurate;
 
 namespace UMBIT.ToDo.Web.Controllers
 {
@@ -36,9 +37,16 @@ namespace UMBIT.ToDo.Web.Controllers
         {
             return await MiddlewareDeRetorno(async () =>
             {
-                await _serviceUser.RemoverUsuario(id);
+                try
+                {
+                    await _serviceUser.AviseUsuario(id);
+                }
+                catch (ExcecaoServicoExterno ex)
+                {
+                    return Json(new { success = false, message = ex.APIReposta?.Erros.First().Mensagem });
+                }
 
-                return Json(new { success = true, message = "Usuário removido com sucesso." });
+                return Json(new { success = true, message = "Usuário avisado com sucesso." });
             });
         }
 

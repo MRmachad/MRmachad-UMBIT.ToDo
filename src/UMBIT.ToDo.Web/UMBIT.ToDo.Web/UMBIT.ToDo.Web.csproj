@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\UMBIT.ToDo.BuildingBlocksc.ASPNet\UMBIT.ToDo.BuildingBlocksc.ASPNet.csproj" />
+    <ProjectReference Include="..\..\UMBIT.ToDo.BuildingBlocks.ASPNet\UMBIT.ToDo.BuildingBlocksc.ASPNet.csproj" />
     <ProjectReference Include="..\..\UMBIT.ToDo.Contrato\UMBIT.ToDo.Contrato.csproj" />
   </ItemGroup>
 

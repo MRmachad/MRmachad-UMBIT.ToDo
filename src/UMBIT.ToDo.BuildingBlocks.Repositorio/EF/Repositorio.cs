@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using UMBIT.ToDo.Core.Notificacao.Interfaces;
-using UMBIT.ToDo.Core.Repositorio.Interfaces;
-using UMBIT.ToDo.Core.Repositorio.Interfaces.Database;
+using UMBIT.ToDo.BuildingBlocks.Core.Notificacao.Interfaces;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Interfaces;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Interfaces.Database;
 
-namespace UMBIT.ToDo.Core.Repositorio.EF
+namespace UMBIT.ToDo.BuildingBlocks.Repositorio.EF
 {
     public class Repositorio<T> : RepositorioDeLeitura<T>, IRepositorio<T> where T : class
     {

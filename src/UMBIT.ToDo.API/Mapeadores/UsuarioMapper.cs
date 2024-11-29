@@ -3,7 +3,7 @@ using UMBIT.Nexus.Auth.Contrato;
 using UMBIT.ToDo.Dominio.Application.Commands.Usuarios;
 using UMBIT.ToDo.Dominio.Entidades.Auth.Basicos;
 
-namespace TSE.Nexus.Auth.API.Mapeadores
+namespace UMBIT.ToDo.API.Mapeadores
 {
     public class UsuarioMapper : Profile
     {

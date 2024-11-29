@@ -1,4 +1,4 @@
-﻿namespace UMBIT.ToDo.Core.Repositorio.Servicos
+﻿namespace UMBIT.ToDo.BuildingBlocks.Repositorio.Servicos
 {
     public interface IServicoBase<T> where T : class
     {

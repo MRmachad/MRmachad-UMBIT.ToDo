@@ -2,9 +2,8 @@ using Refit;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using UMBIT.Nexus.Auth.Contrato;
-using UMBIT.ToDo.Core.Seguranca.Bootstrapper;
-using UMBIT.ToDo.Web.Bootstrapper;
-using UMBIT.ToDo.Web.Middlewares;
+using UMBIT.ToDo.BuildingBlocksc.ASPNet.Bootstrapper;
+using UMBIT.ToDo.BuildingBlocksc.ASPNet.Middlewares;
 using UMBIT.ToDo.Web.services;
 
 var builder = WebApplication.CreateBuilder(args);

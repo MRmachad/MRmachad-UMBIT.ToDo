@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using UMBIT.Nexus.Auth.Contrato;
-using UMBIT.ToDo.Core.API.Controllers;
+using UMBIT.ToDo.BuildingBlocksc.ASPNet.Controllers;
 using UMBIT.ToDo.Web.Basicos.Enumerador;
 using UMBIT.ToDo.Web.Basicos.Extensores;
 using UMBIT.ToDo.Web.Models;
 using UMBIT.ToDo.Web.services;
-using static UMBIT.ToDo.Web.Bootstrapper.ContextConfigurate;
+using static UMBIT.ToDo.BuildingBlocksc.ASPNet.Bootstrapper.ContextConfigurate;
 
 namespace UMBIT.ToDo.Web.Controllers
 {
@@ -243,7 +243,7 @@ namespace UMBIT.ToDo.Web.Controllers
                 if (!ModelState.IsValid)
                     return View(listTaskDTO);
 
-                await this._servicoDeToDo.EditList(listTaskDTO);
+                await this._servicoDeToDo.EditList(listTaskDTO.Id, listTaskDTO);
 
                 return RedirectToAction("ListaTarefa");
 

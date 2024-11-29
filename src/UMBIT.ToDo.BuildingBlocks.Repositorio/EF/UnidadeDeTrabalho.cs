@@ -3,11 +3,11 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.DependencyInjection;
-using UMBIT.ToDo.Core.Notificacao.Interfaces;
-using UMBIT.ToDo.Core.Repositorio.Application.Events.Operacoes;
-using UMBIT.ToDo.Core.Repositorio.Interfaces.Database;
+using UMBIT.ToDo.BuildingBlocks.Core.Notificacao.Interfaces;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Application.Events.Operacoes;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Interfaces.Database;
 
-namespace UMBIT.ToDo.Core.Repositorio.EF
+namespace UMBIT.ToDo.BuildingBlocks.Repositorio.EF
 {
     public class UnidadeDeTrabalho : IUnidadeDeTrabalho
     {

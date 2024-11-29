@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using System.Security.Claims;
-using UMBIT.Nexus.Auth.Dominio.Basicos;
-using UMBIT.ToDo.Core.Messages.Messagem;
-using UMBIT.ToDo.Core.Messages.Messagem.Applications.Commands;
-using UMBIT.ToDo.Core.Messages.Messagem.Interfaces;
-using UMBIT.ToDo.Core.Notificacao.Interfaces;
-using UMBIT.ToDo.Core.Repositorio.Interfaces.Database;
-using UMBIT.ToDo.Core.Seguranca.Models;
+using UMBIT.ToDo.BuildingBlocks.Core.Notificacao.Interfaces;
+using UMBIT.ToDo.BuildingBlocks.Core.Seguranca.Models;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Commands;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Interfaces;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Interfaces.Database;
 using UMBIT.ToDo.Dominio.Application.Commands.Usuarios;
+using UMBIT.ToDo.Dominio.Basicos;
 using UMBIT.ToDo.Dominio.Configuradores;
 using UMBIT.ToDo.Dominio.Entidades.Auth.Basicos;
 

@@ -1,4 +1,4 @@
-﻿namespace UMBIT.ToDo.Core.Messages.Messagem.Applications.Events
+﻿namespace UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Events
 {
     public abstract class UMBITEventHandlerBase
     {

@@ -1,16 +1,16 @@
 ﻿using Microsoft.Extensions.Options;
 using RabbitMQ.Client;
 
-namespace TSE.Nexus.SDK.Messages.Bus.MessagerBus.Models
+namespace UMBIT.ToDo.BuildingBlocks.Message.Bus.MessagerBus.Models
 {
-    public class TSEMessageBusConnectionFactory
+    public class UMBITMessageBusConnectionFactory
     {
         public ConnectionFactory ConnectionFactory { get; private set; }
-        public TSEMessageBusConnectionFactory(IOptions<TSEMessageBusConfig> messageBusConfig)
+        public UMBITMessageBusConnectionFactory(IOptions<UMBITMessageBusConfig> messageBusConfig)
         {
-            if(this.ConnectionFactory == null)
+            if (ConnectionFactory == null)
             {
-                this.ConnectionFactory = new ConnectionFactory()
+                ConnectionFactory = new ConnectionFactory()
                 {
                     HostName = messageBusConfig?.Value?.Host ?? "localhost",
                     Password = messageBusConfig?.Value?.Senha ?? "guest",
@@ -18,12 +18,12 @@ namespace TSE.Nexus.SDK.Messages.Bus.MessagerBus.Models
                     Port = messageBusConfig?.Value?.Port ?? 5672
                 };
 
-                this.ConnectionFactory.AutomaticRecoveryEnabled = true;
-                this.ConnectionFactory.RequestedHeartbeat = TimeSpan.FromSeconds(60);
-                this.ConnectionFactory.NetworkRecoveryInterval = TimeSpan.FromSeconds(10);
+                ConnectionFactory.AutomaticRecoveryEnabled = true;
+                ConnectionFactory.RequestedHeartbeat = TimeSpan.FromSeconds(60);
+                ConnectionFactory.NetworkRecoveryInterval = TimeSpan.FromSeconds(10);
             }
         }
 
-        public string ObtenhaURL() => $"amqp://{this.ConnectionFactory.HostName}:{this.ConnectionFactory.Port}"  ?? String.Empty;
+        public string ObtenhaURL() => $"amqp://{ConnectionFactory.HostName}:{ConnectionFactory.Port}" ?? string.Empty;
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace UMBIT.ToDo.Core.Messages.Messagem
+﻿namespace UMBIT.ToDo.BuildingBlocks.Message.Messagem
 {
     [Serializable]
     public abstract class UMBITMensagem

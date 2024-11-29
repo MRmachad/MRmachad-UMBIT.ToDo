@@ -1,5 +1,5 @@
 ﻿@using UMBIT.Nexus.Auth.Contrato
-@using static UMBIT.ToDo.Web.Bootstrapper.ContextConfigurate
+@using static UMBIT.ToDo.BuildingBlocksc.ASPNet.Bootstrapper.ContextConfigurate
 @model IEnumerable<UsuarioResponseDTO>
 
 @inject AuthSessionContext authSessionContext
@@ -61,13 +61,12 @@
                                        class="btn btn-sm btn-danger">
                                         <i class="fas fa-trash"></i> Excluir
                                     </a>
-
-                                    <a onclick="avise('@user.Id')"
-                                       class="btn btn-sm btn-warning">
-                                        <i class="fas fa-arrow"></i> Notificar
-                                    </a>
-
                                 }
+
+                                <a onclick="avise('@user.Id')"
+                                   class="btn btn-sm btn-warning">
+                                    <i class="fas fa-arrow"></i> Notificar
+                                </a>
                             </td>
                         </tr>
                         count++;

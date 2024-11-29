@@ -50,11 +50,11 @@
 </style>
 
 <div class="container mt-5">
-    <h1 class="mb-4">Lista de Tarefas</h1>
-    <div id="status-buttons" class="mb-3 d-flex justify-content-end" style="display: none;">
-        <button class="btn btn-primary mr-2" onclick="setSelectedTasksStatus(0)">Definir como Pendente</button>
-        <button class=" btn btn-warning mr-2" onclick="setSelectedTasksStatus(1)">Definir como Em Progresso</button>
-        <button class=" btn btn-success" onclick="setSelectedTasksStatus(2)">Definir como Completo</button>
+    <h1 class="mb-4">Lista de Tarefas Pendentes</h1>
+    <div id="status-buttons" class="mb-3 d-flex justify-content-end d-none">
+        <button class="m-2 btn btn-primary mr-2" onclick="setSelectedTasksStatus(0)">Definir como Pendente</button>
+        <button class="m-2 btn btn-warning mr-2" onclick="setSelectedTasksStatus(1)">Definir como Em Progresso</button>
+        <button class="m-2 btn btn-success" onclick="setSelectedTasksStatus(2)">Definir como Completo</button>
     </div>
     @foreach (var parentGroup in Model.GroupBy(task => task.IdToDoList))
     {
@@ -64,7 +64,6 @@
 
             <div class="mb-4">
                 <div class="d-flex align-items-center mb-2">
-                    <input type="checkbox" class="mr-2" id="list-checkbox-@parentGroup.Key.Value" onclick="toggleListTasks('@parentGroup.Key.Value')" />
                     <label class="list-header" for="list-checkbox-@parentGroup.Key.Value">
                         @parent.Nome
                     </label>
@@ -73,7 +72,6 @@
                     @foreach (var task in parentGroup)
                     {
                         <div class="task-item d-flex align-items-baseline">
-                            <input type="checkbox" class="checkbox-column mr-3 list-checkbox-@parentGroup.Key.Value" id="task-checkbox-@task.Id" onclick="checkListStatus('@parentGroup.Key.Value')" />
                             <div class="flex-grow-1">
                                 <div class="task-title">@task.Nome</div>
                                 @if (!string.IsNullOrWhiteSpace(task.Descricao))
@@ -82,7 +80,6 @@
                                 }
                             </div>
                             <div>
-                                <!-- Toggle Status -->
                                 <div class="status-toggle @(task.Status == 2 ? "status-completed" : task.Status == 1 ? "status-in-progress" : "status-pending")"
                                      data-status="@task.Status"                                     
                                      data-id="@task.Id"
@@ -102,7 +99,6 @@
             {
             <div class="mb-4">
                         <div class="task-item d-flex align-items-baseline">
-                            <input type="checkbox" class="checkbox-column mr-3" id="task-checkbox-@task.Id" />
                             <div class="flex-grow-1">
                                 <div class="task-title">@task.Nome</div>
                                 @if (!string.IsNullOrWhiteSpace(task.Descricao))
@@ -111,7 +107,6 @@
                                 }
                             </div>
                             <div>
-                                <!-- Toggle Status -->
                                 <div class="status-toggle @(task.Status == 2 ? "status-completed" : task.Status == 1 ? "status-in-progress" : "status-pending")"
                                      data-status="@task.Status"
                                      data-id="@task.Id"
@@ -141,14 +136,12 @@
             const taskCheckboxes = document.querySelectorAll(`.list-checkbox-${listId}`);
             const allTasksChecked = Array.from(taskCheckboxes).every(checkbox => checkbox.checked);
 
-            // Desmarca a lista se nem todas as tarefas estiverem marcadas
             if (!allTasksChecked) {
                 listCheckbox.checked = false;
             }
         }
 
         function toggleStatus(element) {
-            // Obtem o status atual
             const currentStatus = parseInt(element.getAttribute('data-status'), 10);
             const id = element.getAttribute('data-id');
             const nextStatus = currentStatus === 2 ? 0 : currentStatus + 1;
@@ -159,47 +152,5 @@
             
         }
 
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const taskCheckboxes = document.querySelectorAll('.task-checkbox');
-            const statusButtons = document.getElementById('status-buttons');
-
-            // Função para verificar se há pelo menos uma tarefa selecionada
-            function updateButtonsVisibility() {
-                const isAnyTaskChecked = Array.from(taskCheckboxes).some(checkbox => checkbox.checked);
-                statusButtons.style.display = isAnyTaskChecked ? 'flex' : 'none';
-            }
-
-            // Adiciona listeners a todas as checkboxes de tarefas
-            taskCheckboxes.forEach(checkbox => {
-                checkbox.addEventListener('change', updateButtonsVisibility);
-            });
-
-            // Função para definir o status das tarefas selecionadas
-            window.setSelectedTasksStatus = function (status) {
-                const selectedTasks = Array.from(taskCheckboxes)
-                    .filter(checkbox => checkbox.checked)
-                    .map(checkbox => checkbox.id.replace('task-checkbox-', ''));
-
-                if (selectedTasks.length > 0) {
-                    fetch('@Url.Action("UpdateTasksStatus", "Home")', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({ taskIds: selectedTasks, status }),
-                    })
-                    .then(response => {
-                        if (response.ok) {
-                            location.reload(); // Atualiza a página após sucesso
-                        } else {
-                            alert('Erro ao atualizar status das tarefas.');
-                        }
-                    })
-                    .catch(error => alert('Erro ao conectar ao servidor.'));
-                }
-            };
-        });
     </script>
 }

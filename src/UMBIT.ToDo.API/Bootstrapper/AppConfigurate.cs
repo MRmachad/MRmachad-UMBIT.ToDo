@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.OData.Query;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using UMBIT.ToDo.Core.API.Middlewares;
-using UMBIT.ToDo.Core.Basicos.Utilitarios;
+using UMBIT.ToDo.BuildingBlocks.Basicos.Utilitarios;
+using UMBIT.ToDo.BuildingBlocksc.WebAPI.Middlewares;
 
 namespace UMBIT.ToDo.API.Bootstrapper
 {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace UMBIT.ToDo.Fabrica.Models
+namespace UMBIT.ToDo.BuildingBlocks.Fabrica.Models
 {
     public static class FabricaGenerica
     {

@@ -1,7 +1,7 @@
 ﻿using FluentValidation.Results;
-using UMBIT.ToDo.Core.Repositorio.Application.Events.Operacoes.Base;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Application.Events.Operacoes.Base;
 
-namespace UMBIT.ToDo.Core.Repositorio.Interfaces
+namespace UMBIT.ToDo.BuildingBlocks.Repositorio.Interfaces
 {
     public interface IBaseEntity
     {

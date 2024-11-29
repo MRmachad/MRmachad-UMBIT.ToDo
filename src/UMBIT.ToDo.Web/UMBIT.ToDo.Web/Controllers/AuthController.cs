@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using UMBIT.Nexus.Auth.Contrato;
-using UMBIT.ToDo.Core.API.Controllers;
+using UMBIT.ToDo.BuildingBlocksc.ASPNet.Controllers;
 using UMBIT.ToDo.Web.services;
-using static UMBIT.ToDo.Web.Bootstrapper.ContextConfigurate;
+using static UMBIT.ToDo.BuildingBlocksc.ASPNet.Bootstrapper.ContextConfigurate;
 
 namespace UMBIT.ToDo.Web.Controllers
 {
@@ -66,7 +66,7 @@ namespace UMBIT.ToDo.Web.Controllers
             {
                 await _serviceAuth.AdicionarAdministrador(adicionarAdministradorRequestDTO);
                 return RedirectToAction(nameof(Login));
-            }, "Falha ao Adicionar Administrador!");
+            }, nameof(CreateAdministrator));
 
         }
         public IActionResult CreateUsuario()
@@ -82,7 +82,7 @@ namespace UMBIT.ToDo.Web.Controllers
                 await _serviceAuth.AdicionarUsuario(adicionarUsuario);
                 return RedirectToAction(nameof(Login));
 
-            }, "Falha ao Adicionar Usuario!");
+            }, nameof(CreateUsuario));
 
         }
     }

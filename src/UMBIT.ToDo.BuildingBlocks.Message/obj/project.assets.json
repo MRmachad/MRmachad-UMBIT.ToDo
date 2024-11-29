@@ -6420,8 +6420,8 @@
     },
     "UMBIT.ToDo.BuildingBlocks.Core/1.0.0": {
       "type": "project",
-      "path": "../UMBIT.ToDo.Core/UMBIT.ToDo.BuildingBlocks.Core.csproj",
-      "msbuildProject": "../UMBIT.ToDo.Core/UMBIT.ToDo.BuildingBlocks.Core.csproj"
+      "path": "../UMBIT.ToDo.BuildingBlocks.Core/UMBIT.ToDo.BuildingBlocks.Core.csproj",
+      "msbuildProject": "../UMBIT.ToDo.BuildingBlocks.Core/UMBIT.ToDo.BuildingBlocks.Core.csproj"
     },
     "UMBIT.ToDo.BuildingBlocks.Fabrica/1.0.0": {
       "type": "project",

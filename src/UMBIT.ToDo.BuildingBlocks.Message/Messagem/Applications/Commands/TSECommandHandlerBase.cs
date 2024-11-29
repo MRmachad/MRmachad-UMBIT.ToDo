@@ -1,9 +1,10 @@
 ﻿using FluentValidation.Results;
-using UMBIT.ToDo.Core.Basicos.Excecoes;
-using UMBIT.ToDo.Core.Notificacao.Interfaces;
-using UMBIT.ToDo.Core.Repositorio.Interfaces.Database;
+using UMBIT.ToDo.BuildingBlocks.Core.Notificacao.Interfaces;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Interfaces.Database;
+using UMBIT.ToDo.BuildingBlocks.Basicos.Excecoes;
 
-namespace UMBIT.ToDo.Core.Messages.Messagem.Applications.Commands
+namespace UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Commands
 {
     public abstract class UMBITCommandHandlerBase
     {

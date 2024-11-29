@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UMBIT.ToDo.Core.Basicos.Utilitarios
+namespace UMBIT.ToDo.BuildingBlocks.Basicos.Utilitarios
 {
     public static class EnvironmentHelper
     {

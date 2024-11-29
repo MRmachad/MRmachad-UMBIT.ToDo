@@ -170,7 +170,7 @@ namespace UMBIT.ToDo.API.Migrations
                     b.HasOne("UMBIT.ToDo.Dominio.Entidades.ToDo.ToDoList", "ToDoList")
                         .WithMany("ToDoItems")
                         .HasForeignKey("IdToDoList")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("ToDoList");
                 });

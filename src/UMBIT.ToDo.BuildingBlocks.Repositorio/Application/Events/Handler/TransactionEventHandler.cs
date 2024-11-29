@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Reflection;
 using System.Text.Json;
-using UMBIT.ToDo.Core.Repositorio.Application.Events.Operacoes;
-using UMBIT.ToDo.Core.Repositorio.Data;
-using UMBIT.ToDo.Core.Repositorio.Interfaces;
-using UMBIT.ToDo.Core.Repositorio.Interfaces.Database;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Application.Events.Operacoes;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Data;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Interfaces;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Interfaces.Database;
 
-namespace UMBIT.ToDo.Core.Repositorio.Application.Events.Handler
+namespace UMBIT.ToDo.BuildingBlocks.Repositorio.Application.Events.Handler
 {
     public class TransactionEventHandler :
         INotificationHandler<BeginTransactionEvent>,

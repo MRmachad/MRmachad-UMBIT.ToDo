@@ -1,11 +1,11 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
-using UMBIT.Nexus.Auth.Dominio.Application.Queries.ToDo;
-using UMBIT.ToDo.Core.Messages.Messagem;
-using UMBIT.ToDo.Core.Messages.Messagem.Applications.Query;
-using UMBIT.ToDo.Core.Messages.Messagem.Interfaces;
-using UMBIT.ToDo.Core.Notificacao.Interfaces;
-using UMBIT.ToDo.Core.Repositorio.Interfaces.Database;
+using UMBIT.ToDo.BuildingBlocks.Core.Notificacao.Interfaces;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Query;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Interfaces;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Interfaces.Database;
+using UMBIT.ToDo.Dominio.Application.Queries.ToDo;
 using UMBIT.ToDo.Dominio.Entidades.ToDo;
 
 namespace UMBIT.ToDo.Dominio.Application.Queries

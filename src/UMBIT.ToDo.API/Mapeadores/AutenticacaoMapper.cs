@@ -5,7 +5,7 @@ using UMBIT.ToDo.Dominio.Entidades.Auth.Basicos;
 using UMBIT.ToDo.Dominio.Entidades.Auth.Configuracao;
 using UMBIT.ToDo.Dominio.Entidades.Auth.Token;
 
-namespace TSE.Nexus.Auth.API.Mapeadores
+namespace UMBIT.ToDo.API.Mapeadores
 {
     public class AutenticacaoMapper : Profile
     {

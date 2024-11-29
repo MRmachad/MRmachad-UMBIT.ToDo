@@ -1,14 +1,12 @@
-using TSE.Nexus.Auth.API.Bootstrapper;
-using TSE.Nexus.NodeLink.API.Bootstrapper;
-using TSE.Nexus.SDK.Workers.Bootstrapper;
 using UMBIT.ToDo.API.Bootstrapper;
-using UMBIT.ToDo.Core.API.Bootstrapper;
-using UMBIT.ToDo.Core.Messages.Bootstrapper;
-using UMBIT.ToDo.Core.Notificacao.Bootstrapper;
-using UMBIT.ToDo.Core.Repositorio.Bootstrapper;
-using UMBIT.ToDo.Core.Seguranca.Bootstrapper;
 using UMBIT.ToDo.Infraestrutura.Contextos;
-using TSE.Nexus.SDK.SignalR.Bootstrapper;
+using UMBIT.ToDo.BuildingBlocks.Fabrica.Bootstrapper;
+using UMBIT.ToDo.BuildingBlocks.SignalR.Bootstrapper;
+using UMBIT.ToDo.BuildingBlocks.Message.Bootstrapper;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Bootstrapper;
+using UMBIT.ToDo.BuildingBlocks.Core.Seguranca.Bootstrapper;
+using UMBIT.ToDo.BuildingBlocks.Core.Workers.Bootstrapper;
+using UMBIT.ToDo.BuildingBlocks.Core.Notificacao.Bootstrapper;
 
 InicializeConfigurate.Inicialize();
 
@@ -21,6 +19,7 @@ builder.Services
     .AddIdentityConfiguration(builder.Configuration);
 
 builder.Services
+    .AddSignalRClient(builder.Configuration)
     .AddMessages(builder.Configuration)
     .AddSignalRHub()
     .AddWorkers()

@@ -1,7 +1,7 @@
-﻿using UMBIT.ToDo.Core.Repositorio.Interfaces.Database;
-using UMBIT.ToDo.Core.Notificacao.Interfaces;
+﻿using UMBIT.ToDo.BuildingBlocks.Repositorio.Interfaces.Database;
+using UMBIT.ToDo.BuildingBlocks.Core.Notificacao.Interfaces;
 
-namespace UMBIT.ToDo.Core.Repositorio.Servicos
+namespace UMBIT.ToDo.BuildingBlocks.Repositorio.Servicos
 {
     public abstract class ServicoBase<T> : IDisposable, IServicoBase<T> where T : class
     {

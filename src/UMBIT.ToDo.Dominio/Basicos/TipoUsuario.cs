@@ -1,4 +1,4 @@
-﻿namespace UMBIT.Nexus.Auth.Dominio.Basicos
+﻿namespace UMBIT.ToDo.Dominio.Basicos
 {
     public static class TipoUsuario
     {

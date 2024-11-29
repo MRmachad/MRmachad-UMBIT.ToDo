@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UMBIT.ToDo.Core.Basicos.Enumeradores
+namespace UMBIT.ToDo.BuildingBlocks.Basicos.Enumeradores
 {
     public abstract class EnumeradorBase<T> where T : EnumeradorBase<T>
     {

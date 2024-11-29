@@ -1,9 +1,9 @@
-﻿using UMBIT.ToDo.Core.Messages.Messagem;
-using UMBIT.ToDo.Core.Messages.Messagem.Applications.Commands;
-using UMBIT.ToDo.Core.Messages.Messagem.Applications.Events;
-using UMBIT.ToDo.Core.Messages.Messagem.Applications.Query;
+﻿using UMBIT.ToDo.BuildingBlocks.Message.Messagem;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Commands;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Events;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Query;
 
-namespace UMBIT.ToDo.Core.Messages.Bus.MediatorBus
+namespace UMBIT.ToDo.BuildingBlocks.Message.Bus.MediatorBus
 {
     public interface IMediatorBus
     {

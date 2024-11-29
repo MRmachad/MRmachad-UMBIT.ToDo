@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
-using UMBIT.ToDo.Core.Messages.Messagem.Applications.Query;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Query;
 using UMBIT.ToDo.Dominio.Entidades.ToDo;
 
-namespace UMBIT.Nexus.Auth.Dominio.Application.Queries.ToDo
+namespace UMBIT.ToDo.Dominio.Application.Queries.ToDo
 {
     public class ObterToDoPorIdQuery : UMBITQuery<ObterToDoPorIdQuery, ToDoItem>
     {
@@ -13,7 +13,7 @@ namespace UMBIT.Nexus.Auth.Dominio.Application.Queries.ToDo
 
         public ObterToDoPorIdQuery(Guid id)
         {
-            this.Id = id;
+            Id = id;
         }
 
         protected override void Validadors(ValidatorQuery<ObterToDoPorIdQuery> validator)

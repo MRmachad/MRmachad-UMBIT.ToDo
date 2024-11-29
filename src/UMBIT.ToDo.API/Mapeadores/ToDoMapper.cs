@@ -2,7 +2,7 @@
 using UMBIT.Nexus.Auth.Contrato;
 using UMBIT.ToDo.Dominio.Entidades.ToDo;
 
-namespace TSE.Nexus.Auth.API.Mapeadores
+namespace UMBIT.ToDo.API.Mapeadores
 {
     public class ToDoMapper : Profile
     {

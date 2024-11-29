@@ -11,7 +11,7 @@ namespace UMBIT.ToDo.Web.services
         [Delete("/usuario/{id}")]
         Task RemoverUsuario([AliasAs("id")] Guid id);
 
-        [Delete("/avise-tarefa/{id}")]
+        [Post("/avise-tarefa/{id}")]
         Task AviseUsuario([AliasAs("id")] Guid id);
 
 

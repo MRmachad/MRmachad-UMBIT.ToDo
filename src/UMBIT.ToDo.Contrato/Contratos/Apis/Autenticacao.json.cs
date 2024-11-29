@@ -25,7 +25,7 @@ namespace UMBIT.Nexus.Auth.Contrato
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "14.0.7.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
 
-    public abstract class AutenticacaoControllerBase : UMBIT.ToDo.Core.API.Controllers.BaseController
+    public abstract class AutenticacaoControllerBase : UMBIT.ToDo.BuildingBlocks.WebAPI.Controllers.BaseController
     {
         protected AutenticacaoControllerBase(System.IServiceProvider serviceProvider) : base(serviceProvider)
         {

@@ -4514,7 +4514,7 @@
           "bin/placeholder/UMBIT.ToDo.BuildingBlocks.SignalR.dll": {}
         }
       },
-      "UMBIT.ToDo.BuildingBlocksc.WebAPI/1.0.0": {
+      "UMBIT.ToDo.BuildingBlocks.WebAPI/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
@@ -4523,10 +4523,10 @@
           "UMBIT.ToDo.BuildingBlocks.Message": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/UMBIT.ToDo.BuildingBlocksc.WebAPI.dll": {}
+          "bin/placeholder/UMBIT.ToDo.BuildingBlocks.WebAPI.dll": {}
         },
         "runtime": {
-          "bin/placeholder/UMBIT.ToDo.BuildingBlocksc.WebAPI.dll": {}
+          "bin/placeholder/UMBIT.ToDo.BuildingBlocks.WebAPI.dll": {}
         }
       },
       "UMBIT.ToDo.Contrato/1.0.0": {
@@ -4536,7 +4536,7 @@
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "NSwag.MSBuild": "14.0.7",
           "UMBIT.ToDo.BuildingBlocks.Core": "1.0.0",
-          "UMBIT.ToDo.BuildingBlocksc.WebAPI": "1.0.0"
+          "UMBIT.ToDo.BuildingBlocks.WebAPI": "1.0.0"
         },
         "compile": {
           "bin/placeholder/UMBIT.ToDo.Contrato.dll": {}
@@ -13056,8 +13056,8 @@
     },
     "UMBIT.ToDo.BuildingBlocks.Core/1.0.0": {
       "type": "project",
-      "path": "../UMBIT.ToDo.Core/UMBIT.ToDo.BuildingBlocks.Core.csproj",
-      "msbuildProject": "../UMBIT.ToDo.Core/UMBIT.ToDo.BuildingBlocks.Core.csproj"
+      "path": "../UMBIT.ToDo.BuildingBlocks.Core/UMBIT.ToDo.BuildingBlocks.Core.csproj",
+      "msbuildProject": "../UMBIT.ToDo.BuildingBlocks.Core/UMBIT.ToDo.BuildingBlocks.Core.csproj"
     },
     "UMBIT.ToDo.BuildingBlocks.Fabrica/1.0.0": {
       "type": "project",
@@ -13079,10 +13079,10 @@
       "path": "../UMBIT.ToDo.BuildingBlocks.SignalR/UMBIT.ToDo.BuildingBlocks.SignalR.csproj",
       "msbuildProject": "../UMBIT.ToDo.BuildingBlocks.SignalR/UMBIT.ToDo.BuildingBlocks.SignalR.csproj"
     },
-    "UMBIT.ToDo.BuildingBlocksc.WebAPI/1.0.0": {
+    "UMBIT.ToDo.BuildingBlocks.WebAPI/1.0.0": {
       "type": "project",
-      "path": "../UMBIT.ToDo.WebApi/UMBIT.ToDo.BuildingBlocksc.WebAPI.csproj",
-      "msbuildProject": "../UMBIT.ToDo.WebApi/UMBIT.ToDo.BuildingBlocksc.WebAPI.csproj"
+      "path": "../UMBIT.ToDo.BuildingBlocks.WebApi/UMBIT.ToDo.BuildingBlocks.WebAPI.csproj",
+      "msbuildProject": "../UMBIT.ToDo.BuildingBlocks.WebApi/UMBIT.ToDo.BuildingBlocks.WebAPI.csproj"
     },
     "UMBIT.ToDo.Contrato/1.0.0": {
       "type": "project",

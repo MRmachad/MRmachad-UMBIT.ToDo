@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TSE.Nexus.Auth.API.Extensao
+namespace UMBIT.ToDo.API.Extensao
 {
     public class IdentityMensagensPortugues : IdentityErrorDescriber
     {

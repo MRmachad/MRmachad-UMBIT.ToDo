@@ -10,7 +10,7 @@
   },
   "codeGenerators": {
     "openApiToCSharpController": {
-      "controllerBaseClass": "UMBIT.ToDo.Core.API.Controllers.BaseController",
+      "controllerBaseClass": "UMBIT.ToDo.BuildingBlocks.WebAPI.Controllers.BaseController",
       "controllerStyle": "Abstract",
       "controllerTarget": "AspNetCore",
       "useCancellationToken": false,

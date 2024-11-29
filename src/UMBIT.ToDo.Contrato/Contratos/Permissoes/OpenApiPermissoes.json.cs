@@ -23,7 +23,7 @@ namespace UMBIT.Nexus.Auth.Contrato
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "14.0.7.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
 
-    public abstract class AutorizacaoControllerBase : UMBIT.ToDo.Core.API.Controllers.BaseController
+    public abstract class AutorizacaoControllerBase : UMBIT.ToDo.BuildingBlocks.WebAPI.Controllers.BaseController
     {
         protected AutorizacaoControllerBase(System.IServiceProvider serviceProvider) : base(serviceProvider)
         {
@@ -31,7 +31,7 @@ namespace UMBIT.Nexus.Auth.Contrato
 
         /// <returns>Success</returns>
         [Microsoft.AspNetCore.Mvc.HttpGet, Microsoft.AspNetCore.Mvc.Route("permissoes")]
-        public abstract System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.ActionResult<IEnumerable< UMBIT.ToDo.Core.Seguranca.Basicos.Enumeradores.EnumeradorDePermissaoBase<Permissoes>>>> ObterPermissoes();
+        public abstract System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.ActionResult<IEnumerable< UMBIT.ToDo.BuildingBlocks.Core.Seguranca.Basicos.Enumeradores.EnumeradorDePermissaoBase<Permissoes>>>> ObterPermissoes();
 
     }
 

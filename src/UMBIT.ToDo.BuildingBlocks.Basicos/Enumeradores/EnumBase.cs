@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace UMBIT.ToDo.Core.Basicos.Enumeradores
+namespace UMBIT.ToDo.BuildingBlocks.Basicos.Enumeradores
 {
     public abstract class EnumBase<T> where T : Enum
     {

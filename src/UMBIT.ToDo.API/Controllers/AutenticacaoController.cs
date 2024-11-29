@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
 using UMBIT.Nexus.Auth.Contrato;
-using UMBIT.ToDo.Core.Seguranca.Models;
+using UMBIT.ToDo.BuildingBlocks.Core.Seguranca.Models;
 using UMBIT.ToDo.Dominio.Application.Commands.Autenticacao;
 using UMBIT.ToDo.Dominio.Application.Queries.Configuracao;
 using UMBIT.ToDo.Dominio.Application.Queries.Tokens;

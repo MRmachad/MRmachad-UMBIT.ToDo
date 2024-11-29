@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartAttribute("UMBIT.ToDo.BuildingBlocks.Core")]
 [assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartAttribute("UMBIT.ToDo.BuildingBlocks.Message")]
 [assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartAttribute("UMBIT.ToDo.BuildingBlocks.Repositorio")]
-[assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartAttribute("UMBIT.ToDo.BuildingBlocksc.WebAPI")]
+[assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartAttribute("UMBIT.ToDo.BuildingBlocks.WebAPI")]
 [assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartAttribute("UMBIT.ToDo.Contrato")]
 [assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartAttribute("UMBIT.ToDo.Dominio")]
 [assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartAttribute("UMBIT.ToDo.Infraestrutura")]

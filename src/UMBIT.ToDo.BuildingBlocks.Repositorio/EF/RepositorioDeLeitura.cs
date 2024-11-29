@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using UMBIT.ToDo.Core.Repositorio.Interfaces.Database;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Interfaces.Database;
 
-namespace UMBIT.ToDo.Core.Repositorio.EF
+namespace UMBIT.ToDo.BuildingBlocks.Repositorio.EF
 {
     public class RepositorioDeLeitura<T> : IRepositorioDeLeitura<T> where T : class
     {

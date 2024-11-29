@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using UMBIT.ToDo.Core.Messages.Messagem.Applications.Commands;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Commands;
 
 namespace UMBIT.ToDo.Dominio.Application.Commands.Usuarios
 {

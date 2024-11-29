@@ -38,8 +38,8 @@ namespace UMBIT.ToDo.Web.services
         [Post("/lista-tarefa")]
         Task AdicioneList([Body] AdicionarListaRequest request);
 
-        [Put("/lista-tarefa")]
-        Task EditList([Body] AtualizarListaRequest request);
+        [Put("/lista-tarefa/{id}")]
+        Task EditList([Refit.AliasAs("id")] Guid id, [Body] AtualizarListaRequest request);
 
         [Delete("/lista-tarefa/{id}")]
         Task DeleteList([Refit.AliasAs("id")] Guid id);

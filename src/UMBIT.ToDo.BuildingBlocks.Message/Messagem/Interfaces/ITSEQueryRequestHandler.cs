@@ -1,8 +1,8 @@
 ﻿using MediatR;
-using UMBIT.ToDo.Core.Messages.Messagem;
-using UMBIT.ToDo.Core.Messages.Messagem.Applications.Query;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Query;
 
-namespace UMBIT.ToDo.Core.Messages.Messagem.Interfaces
+namespace UMBIT.ToDo.BuildingBlocks.Message.Messagem.Interfaces
 {
     public interface IUMBITQueryRequestHandler<TQuery, T> : IRequestHandler<TQuery, UMBITMessageResponse<T>>
         where T : class

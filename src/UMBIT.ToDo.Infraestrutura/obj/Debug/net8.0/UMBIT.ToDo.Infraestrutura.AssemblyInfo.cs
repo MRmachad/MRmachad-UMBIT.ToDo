@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UMBIT.ToDo.Infraestrutura")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1855055f513e868461bf1608f5a9f35f171f2b9f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5c65330596617d060478e4bd22dd1ca891b2fe30")]
 [assembly: System.Reflection.AssemblyProductAttribute("UMBIT.ToDo.Infraestrutura")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UMBIT.ToDo.Infraestrutura")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

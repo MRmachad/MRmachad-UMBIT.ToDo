@@ -1,11 +1,9 @@
-using Azure.Core;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UMBIT.Nexus.Auth.Contrato;
-using UMBIT.Nexus.Auth.Dominio.Application.Queries.ToDo;
-using UMBIT.ToDo.Core.Seguranca.Basicos.Atributos;
-using UMBIT.ToDo.Core.Seguranca.Models;
+using UMBIT.ToDo.BuildingBlocks.Core.Seguranca.Basicos.Atributos;
+using UMBIT.ToDo.BuildingBlocks.Core.Seguranca.Models;
 using UMBIT.ToDo.Dominio.Application.Commands.ToDo;
+using UMBIT.ToDo.Dominio.Application.Queries.ToDo;
 using UMBIT.ToDo.Dominio.Entidades.ToDo;
 
 namespace UMBIT.ToDo.API.Controllers
@@ -24,7 +22,7 @@ namespace UMBIT.ToDo.API.Controllers
             var response = await Mediator.EnviarQuery<ObterToDoQuery, IQueryable<ToDoItem>>(new ObterToDoQuery());
 
             if (!_contextoPrincipal.ObtenhaPrincipal()!.EhAdministrador())
-                response.Dados!.Where(t => t.IdUsuario.ToString() == _contextoPrincipal.ObtenhaPrincipal()!.Id);
+                response.Dados = response.Dados!.Where(t => t.IdUsuario.ToString() == _contextoPrincipal.ObtenhaPrincipal()!.Id);
 
             return UMBITCollectionResponseEntity<TarefaDTO, ToDoItem>(response);
         }
@@ -87,7 +85,7 @@ namespace UMBIT.ToDo.API.Controllers
             var response = await Mediator.EnviarQuery<ObterToDoListQuery, IQueryable<ToDoList>>(new ObterToDoListQuery());
 
             if (!_contextoPrincipal.ObtenhaPrincipal()!.EhAdministrador())
-                response.Dados!.Where(t => t.IdUsuario.ToString() == _contextoPrincipal.ObtenhaPrincipal()!.Id);
+                response.Dados = response.Dados!.Where(t => t.IdUsuario.ToString() == _contextoPrincipal.ObtenhaPrincipal()!.Id);
 
             return UMBITCollectionResponseEntity<ListaDTO, ToDoList>(response);
         }

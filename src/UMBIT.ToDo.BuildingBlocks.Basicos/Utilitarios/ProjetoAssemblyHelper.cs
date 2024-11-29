@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
-using UMBIT.ToDo.Core.Basicos.Excecoes;
+using UMBIT.ToDo.BuildingBlocks.Basicos.Excecoes;
 
-namespace UMBIT.ToDo.Core.Basicos.Utilitarios
+namespace UMBIT.ToDo.BuildingBlocks.Basicos.Utilitarios
 {
     public static class ProjetoAssemblyHelper
     {

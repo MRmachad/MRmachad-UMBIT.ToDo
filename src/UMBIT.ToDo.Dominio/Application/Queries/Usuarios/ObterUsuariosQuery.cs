@@ -1,4 +1,4 @@
-﻿using UMBIT.ToDo.Core.Messages.Messagem.Applications.Query;
+﻿using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Query;
 using UMBIT.ToDo.Dominio.Entidades.Auth.Basicos;
 
 namespace UMBIT.ToDo.Dominio.Application.Queries.Usuarios

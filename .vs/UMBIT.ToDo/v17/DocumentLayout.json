@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9386937F-CB18-434D-A9FC-6ABC623D9AB6}|src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.web\\umbit.todo.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9386937F-CB18-434D-A9FC-6ABC623D9AB6}|src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web.csproj|solutionrelative:src\\umbit.todo.web\\umbit.todo.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A8820FE9-C88B-46EB-BF66-CFE8D3ADDB61}|src\\UMBIT.ToDo.API\\UMBIT.ToDo.API.csproj|solutionrelative:src\\umbit.todo.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAIsAAAAAAAAAAAAkwFcAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-29T03:33:27.944Z",
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.API\\appsettings.Development.json",
+              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.API\\appsettings.Development.json",
+              "RelativeToolTip": "src\\UMBIT.ToDo.API\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-29T18:36:16.977Z",
               "EditorCaption": ""
             }
           ]

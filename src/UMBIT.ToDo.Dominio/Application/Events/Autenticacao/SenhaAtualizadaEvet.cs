@@ -1,4 +1,4 @@
-﻿using UMBIT.ToDo.Core.Messages.Messagem.Applications.Events;
+﻿using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Events;
 
 namespace UMBIT.ToDo.Dominio.Application.Events.Autenticacao
 {

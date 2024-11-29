@@ -9,6 +9,11 @@
     {
       "library": "pnotify@5.1.2",
       "destination": "wwwroot/pnotify/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "microsoft-signalr@8.0.7",
+      "destination": "wwwroot/microsoft-signalr/"
     }
   ]
 }

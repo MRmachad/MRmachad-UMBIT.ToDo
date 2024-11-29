@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using UMBIT.ToDo.Core.Messages.Messagem.Interfaces;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Interfaces;
 using UMBIT.ToDo.Dominio.Application.Events.Autenticacao;
 using UMBIT.ToDo.Dominio.Entidades.Auth.Basicos;
 

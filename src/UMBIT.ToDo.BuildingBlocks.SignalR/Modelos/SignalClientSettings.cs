@@ -1,4 +1,4 @@
-﻿namespace TSE.Nexus.SDK.SignalR.Modelos
+﻿namespace UMBIT.ToDo.BuildingBlocks.SignalR.Modelos
 {
     public class SignalClientSettings
     {

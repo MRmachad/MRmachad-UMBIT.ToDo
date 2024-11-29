@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
-using UMBIT.ToDo.Core.Repositorio.Application.Events.Operacoes.Base;
-using UMBIT.ToDo.Core.Repositorio.Interfaces;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Application.Events.Operacoes.Base;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Interfaces;
 
-namespace UMBIT.ToDo.Core.Repositorio.Application.Events.Operacoes
+namespace UMBIT.ToDo.BuildingBlocks.Repositorio.Application.Events.Operacoes
 {
     public class BaseEntityRemovedEventBase<T> : DomainEvent where T : class
     {

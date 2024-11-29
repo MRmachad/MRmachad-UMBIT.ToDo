@@ -2,13 +2,13 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
-using TSE.Nexus.SDK.Messages.Bus.MessagerBus;
-using TSE.Nexus.SDK.Messages.Bus.MessagerBus.Models;
-using UMBIT.ToDo.Core.Basicos.Utilitarios;
-using UMBIT.ToDo.Core.Messages.Bus.MediatorBus;
-using UMBIT.ToDo.Core.Repositorio.Interfaces.Database;
+using UMBIT.ToDo.BuildingBlocks.Basicos.Utilitarios;
+using UMBIT.ToDo.BuildingBlocks.Message.Bus.MediatorBus;
+using UMBIT.ToDo.BuildingBlocks.Message.Bus.MessagerBus;
+using UMBIT.ToDo.BuildingBlocks.Message.Bus.MessagerBus.Models;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Interfaces.Database;
 
-namespace UMBIT.ToDo.Core.Messages.Bootstrapper
+namespace UMBIT.ToDo.BuildingBlocks.Message.Bootstrapper
 {
     public static class MessageConfigurate
     {
@@ -21,10 +21,10 @@ namespace UMBIT.ToDo.Core.Messages.Bootstrapper
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(appAssemblies.ToArray()));
             services.AddTransient<IMediatorBus, MediatorBus>();
 
-            services.Configure<TSEMessageBusConfig>(configuration.GetSection("TSEMessageBusConfig"));
+            services.Configure<UMBITMessageBusConfig>(configuration.GetSection("UMBITMessageBusConfig"));
 
 
-            services.AddSingleton<TSEMessageBusConnectionFactory>();
+            services.AddSingleton<UMBITMessageBusConnectionFactory>();
             services.AddSingleton<IMessagerBus, MessagerBus>();
 
             return services;

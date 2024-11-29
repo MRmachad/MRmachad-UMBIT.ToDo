@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace UMBIT.ToDo.Core.Basicos.Notificacoes
+namespace UMBIT.ToDo.BuildingBlocks.Basicos.Notificacoes
 {
     public class NotificacaoPadrao
     {

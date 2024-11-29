@@ -1,6 +1,6 @@
-﻿namespace TSE.Nexus.SDK.Messages.Bus.MessagerBus.Models
+﻿namespace UMBIT.ToDo.BuildingBlocks.Message.Bus.MessagerBus.Models
 {
-    public class TSEMessageBusConfig
+    public class UMBITMessageBusConfig
     {
         public int? Port { get; set; }
         public string? Host { get; set; }

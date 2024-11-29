@@ -1,10 +1,10 @@
 ﻿using MediatR;
 using FluentValidation.Results;
 using FluentValidation;
-using UMBIT.ToDo.Core.Messages.Messagem;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem;
 
 
-namespace UMBIT.ToDo.Core.Messages.Messagem.Applications.Query
+namespace UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Query
 {
     public interface IUMBITQuery<TResponse> : IRequest<UMBITMessageResponse<TResponse>> where TResponse : class
     {

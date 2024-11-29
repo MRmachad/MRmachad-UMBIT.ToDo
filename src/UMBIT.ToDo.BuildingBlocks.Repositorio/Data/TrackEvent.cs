@@ -1,4 +1,4 @@
-﻿namespace UMBIT.ToDo.Core.Repositorio.Data
+﻿namespace UMBIT.ToDo.BuildingBlocks.Repositorio.Data
 {
     public class TrackEvent
     {

@@ -1,6 +1,6 @@
-﻿using UMBIT.ToDo.Core.Basicos.Utilitarios;
+﻿using UMBIT.ToDo.BuildingBlocks.Basicos.Utilitarios;
 
-namespace TSE.Nexus.NodeLink.API.Bootstrapper
+namespace UMBIT.ToDo.API.Bootstrapper
 {
     public static class InicializeConfigurate
     {

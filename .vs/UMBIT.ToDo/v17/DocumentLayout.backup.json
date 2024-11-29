@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{9386937F-CB18-434D-A9FC-6ABC623D9AB6}|src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web.csproj|d:\\dev\\_bymyself\\umbit\\umbit.todo\\src\\umbit.todo.web\\umbit.todo.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9386937F-CB18-434D-A9FC-6ABC623D9AB6}|src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web.csproj|solutionrelative:src\\umbit.todo.web\\umbit.todo.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,24 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAkwDYAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-29T03:33:27.944Z",
-              "EditorCaption": ""
             }
           ]
         }

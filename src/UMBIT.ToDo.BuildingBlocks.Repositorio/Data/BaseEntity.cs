@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
-using UMBIT.ToDo.Core.Repositorio.Application.Events.Operacoes;
-using UMBIT.ToDo.Core.Repositorio.Application.Events.Operacoes.Base;
-using UMBIT.ToDo.Core.Repositorio.Interfaces;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Application.Events.Operacoes;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Application.Events.Operacoes.Base;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Interfaces;
 
-namespace UMBIT.ToDo.Core.Repositorio.Data
+namespace UMBIT.ToDo.BuildingBlocks.Repositorio.Data
 {
     public abstract class BaseEntity<T> : IBaseEntity where T : BaseEntity<T>
     {

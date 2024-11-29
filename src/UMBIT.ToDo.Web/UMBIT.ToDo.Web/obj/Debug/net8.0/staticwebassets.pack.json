@@ -249,6 +249,18 @@
       "PackagePath": "staticwebassets\\lib\\echarts\\echarts.common.min.js"
     },
     {
+      "Id": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\wwwroot\\lib\\echarts\\echarts.esm.js",
+      "PackagePath": "staticwebassets\\lib\\echarts\\echarts.esm.js"
+    },
+    {
+      "Id": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\wwwroot\\lib\\echarts\\echarts.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\echarts\\echarts.esm.js.map"
+    },
+    {
+      "Id": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\wwwroot\\lib\\echarts\\echarts.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\echarts\\echarts.esm.min.js"
+    },
+    {
       "Id": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\wwwroot\\lib\\echarts\\echarts.js",
       "PackagePath": "staticwebassets\\lib\\echarts\\echarts.js"
     },
@@ -983,6 +995,14 @@
     {
       "Id": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\wwwroot\\lib\\mvc-grid\\mvc-grid.js",
       "PackagePath": "staticwebassets\\lib\\mvc-grid\\mvc-grid.js"
+    },
+    {
+      "Id": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\wwwroot\\microsoft-signalr\\signalr.js",
+      "PackagePath": "staticwebassets\\microsoft-signalr\\signalr.js"
+    },
+    {
+      "Id": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\wwwroot\\microsoft-signalr\\signalr.min.js",
+      "PackagePath": "staticwebassets\\microsoft-signalr\\signalr.min.js"
     },
     {
       "Id": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Web\\UMBIT.ToDo.Web\\wwwroot\\mvc-grid\\fonts\\grid-glyphs.woff",

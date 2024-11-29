@@ -1,4 +1,4 @@
-﻿using UMBIT.ToDo.Core.Seguranca.Models;
+﻿using UMBIT.ToDo.BuildingBlocks.Core.Seguranca.Models;
 using UMBIT.ToDo.Dominio.Interfaces;
 
 namespace UMBIT.ToDo.API.Bootstrapper

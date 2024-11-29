@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using UMBIT.ToDo.Core.Repositorio.Data;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Data;
 using UMBIT.ToDo.Dominio.Basicos.Enum;
 
 namespace UMBIT.ToDo.Dominio.Entidades.ToDo

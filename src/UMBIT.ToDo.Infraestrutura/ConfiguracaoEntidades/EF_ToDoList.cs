@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using UMBIT.ToDo.Core.Repositorio.EF;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.EF;
 using UMBIT.ToDo.Dominio.Entidades.ToDo;
 
 
@@ -12,7 +12,7 @@ namespace UMBIT.ToDo.Infraestrutura.ConfiguracaoEntidades
             builder.HasMany(t => t.ToDoItems)
                 .WithOne(t => t.ToDoList)
                 .HasForeignKey(t => t.IdToDoList)
-                .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Restrict);
+                .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
                 
         }
     }

@@ -1,4 +1,4 @@
-﻿using UMBIT.ToDo.Core.Messages.Messagem.Applications.Commands;
+﻿using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Commands;
 using UMBIT.ToDo.Dominio.Utilitarios;
 
 namespace UMBIT.ToDo.Dominio.Application.Commands.Autenticacao

@@ -6293,8 +6293,8 @@
     },
     "UMBIT.ToDo.BuildingBlocks.Core/1.0.0": {
       "type": "project",
-      "path": "../UMBIT.ToDo.Core/UMBIT.ToDo.BuildingBlocks.Core.csproj",
-      "msbuildProject": "../UMBIT.ToDo.Core/UMBIT.ToDo.BuildingBlocks.Core.csproj"
+      "path": "../UMBIT.ToDo.BuildingBlocks.Core/UMBIT.ToDo.BuildingBlocks.Core.csproj",
+      "msbuildProject": "../UMBIT.ToDo.BuildingBlocks.Core/UMBIT.ToDo.BuildingBlocks.Core.csproj"
     },
     "UMBIT.ToDo.BuildingBlocks.Fabrica/1.0.0": {
       "type": "project",
@@ -6340,8 +6340,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Core\\UMBIT.ToDo.BuildingBlocks.Core.csproj": {
-              "projectPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.Core\\UMBIT.ToDo.BuildingBlocks.Core.csproj"
+            "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.BuildingBlocks.Core\\UMBIT.ToDo.BuildingBlocks.Core.csproj": {
+              "projectPath": "D:\\Dev\\_ByMySelf\\UMBIT\\UMBIT.ToDo\\src\\UMBIT.ToDo.BuildingBlocks.Core\\UMBIT.ToDo.BuildingBlocks.Core.csproj"
             }
           }
         }

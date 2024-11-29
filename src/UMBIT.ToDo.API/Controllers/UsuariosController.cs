@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using UMBIT.Nexus.Auth.Contrato;
-using UMBIT.ToDo.Core.Seguranca.Basicos.Atributos;
+using UMBIT.ToDo.BuildingBlocks.Core.Seguranca.Basicos.Atributos;
 using UMBIT.ToDo.Dominio.Application.Commands.Usuarios;
 using UMBIT.ToDo.Dominio.Application.Queries.Usuarios;
 using UMBIT.ToDo.Dominio.Entidades.Auth.Basicos;

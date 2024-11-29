@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using UMBIT.ToDo.Core.Repositorio.Interfaces;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Interfaces;
 
-namespace UMBIT.ToDo.Core.Repositorio.EF
+namespace UMBIT.ToDo.BuildingBlocks.Repositorio.EF
 {
     public abstract class CoreEntityConfigurate<T> : IEntityTypeConfiguration<T> where T : class, IBaseEntity
     {

@@ -29,8 +29,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\UMBIT.ToDo.Core\UMBIT.ToDo.BuildingBlocks.Core.csproj" />
-	  <ProjectReference Include="..\UMBIT.ToDo.WebApi\UMBIT.ToDo.BuildingBlocksc.WebAPI.csproj" />
+	  <ProjectReference Include="..\UMBIT.ToDo.BuildingBlocks.Core\UMBIT.ToDo.BuildingBlocks.Core.csproj" />
+	  <ProjectReference Include="..\UMBIT.ToDo.BuildingBlocks.WebApi\UMBIT.ToDo.BuildingBlocks.WebAPI.csproj" />
 	</ItemGroup>
 
 	<Target Name="NSwag" Outputs="%(OpenApiToClientCode.Identity)" BeforeTargets="PrepareForBuild" Condition="'$(Configuration)' == 'Debug'">

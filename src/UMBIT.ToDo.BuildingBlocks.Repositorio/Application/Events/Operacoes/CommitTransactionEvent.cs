@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace UMBIT.ToDo.Core.Repositorio.Application.Events.Operacoes
+namespace UMBIT.ToDo.BuildingBlocks.Repositorio.Application.Events.Operacoes
 {
     public class CommitTransactionEvent : INotification
     {

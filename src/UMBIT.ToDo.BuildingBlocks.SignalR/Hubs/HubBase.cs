@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 
-namespace TSE.Nexus.SDK.SignalR.Hubs
+namespace UMBIT.ToDo.BuildingBlocks.SignalR.Hubs
 {
-    public abstract class HubBase: Hub
+    public abstract class HubBase : Hub
     {
         public async Task Registrar(string grupo)
         {
@@ -16,7 +16,7 @@ namespace TSE.Nexus.SDK.SignalR.Hubs
 
         public async Task Atualizar(string grupo, string metodo, object dados)
         {
-           await Clients.Group(grupo).SendAsync(metodo, dados);
+            await Clients.Group(grupo).SendAsync(metodo, dados);
         }
     }
 }

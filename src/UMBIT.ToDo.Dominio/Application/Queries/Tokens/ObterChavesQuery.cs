@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using UMBIT.ToDo.Core.Messages.Messagem.Applications.Query;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Query;
 
 namespace UMBIT.ToDo.Dominio.Application.Queries.Tokens
 {

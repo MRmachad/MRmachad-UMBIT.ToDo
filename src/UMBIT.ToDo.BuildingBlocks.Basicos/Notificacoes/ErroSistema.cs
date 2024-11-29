@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Text.Json.Serialization;
-using UMBIT.ToDo.Core.Basicos.Excecoes;
+using UMBIT.ToDo.BuildingBlocks.Basicos.Excecoes;
 
-namespace UMBIT.ToDo.Core.Basicos.Notificacoes
+namespace UMBIT.ToDo.BuildingBlocks.Basicos.Notificacoes
 {
     public class ErroSistema : NotificacaoPadrao
     {

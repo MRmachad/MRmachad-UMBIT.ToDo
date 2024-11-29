@@ -3,13 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.DependencyInjection;
 using System.Text.Json;
-using UMBIT.ToDo.Core.Basicos.Utilitarios;
-using UMBIT.ToDo.Core.Repositorio.Application.Events.Operacoes.Base;
-using UMBIT.ToDo.Core.Repositorio.Data;
-using UMBIT.ToDo.Core.Repositorio.Interfaces;
-using UMBIT.ToDo.Fabrica.Models;
+using UMBIT.ToDo.BuildingBlocks.Basicos.Utilitarios;
+using UMBIT.ToDo.BuildingBlocks.Fabrica.Models;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Application.Events.Operacoes.Base;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Data;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Interfaces;
 
-namespace UMBIT.ToDo.Core.Repositorio.EF
+namespace UMBIT.ToDo.BuildingBlocks.Repositorio.EF
 {
 
     public abstract class BaseContext<T> : DbContext where T : DbContext

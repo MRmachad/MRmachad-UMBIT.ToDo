@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using TSE.Nexus.SDK.Messages.Bus.MessagerBus;
-using TSE.Nexus.SDK.SignalR.Interfaces;
-using TSE.Nexus.SDK.Workers.Workers.JustFire;
-using UMBIT.ToDo.Core.Messages.Messagem;
+using UMBIT.ToDo.BuildingBlocks.Core.Workers.Workers.JustFire;
+using UMBIT.ToDo.BuildingBlocks.Message.Bus.MessagerBus;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem;
+using UMBIT.ToDo.BuildingBlocks.SignalR.Interfaces;
 
 namespace UMBIT.ToDo.Dominio.Workers
 {

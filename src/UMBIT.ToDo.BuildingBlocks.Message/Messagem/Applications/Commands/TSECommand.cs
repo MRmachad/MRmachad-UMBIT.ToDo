@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
 using MediatR;
-using UMBIT.ToDo.Core.Messages.Messagem;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem;
 
-namespace UMBIT.ToDo.Core.Messages.Messagem.Applications.Commands
+namespace UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Commands
 {
     public interface IUMBITCommandRequest<TCommand> : IRequest<UMBITMessageResponse> where TCommand : class, IUMBITCommandRequest<TCommand>
     {

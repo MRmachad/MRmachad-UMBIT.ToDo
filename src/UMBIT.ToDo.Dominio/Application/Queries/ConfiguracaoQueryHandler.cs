@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using UMBIT.ToDo.Core.Messages.Messagem;
-using UMBIT.ToDo.Core.Messages.Messagem.Applications.Query;
-using UMBIT.ToDo.Core.Messages.Messagem.Interfaces;
-using UMBIT.ToDo.Core.Notificacao.Interfaces;
-using UMBIT.ToDo.Core.Repositorio.Interfaces.Database;
+using UMBIT.ToDo.BuildingBlocks.Core.Notificacao.Interfaces;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Query;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Interfaces;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Interfaces.Database;
 using UMBIT.ToDo.Dominio.Application.Queries.Configuracao;
 using UMBIT.ToDo.Dominio.Entidades.Auth.Basicos;
 using UMBIT.ToDo.Dominio.Entidades.Auth.Configuracao;

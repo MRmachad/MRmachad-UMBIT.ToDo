@@ -1,6 +1,6 @@
-﻿using UMBIT.ToDo.Core.Messages.Messagem;
+﻿using UMBIT.ToDo.BuildingBlocks.Message.Messagem;
 
-namespace TSE.Nexus.SDK.Messages.Bus.MessagerBus
+namespace UMBIT.ToDo.BuildingBlocks.Message.Bus.MessagerBus
 {
     public interface IMessagerBus
     {

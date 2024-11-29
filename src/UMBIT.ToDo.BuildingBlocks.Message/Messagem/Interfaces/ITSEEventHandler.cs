@@ -1,8 +1,8 @@
 ﻿using MediatR;
-using UMBIT.ToDo.Core.Messages.Messagem.Applications.Events;
-using UMBIT.ToDo.Core.Repositorio.Application.Events.Operacoes.Base;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Events;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Application.Events.Operacoes.Base;
 
-namespace UMBIT.ToDo.Core.Messages.Messagem.Interfaces
+namespace UMBIT.ToDo.BuildingBlocks.Message.Messagem.Interfaces
 {
     public interface IUMBITEventHandler<T> : INotificationHandler<T> where T : UMBITEvent
     {

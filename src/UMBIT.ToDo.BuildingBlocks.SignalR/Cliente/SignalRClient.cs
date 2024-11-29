@@ -4,10 +4,10 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System;
 using System.Threading.Tasks;
-using TSE.Nexus.SDK.SignalR.Interfaces;
-using TSE.Nexus.SDK.SignalR.Modelos;
+using UMBIT.ToDo.BuildingBlocks.SignalR.Interfaces;
+using UMBIT.ToDo.BuildingBlocks.SignalR.Modelos;
 
-namespace TSE.Nexus.SDK.SignalR.Cliente
+namespace UMBIT.ToDo.BuildingBlocks.SignalR.Cliente
 {
     public class SignalRClient : ISignalRClient
     {
@@ -32,7 +32,7 @@ namespace TSE.Nexus.SDK.SignalR.Cliente
 
             Conexao.Closed += async (error) =>
             {
-                this.Logger.LogError(error, "Erro na Conexão!");
+                Logger.LogError(error, "Erro na Conexão!");
 
                 await Task.Delay(new Random().Next(0, 5) * 1000);
                 await Conexao.StartAsync();
@@ -46,14 +46,14 @@ namespace TSE.Nexus.SDK.SignalR.Cliente
 
             try
             {
-                this.Logger.LogInformation($"Emitindo atualização via SignalR. {grupo}, {metodo}");
-                this.Conexao?.InvokeAsync("Atualizar", grupo ?? metodo, metodo, dados).Wait();
+                Logger.LogInformation($"Emitindo atualização via SignalR. {grupo}, {metodo}");
+                Conexao?.InvokeAsync("Atualizar", grupo ?? metodo, metodo, dados).Wait();
             }
             catch (Exception ex)
             {
-                this.Conexao?.StopAsync();
+                Conexao?.StopAsync();
 
-                this.Logger.LogError(ex, "Erro na emissão de atualização!");
+                Logger.LogError(ex, "Erro na emissão de atualização!");
             }
         }
 
@@ -68,23 +68,23 @@ namespace TSE.Nexus.SDK.SignalR.Cliente
 
             try
             {
-                this.Logger.LogInformation("Configurando handler de atualização via SignalR");
-                this.Conexao?.InvokeAsync("Registrar", grupo ?? metodo).Wait();
-                this.Conexao?.On<T>(metodo, handler);
+                Logger.LogInformation("Configurando handler de atualização via SignalR");
+                Conexao?.InvokeAsync("Registrar", grupo ?? metodo).Wait();
+                Conexao?.On(metodo, handler);
             }
             catch (Exception ex)
             {
-                this.Conexao?.StopAsync();
+                Conexao?.StopAsync();
 
-                this.Logger.LogError(ex, "Erro na recepção de atualização!");
+                Logger.LogError(ex, "Erro na recepção de atualização!");
             }
         }
 
         private void VerifiqueConnectClient()
         {
-            if (this.Conexao?.State != HubConnectionState.Connected)
+            if (Conexao?.State != HubConnectionState.Connected)
             {
-                this.Logger.LogInformation("Cliente Desconectado!");
+                Logger.LogInformation("Cliente Desconectado!");
 
                 Conexao?.StartAsync().Wait();
             }

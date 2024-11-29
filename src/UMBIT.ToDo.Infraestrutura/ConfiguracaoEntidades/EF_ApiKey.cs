@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using UMBIT.ToDo.Core.Repositorio.EF;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.EF;
 using UMBIT.ToDo.Dominio.Entidades.Auth.Token;
 
-namespace TSE.Nexus.Auth.Infraestrutura.ConfiguracaoDeEntidades
+namespace UMBIT.ToDo.Infraestrutura.ConfiguracaoEntidades
 {
     public class EF_ApiKey : CoreEntityConfigurate<ApiToken>
     {

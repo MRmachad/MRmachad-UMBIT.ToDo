@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using UMBIT.ToDo.Core.Messages.Bus.MediatorBus;
-using UMBIT.ToDo.Core.Seguranca.Models;
+using UMBIT.ToDo.BuildingBlocks.Core.Seguranca.Models;
+using UMBIT.ToDo.BuildingBlocks.Message.Bus.MediatorBus;
 using UMBIT.ToDo.Dominio.Application.Queries.Tokens;
 
 namespace UMBIT.ToDo.API.Bootstrapper

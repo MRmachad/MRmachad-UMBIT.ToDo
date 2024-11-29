@@ -50,7 +50,7 @@
 </style>
 
 <div class="container mt-5">
-    <h1 class="mb-4">Lista de Tarefas Demo</h1>
+    <h2 class="mb-4">Lista de Tarefas Pendentes Demo</h2>
     @foreach (var parentGroup in Model.GroupBy(task => task.IdToDoList))
     {
         if (parentGroup.Key != null && parentGroup.Key != Guid.Empty)
@@ -59,7 +59,6 @@
 
             <div class="mb-4">
                 <div class="d-flex align-items-center mb-2">
-                    <input type="checkbox" class="mr-2" id="list-checkbox-@parentGroup.Key.Value" onclick="toggleListTasks('@parentGroup.Key.Value')" />
                     <label class="list-header" for="list-checkbox-@parentGroup.Key.Value">
                         @parent.Nome
                     </label>
@@ -68,7 +67,6 @@
                     @foreach (var task in parentGroup)
                     {
                         <div class="task-item d-flex align-items-baseline">
-                            <input type="checkbox" class="checkbox-column mr-3 list-checkbox-@parentGroup.Key.Value" id="task-checkbox-@task.Id" onclick="checkListStatus('@parentGroup.Key.Value')" />
                             <div class="flex-grow-1">
                                 <div class="task-title">@task.Nome</div>
                                 @if (!string.IsNullOrWhiteSpace(task.Descricao))
@@ -77,7 +75,6 @@
                                 }
                             </div>
                             <div>
-                                <!-- Toggle Status -->
                                 <div class="status-toggle @(task.Status == 2 ? "status-completed" : task.Status == 1 ? "status-in-progress" : "status-pending")"
                                      data-status="@task.Status"
                                      id="status-toggle-@task.Id"
@@ -121,15 +118,15 @@
             switch (nextStatus) {
                 case 2:
                     element.className = 'status-toggle status-completed';
-                    element.textContent = 'Completed';
+                    element.textContent = 'Completa';
                     break;
                 case 1:
                     element.className = 'status-toggle status-in-progress';
-                    element.textContent = 'In Progress';
+                    element.textContent = 'Em Progresso';
                     break;
                 case 0:
                     element.className = 'status-toggle status-pending';
-                    element.textContent = 'Pending';
+                    element.textContent = 'Pendente';
                     break;
             }
         }

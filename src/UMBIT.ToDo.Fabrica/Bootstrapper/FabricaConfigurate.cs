@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using UMBIT.ToDo.Fabrica.Models;
+using UMBIT.ToDo.BuildingBlocks.Fabrica.Models;
 
-namespace UMBIT.ToDo.Core.API.Bootstrapper
+namespace UMBIT.ToDo.BuildingBlocks.Fabrica.Bootstrapper
 {
     public static class FabricaConfigurate
     {

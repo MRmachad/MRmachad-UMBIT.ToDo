@@ -1,15 +1,15 @@
 ﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using UMBIT.ToDo.Core.Basicos.Excecoes;
-using UMBIT.ToDo.Core.Messages.Messagem;
-using UMBIT.ToDo.Core.Messages.Messagem.Applications.Commands;
-using UMBIT.ToDo.Core.Messages.Messagem.Applications.Events;
-using UMBIT.ToDo.Core.Messages.Messagem.Applications.Query;
-using UMBIT.ToDo.Core.Notificacao.Interfaces;
-using UMBIT.ToDo.Core.Repositorio.Interfaces.Database;
-using UMBIT.ToDo.Fabrica.Models;
+using UMBIT.ToDo.BuildingBlocks.Core.Notificacao.Interfaces;
+using UMBIT.ToDo.BuildingBlocks.Fabrica.Models;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Commands;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Events;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Query;
+using UMBIT.ToDo.BuildingBlocks.Repositorio.Interfaces.Database;
+using UMBIT.ToDo.BuildingBlocks.Basicos.Excecoes;
 
-namespace UMBIT.ToDo.Core.Messages.Bus.MediatorBus
+namespace UMBIT.ToDo.BuildingBlocks.Message.Bus.MediatorBus
 {
     internal class MediatorBus : IMediatorBus
     {

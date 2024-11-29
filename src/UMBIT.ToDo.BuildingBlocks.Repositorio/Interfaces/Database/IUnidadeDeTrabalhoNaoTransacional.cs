@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace UMBIT.ToDo.Core.Repositorio.Interfaces.Database
+namespace UMBIT.ToDo.BuildingBlocks.Repositorio.Interfaces.Database
 {
     public interface IUnidadeDeTrabalhoNaoTransacional : IDisposable
     {

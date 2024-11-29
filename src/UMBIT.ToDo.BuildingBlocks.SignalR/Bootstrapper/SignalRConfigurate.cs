@@ -3,14 +3,14 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
-using TSE.Nexus.SDK.SignalR.Basicos.Atributos;
-using TSE.Nexus.SDK.SignalR.Cliente;
-using TSE.Nexus.SDK.SignalR.Hubs;
-using TSE.Nexus.SDK.SignalR.Interfaces;
-using TSE.Nexus.SDK.SignalR.Modelos;
-using UMBIT.ToDo.Core.Basicos.Utilitarios;
+using UMBIT.ToDo.BuildingBlocks.Basicos.Utilitarios;
+using UMBIT.ToDo.BuildingBlocks.SignalR.Basicos.Atributos;
+using UMBIT.ToDo.BuildingBlocks.SignalR.Cliente;
+using UMBIT.ToDo.BuildingBlocks.SignalR.Hubs;
+using UMBIT.ToDo.BuildingBlocks.SignalR.Interfaces;
+using UMBIT.ToDo.BuildingBlocks.SignalR.Modelos;
 
-namespace TSE.Nexus.SDK.SignalR.Bootstrapper
+namespace UMBIT.ToDo.BuildingBlocks.SignalR.Bootstrapper
 {
     public static class SignalRConfigurate
     {
@@ -32,7 +32,7 @@ namespace TSE.Nexus.SDK.SignalR.Bootstrapper
             var hubs = new SignalRsWrapped();
 
             return hubs.AddHubs(routing);
-             
+
         }
         class SignalRsWrapped
         {

@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using TSE.Nexus.Auth.API.Extensao;
-using TSE.Nexus.Auth.Infraestrutura.Contexto;
-using UMBIT.ToDo.Core.Basicos.Utilitarios;
+using UMBIT.ToDo.API.Extensao;
+using UMBIT.ToDo.BuildingBlocks.Basicos.Utilitarios;
 using UMBIT.ToDo.Dominio.Configuradores;
 using UMBIT.ToDo.Dominio.Entidades.Auth.Basicos;
+using UMBIT.ToDo.Infraestrutura.Contextos;
 
-namespace TSE.Nexus.Auth.API.Bootstrapper
+namespace UMBIT.ToDo.API.Bootstrapper
 {
     public static class IdentityConfiguration
     {

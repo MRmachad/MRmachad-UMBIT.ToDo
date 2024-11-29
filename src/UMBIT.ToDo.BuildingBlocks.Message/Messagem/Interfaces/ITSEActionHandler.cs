@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using UMBIT.ToDo.Core.Messages.Messagem.Applications.Commands;
+using UMBIT.ToDo.BuildingBlocks.Message.Messagem.Applications.Commands;
 
-namespace UMBIT.ToDo.Core.Messages.Messagem.Interfaces
+namespace UMBIT.ToDo.BuildingBlocks.Message.Messagem.Interfaces
 {
     public interface IUMBITActionHandler<T> : INotificationHandler<T> where T : IUMBITAction
     {
